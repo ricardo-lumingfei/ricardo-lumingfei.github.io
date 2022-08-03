@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>一些js面试题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="1.console.log(0.1 + 0.2)1230.1+0.2的结果不是0.3，而是0.3000000000000000004JS中两个数字相加时是以二进制形式进行的,当十进制小数的二进制表示的有限数字超过52位时,在JS里是不能精确储存的，这个时候就存在舍入误差.  2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;123&#x3D;&#x3D;：只是比较值,值相等则结果为	true&#x3D;&#x3D;&#x3D;:既">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些js面试题">
+<meta property="og:url" content="http://example.com/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.console.log(0.1 + 0.2)1230.1+0.2的结果不是0.3，而是0.3000000000000000004JS中两个数字相加时是以二进制形式进行的,当十进制小数的二进制表示的有限数字超过52位时,在JS里是不能精确储存的，这个时候就存在舍入误差.  2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;123&#x3D;&#x3D;：只是比较值,值相等则结果为	true&#x3D;&#x3D;&#x3D;:既">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-03T00:43:44.000Z">
+<meta property="article:modified_time" content="2022-08-03T06:43:13.697Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,103 +154,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-一些js面试题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2022-08-03T06:42:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/">jQuery实现轮播图</a>
+    <h1 class="article-title" itemprop="name">
+      一些js面试题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
+        
+        <a href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
   	<time datetime="2022-08-03T00:43:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">一些js面试题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-console-log-0-1-0-2"><a href="#1-console-log-0-1-0-2" class="headerlink" title="1.console.log(0.1 + 0.2)"></a>1.console.log(0.1 + 0.2)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.1+0.2的结果不是0.3，而是0.3000000000000000004</span><br><span class="line"></span><br><span class="line">JS中两个数字相加时是以二进制形式进行的,当十进制小数的二进制表示的有限数字超过52位时,在JS里是不能精确储存的，这个时候就存在舍入误差.</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h1 id="2-x3D-x3D-和-x3D-x3D-x3D"><a href="#2-x3D-x3D-和-x3D-x3D-x3D" class="headerlink" title="2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;"></a>2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==：只是比较值,值相等则结果为	true</span><br><span class="line">===:既比较值又比较数据类型	值向等数据类型不等则结果为	false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h1 id="3-事件冒泡和事件捕获到底有何区别"><a href="#3-事件冒泡和事件捕获到底有何区别" class="headerlink" title="3.事件冒泡和事件捕获到底有何区别"></a>3.事件冒泡和事件捕获到底有何区别</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.：事件冒泡：从下到上(从里到外)。给父子元素的同一事件绑定方法的时候，触发子元素身上的事件，执行完毕之后，也会触发父级元素相同发事件</span><br><span class="line">2.：事件捕获：从上至下(从外到里)。当触发子元素身上的事件时，先触发父元素，然后再传递给子元素</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-JS数据类型"><a href="#4-JS数据类型" class="headerlink" title="4.JS数据类型"></a>4.JS数据类型</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ES5：Number,String,Boolean,undefined.object,Null</span><br><span class="line">ES6:Symbol	(这种类型的对象用不相等，即使创建的时候传入相同的值，可以解决属性名冲突的问题，作为标记)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/hello-world/" class="archive-article-date">
-  	<time datetime="2022-08-02T15:18:38.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          jQuery实现轮播图
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-console-log-0-1-0-2"><span class="toc-number">1.</span> <span class="toc-text">1.console.log(0.1 + 0.2)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-x3D-x3D-%E5%92%8C-x3D-x3D-x3D"><span class="toc-number"></span> <span class="toc-text">2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1%E5%92%8C%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7%E5%88%B0%E5%BA%95%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB"><span class="toc-number"></span> <span class="toc-text">3.事件冒泡和事件捕获到底有何区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">4.JS数据类型</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -269,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
