@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/8 | Hexo</title>
+  <title>解构 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/08/index.html">
+  <meta name="description" content="对象解构1.正常ES5获取对象内容2.完全解构3.部分解构4.解构之后重命名5.解构现成对象的方法，赋给一个变量 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;head&gt;		&lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解构">
+<meta property="og:url" content="http://example.com/2022/08/09/%E8%A7%A3%E6%9E%84/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对象解构1.正常ES5获取对象内容2.完全解构3.部分解构4.解构之后重命名5.解构现成对象的方法，赋给一个变量 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;head&gt;		&lt;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-09T02:57:53.000Z">
+<meta property="article:modified_time" content="2022-08-09T03:00:04.176Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,184 +154,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-解构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      解构
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/09/%E8%A7%A3%E6%9E%84/" class="archive-article-date">
+
+        
+        <a href="/2022/08/09/%E8%A7%A3%E6%9E%84/" class="archive-article-date">
   	<time datetime="2022-08-09T02:57:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/09/%E8%A7%A3%E6%9E%84/">解构</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h1><p>1.正常ES5获取对象内容<br>2.完全解构<br>3.部分解构<br>4.解构之后重命名<br>5.解构现成对象的方法，赋给一个变量</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 1.正常ES5获取对象内容</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var info = &#123; id:10,name:&quot;王仁武&quot;,age:20,sex:&quot;男&quot; &#125;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var name = info.name; //获取name属性值</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var age = info.age;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var sex = info.sex;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var  id = info.id;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// console.log(id,name,age,sex);</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 2.完全解构</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 语法： let &#123;需要获取的key&#125; = 解构的对象变量； &#123;&#125;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var info = &#123; id:10,name:&quot;王仁武&quot;,age:20,sex:&quot;男&quot; &#125;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// // =&gt;  let  &#123;id,name,sex,age&#125; = &#123; id:10,name:&quot;王仁武&quot;,age:20,sex:&quot;男&quot; &#125;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// let &#123; id,name,sex,age &#125; = info;  //将等号右侧对象内所有的属性全部获取，称为完全解构</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// console.log(id,name,age,sex);</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 3.部分解构: 获取右侧对象中部分的值</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var info = &#123; id:10,name:&quot;王仁武&quot;,age:20,sex:&quot;男&quot; &#125;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// // var  name = info.name;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// let &#123;name&#125;  =info;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// console.log(name);</span></span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 4.解构之后重命名   &#123; key:newName &#125;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">var</span> info = &#123; <span class="attr">id</span>:<span class="number">10</span>,<span class="attr">name</span>:<span class="string">&quot;王仁武&quot;</span>,<span class="attr">age</span>:<span class="number">20</span>,<span class="attr">sex</span>:<span class="string">&quot;男&quot;</span>,<span class="attr">content</span>:[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>] &#125;</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var data = info.content;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">let</span> &#123;<span class="attr">content</span>:data&#125; = info;</span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 5.解构现成对象的方法，赋给一个变量</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">//  Math 数学对象   Date() 时间对象</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// console.log( Math.random() );</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// let  &#123; random &#125; = Math;</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// console.log( random() );</span></span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// var random = Math.random; // 0.999898</span></span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// random()</span></span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/09/%E8%A7%A3%E6%9E%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2022-08-08T03:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">变量和常量声明关键字</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/">变量和常量声明关键字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">对象解构</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-04T06:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">ajax请求切换商品列表排序方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2022-08-03T06:42:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/">jQuery实现轮播图</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-08-03T00:43:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">一些js面试题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/hello-world/" class="archive-article-date">
-  	<time datetime="2022-08-02T15:18:38.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -350,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
