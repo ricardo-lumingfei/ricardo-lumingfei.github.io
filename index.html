@@ -152,6 +152,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js基础复习-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/">js基础复习-3</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/" class="archive-article-date">
+  	<time datetime="2022-08-13T08:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JS隐式转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -414,27 +476,49 @@
 
 <h3 id="1-2sort-方法"><a href="#1-2sort-方法" class="headerlink" title="1.2	sort()方法"></a>1.2	sort()方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">				语法：</span></span><br><span class="line"><span class="comment">				  数组.sort(function(a,b)&#123;&#125;)</span></span><br><span class="line"><span class="comment">			 </span></span><br><span class="line"><span class="comment">			 */</span></span><br><span class="line">			<span class="keyword">var</span>  arr= [<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">10</span>,<span class="number">13</span>];</span><br><span class="line">			<span class="comment">// [&#123;id:10,num:2&#125;,&#123;id:9,num:3&#125;,&#123;&#125;]</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">// a,b是函数的两个参数，   a和b不是固定的，可以使用任何字符代替（正常使用英文单词)</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 如果 return  后面是  前面的数减去后面的数，排序做的是升序</span></span><br><span class="line">			<span class="comment">// arr = arr.sort(function(a,b)&#123;</span></span><br><span class="line">			<span class="comment">// 	return  a-b;</span></span><br><span class="line">			<span class="comment">// &#125;);</span></span><br><span class="line">			<span class="comment">// console.log(arr);  // 升序</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 降序</span></span><br><span class="line">			arr = arr.<span class="title function_">sort</span>(<span class="keyword">function</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">				<span class="keyword">return</span> b-a;</span><br><span class="line">			&#125;);</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-函数"><a href="#2-函数" class="headerlink" title="2.函数"></a>2.函数</h2><h3 id="2-1函数声明"><a href="#2-1函数声明" class="headerlink" title="2.1函数声明"></a>2.1函数声明</h3><h4 id="2-1-1典型的函数声明"><a href="#2-1-1典型的函数声明" class="headerlink" title="2.1.1	典型的函数声明"></a>2.1.1	典型的函数声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">slide</span>(<span class="params"> <span class="variable language_">arguments</span></span>)&#123;</span><br><span class="line"><span class="comment">// ...code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-数组遍历"><a href="#2-数组遍历" class="headerlink" title="2.数组遍历"></a>2.数组遍历</h2><p>1.for循环</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;<span class="keyword">for</span>&lt;数组.<span class="property">length</span>;i++)&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-1-2以函数表达式的形式定义函数"><a href="#2-1-2以函数表达式的形式定义函数" class="headerlink" title="2.1.2	以函数表达式的形式定义函数"></a>2.1.2	以函数表达式的形式定义函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> slide = <span class="keyword">function</span>(<span class="params"> <span class="variable language_">arguments</span></span>)&#123;</span><br><span class="line"><span class="comment">// ...code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.forEach遍历数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">作用： 遍历数组</span><br><span class="line">arr.forEach(function(item,index)&#123;</span><br><span class="line">  item 是数组里面的每个元素</span><br><span class="line">  index 是数组的每个索引</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="3-函数"><a href="#3-函数" class="headerlink" title="3.函数"></a>3.函数</h2><h3 id="3-1函数声明"><a href="#3-1函数声明" class="headerlink" title="3.1函数声明"></a>3.1函数声明</h3><h4 id="3-1-1典型的函数声明"><a href="#3-1-1典型的函数声明" class="headerlink" title="3.1.1	典型的函数声明"></a>3.1.1	典型的函数声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">slide</span>(<span class="params"> <span class="variable language_">arguments</span></span>)&#123;</span><br><span class="line"><span class="comment">// ...code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-2以函数表达式的形式定义函数"><a href="#3-1-2以函数表达式的形式定义函数" class="headerlink" title="3.1.2	以函数表达式的形式定义函数"></a>3.1.2	以函数表达式的形式定义函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> slide = <span class="keyword">function</span>(<span class="params"> <span class="variable language_">arguments</span></span>)&#123;</span><br><span class="line"><span class="comment">// ...code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h6 id="虽然上面两种方式逻辑上是等价的，但是还是有点小区别"><a href="#虽然上面两种方式逻辑上是等价的，但是还是有点小区别" class="headerlink" title="虽然上面两种方式逻辑上是等价的，但是还是有点小区别:"></a>虽然上面两种方式逻辑上是等价的，但是还是有点小区别:</h6><ul>
 <li>例一中的函数会在代码执行以前被加载到作用域中，而例二则是在代码执行到那一行的时候才会有定义;</li>
 <li>函数声明会给函数指定一个名字，而函数表达式则是创建一个匿名函数，然后将这个匿名函数赋给一个变量；</li>
 </ul>
-<p>2.1.3	自调用函数</p>
+<p>3.1.3	自调用函数</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;自调用函数&#x27;</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="2-2函数的返回值return"><a href="#2-2函数的返回值return" class="headerlink" title="2.2函数的返回值	return"></a>2.2函数的返回值	return</h3><p>函数执行完毕之后会有一个执行结果，该结果就叫 —— 返回值（返回值就是给函数的调用处返回的值）</p>
+<h3 id="3-2函数的返回值return"><a href="#3-2函数的返回值return" class="headerlink" title="3.2函数的返回值	return"></a>3.2函数的返回值	return</h3><p>函数执行完毕之后会有一个执行结果，该结果就叫 —— 返回值（返回值就是给函数的调用处返回的值）</p>
 <p>如果你希望函数执行完毕之后，有一个你想要的数据，就可以使用返回值来实现</p>
 <p><strong>函数默认情况下，得到的结果是 —— undefined</strong></p>
 <p>想要修改可以修改，使用return修改</p>
-<h2 id="3-对象"><a href="#3-对象" class="headerlink" title="3.对象"></a>3.对象</h2><h4 id="对象就是属性和方法的集合"><a href="#对象就是属性和方法的集合" class="headerlink" title="对象就是属性和方法的集合"></a>对象就是属性和方法的集合</h4><p>3.1创建对象</p>
-<h3 id="3-1-1构造函数创建对象"><a href="#3-1-1构造函数创建对象" class="headerlink" title="3.1.1	构造函数创建对象"></a>3.1.1	构造函数创建对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br></pre></td></tr></table></figure>
+<h2 id="4-对象"><a href="#4-对象" class="headerlink" title="4.对象"></a>4.对象</h2><h4 id="对象就是属性和方法的集合"><a href="#对象就是属性和方法的集合" class="headerlink" title="对象就是属性和方法的集合"></a>对象就是属性和方法的集合</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">js里面的对象分成三大类</span><br><span class="line"></span><br><span class="line">1.内置对象</span><br><span class="line">	new Date()  </span><br><span class="line">2.自定义对象</span><br><span class="line">	&#123;&#125;  new  Array()</span><br><span class="line">3.宿主对象 </span><br><span class="line">	window    dom   bom</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-1-2字面量创建对象"><a href="#3-1-2字面量创建对象" class="headerlink" title="3.1.2	字面量创建对象"></a>3.1.2	字面量创建对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">console.log(obj)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>3.1创建对象</p>
+<h3 id="4-1-1构造函数创建对象"><a href="#4-1-1构造函数创建对象" class="headerlink" title="4.1.1	构造函数创建对象"></a>4.1.1	构造函数创建对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-1-2字面量创建对象"><a href="#4-1-2字面量创建对象" class="headerlink" title="4.1.2	字面量创建对象"></a>4.1.2	字面量创建对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">console.log(obj)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2键的方式访问对象的属性和方法"><a href="#4-2键的方式访问对象的属性和方法" class="headerlink" title="4.2键的方式访问对象的属性和方法"></a>4.2键的方式访问对象的属性和方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  .的形式</span><br><span class="line">           使用.的形式获取获取值，直接使用 对象.<span class="property">key</span></span><br><span class="line">           <span class="number">2.</span>  []的形式</span><br><span class="line">           使用[]的形式获取值  对象[<span class="string">&#x27;key&#x27;</span>]</span><br><span class="line">               []可以解析变量</span><br><span class="line"></span><br><span class="line">               <span class="keyword">var</span> a = key</span><br><span class="line"></span><br><span class="line">               <span class="title class_">Object</span>[a] = <span class="number">0</span>;  []可以解析变量a中的key</span><br><span class="line">               </span><br><span class="line">               </span><br><span class="line">           <span class="keyword">var</span> obj = &#123;</span><br><span class="line">           <span class="attr">name</span>:<span class="string">&#x27;路明非&#x27;</span>,</span><br><span class="line">           <span class="attr">age</span>:<span class="number">20</span>,</span><br><span class="line">           <span class="attr">sex</span>:<span class="string">&#x27;男&#x27;</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">var</span> a = obj.<span class="property">name</span>;</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(obj[name]);<span class="comment">//underfined</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(obj[<span class="string">&#x27;name&#x27;</span>]);<span class="comment">//路明非</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(a);<span class="comment">//路明非</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3遍历对象"><a href="#4-3遍历对象" class="headerlink" title="4.3遍历对象"></a>4.3遍历对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line"></span><br><span class="line">for(var key in obj)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">key 就是obj这个对象中的每个键，obj[key]就是对象中的每个值。</span><br></pre></td></tr></table></figure>
+
+
 
 
       
