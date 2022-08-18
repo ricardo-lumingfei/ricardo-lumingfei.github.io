@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/8 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/08/index.html">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,292 +152,156 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一些js面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">一些js面试题</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-08-03T00:43:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-console-log-0-1-0-2"><a href="#1-console-log-0-1-0-2" class="headerlink" title="1.console.log(0.1 + 0.2)"></a>1.console.log(0.1 + 0.2)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.1+0.2的结果不是0.3，而是0.3000000000000000004</span><br><span class="line"></span><br><span class="line">JS中两个数字相加时是以二进制形式进行的,当十进制小数的二进制表示的有限数字超过52位时,在JS里是不能精确储存的，这个时候就存在舍入误差.</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-x3D-x3D-和-x3D-x3D-x3D"><a href="#2-x3D-x3D-和-x3D-x3D-x3D" class="headerlink" title="2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;"></a>2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==：只是比较值,值相等则结果为	true</span><br><span class="line">===:既比较值又比较数据类型	值向等数据类型不等则结果为	false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-事件冒泡和事件捕获到底有何区别"><a href="#3-事件冒泡和事件捕获到底有何区别" class="headerlink" title="3.事件冒泡和事件捕获到底有何区别"></a>3.事件冒泡和事件捕获到底有何区别</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.：事件冒泡：从下到上(从里到外)。给父子元素的同一事件绑定方法的时候，触发子元素身上的事件，执行完毕之后，也会触发父级元素相同发事件</span><br><span class="line">2.：事件捕获：从上至下(从外到里)。当触发子元素身上的事件时，先触发父元素，然后再传递给子元素</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-JS数据类型"><a href="#4-JS数据类型" class="headerlink" title="4.JS数据类型"></a>4.JS数据类型</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ES5：Number,String,Boolean,undefined.object,Null</span><br><span class="line">ES6:Symbol	(这种类型的对象用不相等，即使创建的时候传入相同的值，可以解决属性名冲突的问题，作为标记)</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-js中的作用域和变量声明提升"><a href="#5-js中的作用域和变量声明提升" class="headerlink" title="5.js中的作用域和变量声明提升"></a>5.js中的作用域和变量声明提升</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">作用域：程序源代码中定义变量的区域，作用域确定了当前执行代码对变量的访问权限</span><br><span class="line">变量声明提升：所有变量和函数的声明都会被&quot;移动&quot;到各自作用域的最顶端</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/" class="archive-article-date">
-  	<time datetime="2022-08-16T13:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/">JS进阶-02</a>
+      <a class="article-title" href="/2022/08/02/hello-world/">Hello World</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/" class="archive-article-date">
-  	<time datetime="2022-08-16T12:25:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-16</time>
+        
+        <a href="/2022/08/02/hello-world/" class="archive-article-date">
+  	<time datetime="2022-08-02T15:18:38.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/">JS进阶-01</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/02/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/" class="archive-article-date">
-  	<time datetime="2022-08-13T08:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/">js基础复习-3</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/11/JS%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
-  	<time datetime="2022-08-11T13:05:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/11/JS%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2/">JS隐式转换</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/11/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-day2/" class="archive-article-date">
-  	<time datetime="2022-08-11T12:17:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/11/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-day2/">js基础复习 day2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/10/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-08-10T15:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/10/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/">js基础复习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/09/%E8%A7%A3%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2022-08-09T02:57:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/09/%E8%A7%A3%E6%9E%84/">解构</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2022-08-08T03:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/">变量和常量声明关键字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-04T06:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">ajax请求切换商品列表排序方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2022-08-03T06:42:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/">jQuery实现轮播图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/08/page/2/">2</a><a class="extend next" rel="next" href="/archives/2022/08/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -461,9 +325,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
