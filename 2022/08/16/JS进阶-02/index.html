@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>JS进阶-02 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="事件1.事件的三个阶段事件触发分为三个阶段 ​		1.目标阶段 ​		2.冒泡阶段(微软提出，整个事件默认执行的阶段),只要当前页面的元素存在嵌套关系，同时多个多个元素之间绑定的事件类型是一致的，那么默认就是发生冒泡(从里到外执行) ​		3.捕获阶段(必须经过设置才能执行,从外到内) 1.1什么是事件冒泡123在一个对象上触发某类事件（比如单击onclick事件），如果此对象定义了此事件的处理程">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JS进阶-02">
 <meta property="og:url" content="http://example.com/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="事件1.事件的三个阶段事件触发分为三个阶段 ​		1.目标阶段 ​		2.冒泡阶段(微软提出，整个事件默认执行的阶段),只要当前页面的元素存在嵌套关系，同时多个多个元素之间绑定的事件类型是一致的，那么默认就是发生冒泡(从里到外执行) ​		3.捕获阶段(必须经过设置才能执行,从外到内) 1.1什么是事件冒泡123在一个对象上触发某类事件（比如单击onclick事件），如果此对象定义了此事件的处理程">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-16T13:14:49.000Z">
-<meta property="article:modified_time" content="2022-08-16T13:14:49.353Z">
+<meta property="article:modified_time" content="2022-08-18T08:57:46.299Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -172,7 +174,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="1-事件的三个阶段"><a href="#1-事件的三个阶段" class="headerlink" title="1.事件的三个阶段"></a>1.事件的三个阶段</h2><p>事件触发分为三个阶段</p>
+<p>​		1.目标阶段</p>
+<p>​		2.冒泡阶段(微软提出，整个事件默认执行的阶段),只要当前页面的元素存在嵌套关系，同时多个多个元素之间绑定的事件类型是一致的，那么默认就是发生冒泡(从里到外执行)</p>
+<p>​		3.捕获阶段(必须经过设置才能执行,从外到内)</p>
+<h3 id="1-1什么是事件冒泡"><a href="#1-1什么是事件冒泡" class="headerlink" title="1.1什么是事件冒泡"></a>1.1什么是事件冒泡</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在一个对象上触发某类事件（比如单击onclick事件），如果此对象定义了此事件的处</span><br><span class="line">理程序，那么此事件就会调用这个处理程序，如果没有定义此事件处理程序或者事件返回true，那么这个事件会向这个对象的父级对象传播，从里到外，直至它</span><br><span class="line">被处理（父级对象所有同类事件都将被激活），或者它到达了对象层次的最顶层，即document对象（有些浏览器是window）。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2阻止事件冒泡"><a href="#1-2阻止事件冒泡" class="headerlink" title="1.2阻止事件冒泡"></a>1.2阻止事件冒泡</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e.<span class="title function_">stopPropagation</span>();<span class="comment">//停止传播，不再派发事件，符合w3c标准，谷歌和火狐支持，IE8不支持</span></span><br><span class="line">e.<span class="property">cancelBubble</span> = <span class="literal">true</span>;<span class="comment">//确定取消冒泡，IE特有 居然没有兼容</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-事件对象event-非常重要"><a href="#2-事件对象event-非常重要" class="headerlink" title="2.事件对象event	(非常重要)"></a>2.事件对象event	(非常重要)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">只要给一个元素绑定了事件，那么在事件函数中默认会生成一个形参 ---即事件对象</span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> event = event || <span class="variable language_">window</span>.<span class="property">event</span>	<span class="comment">//兼容IE8</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//event.pageX--表示鼠标距离，网页左上角的水平距离</span></span><br><span class="line"><span class="comment">//event.pageY--表示鼠标距离，网页左上角的垂直距离</span></span><br><span class="line"><span class="comment">//event.target--返回触发此事件的元素(事件的目标节点)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p><strong>事件委托</strong>：又叫事件代理，原理就是利用事件冒泡的特点：当子元素的事件发生时，父元素的同名事件也会发生——指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+<p>优点：不用给列表的每一个元素绑定事件，只需要绑定父元素就可以处理所有子元素的事件，优化性能。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用事件委托，实现删除和替换功能（目的： 使新添加的节点也能实现删除和替换的效果）</span></span><br><span class="line">			uu.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">				<span class="comment">// console.log(&#x27;click,uu&#x27;);</span></span><br><span class="line">				<span class="comment">// 目的：  寻找触发uu点击事件的事件源</span></span><br><span class="line">				<span class="comment">// 简单的来说：就是用户点击的是哪一个按钮，触发的click事件</span></span><br><span class="line">				<span class="comment">// console.dir(e.target);</span></span><br><span class="line">				<span class="comment">// 删除</span></span><br><span class="line">				<span class="keyword">if</span>(e.<span class="property">target</span>.<span class="property">nodeName</span>==<span class="string">&quot;BUTTON&quot;</span> &amp;&amp; e.<span class="property">target</span>.<span class="property">innerText</span> ==<span class="string">&quot;删除&quot;</span>)&#123;</span><br><span class="line">					<span class="comment">// console.log(&#x27;删除&#x27;);</span></span><br><span class="line">					uu.<span class="title function_">removeChild</span>(e.<span class="property">target</span>.<span class="property">parentElement</span>)</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-阻止事件默认行为"><a href="#3-阻止事件默认行为" class="headerlink" title="3.阻止事件默认行为"></a>3.阻止事件默认行为</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">e.<span class="title function_">preventDefalue</span>() <span class="comment">// 阻止默认行为 符合w3c标准 只有IE8不支持</span></span><br><span class="line">e.<span class="property">returnValue</span> = <span class="literal">false</span>;阻止默认行为 <span class="variable constant_">IE</span>特有 火狐不支持(亲测支持)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-事件绑定"><a href="#4-事件绑定" class="headerlink" title="4.事件绑定"></a>4.事件绑定</h2><h4 id="1-0级事件绑定"><a href="#1-0级事件绑定" class="headerlink" title="1.0级事件绑定"></a>1.0级事件绑定</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件源.on事件=function()&#123;要执行的处理程序;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>缺点：</p>
+<p>​		重复绑定会覆盖之前的事件</p>
+<h4 id="2-2级事件绑定"><a href="#2-2级事件绑定" class="headerlink" title="2.2级事件绑定"></a>2.2级事件绑定</h4><p>​		又叫<strong>事件监听</strong>：使同一个事件源一次或多次触发同类型事件函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//谷歌和火狐支持,IE8不支持(掌握)</span></span><br><span class="line">对象.<span class="title function_">addEventListener</span>(<span class="string">&quot;事件类型&quot;</span>,事件处理函数,<span class="literal">false</span>); <span class="comment">//  false  代表冒泡  true  捕获，默认值是false（冒泡）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>级事件解绑：</span><br><span class="line"><span class="comment">//直接将dom.onclick = null；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// addEventListener对应的事件解绑(掌握)</span></span><br><span class="line">对象.<span class="title function_">removeEventListener</span>(<span class="string">&quot;事件类型&quot;</span>,事件处理函数,<span class="literal">false</span>); <span class="comment">//  false 冒泡  true  捕获</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="顶级对象window"><a href="#顶级对象window" class="headerlink" title="顶级对象window"></a>顶级对象window</h1><h3 id="1-原生js入口函数"><a href="#1-原生js入口函数" class="headerlink" title="1.原生js入口函数"></a>1.原生js入口函数</h3><h6 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h6><p>​			用与在网页加载完毕后立即执行的操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onlioad = function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><h5 id="window对象：浏览器的顶级对象，全局对象"><a href="#window对象：浏览器的顶级对象，全局对象" class="headerlink" title="window对象：浏览器的顶级对象，全局对象"></a>window对象：浏览器的顶级对象，全局对象</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. alert 等一系列弹框方法</span><br><span class="line">2. open方法：打开新窗口</span><br><span class="line">3. close方法：关闭当前窗口</span><br><span class="line">4. document对象：HTML 文档</span><br><span class="line">5. location对象：包含当前网页文档的URL信息</span><br><span class="line">6. history对象：包含浏览器窗口访问过的URL信息</span><br><span class="line">7. navigator对象：包含有关浏览器的信息，如名称，版本和系统等。</span><br><span class="line">8. 定时器</span><br></pre></td></tr></table></figure>
+
+<h4 id="Location对象"><a href="#Location对象" class="headerlink" title="Location对象"></a>Location对象</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.href -- 获取完整的URL</span><br><span class="line"></span><br><span class="line">location.href = &quot;一个地址&quot;	可以跳转页面</span><br></pre></td></tr></table></figure>
+
+<h4 id="History对象"><a href="#History对象" class="headerlink" title="History对象"></a>History对象</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> length属性——历史记录的长度（个数）。</span><br><span class="line"> back() 方法——向后跳转，加载 history 列表中的前一个 URL。</span><br><span class="line">*** forward()方法——向前跳转，加载 history 列表中的下一个 URL。</span><br><span class="line"> go()方法——加载 history 列表中的某个具体页面，参数 1 表示向前跳转，-1表示向后跳转。</span><br></pre></td></tr></table></figure>
+
+<h4 id="offset方法和-scroll方法"><a href="#offset方法和-scroll方法" class="headerlink" title="offset方法	和 scroll方法"></a>offset方法	和 scroll方法</h4><p>offset是偏移、位移、补偿的意思（取整数值四舍五入），表示元素的偏移量。</p>
+<p>scroll是长卷纸，卷轴的意思，表示浏览器滚动时元素的卷曲值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**offsetLeft和offsetTop**(  常用）</span><br><span class="line">- 1、表示当前元素距离它最近的相对父级（定位元素）的水平或者垂直距离。</span><br><span class="line">- 2、如果它一直没有相对父级元素，默认指向body</span><br><span class="line"></span><br><span class="line">**scrollTop和scrollLeft（常用）**</span><br><span class="line">相对父盒子，元素 向上/向左 卷曲出去（滚出去）的距离</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><h3 id="1-单次定时器"><a href="#1-单次定时器" class="headerlink" title="1.单次定时器"></a>1.单次定时器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单次定时器，只能执行一次</span></span><br><span class="line"><span class="comment">// 设置定时器</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,时间);</span><br><span class="line">第一个参数是匿名函数：  当前执行的代码块</span><br><span class="line">第二个参数： 设置的指定的时间  ，时间单位是毫秒    1s == 1000ms</span><br><span class="line">当前定时器只执行一次；</span><br><span class="line"><span class="comment">//清除定时器</span></span><br><span class="line"><span class="built_in">clearTimeout</span>(定时器名称);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-循环定时器"><a href="#2-循环定时器" class="headerlink" title="2.循环定时器"></a>2.循环定时器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环定时器，不停歇，每过一段时间time，执行一次。</span></span><br><span class="line"><span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123; &#125;,time);</span><br><span class="line"></span><br><span class="line">语法参数同一次性定时器一致；</span><br><span class="line"><span class="built_in">clearInterval</span>(定时器名称);</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -265,6 +319,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          jQuery复习-01
+        
+      </div>
+    </a>
+  
   
     <a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">JS进阶-01</div>
@@ -294,7 +357,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1.事件的三个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1什么是事件冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2阻止事件冒泡</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1event-%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81"><span class="toc-number">1.2.</span> <span class="toc-text">2.事件对象event	(非常重要)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">1.2.1.</span> <span class="toc-text">事件委托</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.3.</span> <span class="toc-text">3.阻止事件默认行为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.</span> <span class="toc-text">4.事件绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-0%E7%BA%A7%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">1.0级事件绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%E7%BA%A7%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">2.2级事件绑定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E8%A7%A3%E7%BB%91"><span class="toc-number">1.5.</span> <span class="toc-text">事件解绑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B6%E7%BA%A7%E5%AF%B9%E8%B1%A1window"><span class="toc-number">2.</span> <span class="toc-text">顶级对象window</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8E%9F%E7%94%9Fjs%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.原生js入口函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#window-onload"><span class="toc-number">2.0.1.0.0.1.</span> <span class="toc-text">window.onload</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM"><span class="toc-number">2.1.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E9%A1%B6%E7%BA%A7%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.0.0.1.</span> <span class="toc-text">window对象：浏览器的顶级对象，全局对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Location%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">Location对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#History%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">History对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#offset%E6%96%B9%E6%B3%95%E5%92%8C-scroll%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.0.3.</span> <span class="toc-text">offset方法	和 scroll方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">定时器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%95%E6%AC%A1%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.单次定时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BE%AA%E7%8E%AF%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.循环定时器</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

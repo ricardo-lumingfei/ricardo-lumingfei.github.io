@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>jQuery复习-01 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="jQuery1.jQuery入口函数123456789101112&#x2F;&#x2F;原生js写法：window.onload &#x3D; function()&amp;#123;...&amp;#125;&#x2F;&#x2F;jQuery写法一：jQuery(document).ready(function()&amp;#123;...&amp;#125;)&#x2F;&#x2F;jQuery写法二：$(document).ready(function()&amp;#123;...&amp;#125;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery复习-01">
+<meta property="og:url" content="http://example.com/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jQuery1.jQuery入口函数123456789101112&#x2F;&#x2F;原生js写法：window.onload &#x3D; function()&amp;#123;...&amp;#125;&#x2F;&#x2F;jQuery写法一：jQuery(document).ready(function()&amp;#123;...&amp;#125;)&#x2F;&#x2F;jQuery写法二：$(document).ready(function()&amp;#123;...&amp;#125;)">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-18T08:58:26.000Z">
+<meta property="article:modified_time" content="2022-08-18T11:31:27.771Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,295 +154,215 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-jQuery复习-01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      jQuery复习-01
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/" class="archive-article-date">
+
+        
+        <a href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/" class="archive-article-date">
   	<time datetime="2022-08-18T08:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/">jQuery复习-01</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="1-jQuery入口函数"><a href="#1-jQuery入口函数" class="headerlink" title="1.jQuery入口函数"></a>1.jQuery入口函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原生js写法：</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;</span><br><span class="line"><span class="comment">//jQuery写法一：</span></span><br><span class="line"><span class="title function_">jQuery</span>(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//jQuery写法二：</span></span><br><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//jQuery写法三：</span></span><br><span class="line">$().<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//jQuery写法四：</span></span><br><span class="line">$(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="2-显示，隐藏与切换"><a href="#2-显示，隐藏与切换" class="headerlink" title="2.显示，隐藏与切换"></a>2.显示，隐藏与切换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">show</span>(time);<span class="comment">//显示，tiem表示动画时常 为毫秒</span></span><br><span class="line">$(selector).<span class="title function_">hide</span>(time);<span class="comment">//隐藏，</span></span><br><span class="line">$(selector).<span class="title function_">toggle</span>(time);<span class="comment">//切换</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="3-访问和修改文本内容"><a href="#3-访问和修改文本内容" class="headerlink" title="3.访问和修改文本内容"></a>3.访问和修改文本内容</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">html</span>();<span class="comment">//获取与修改选择器中的html内容</span></span><br><span class="line">innerHTML</span><br><span class="line">$(selector).<span class="title function_">text</span>();<span class="comment">//获取与修改选择器中的文本内容</span></span><br><span class="line">innerText</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-jQuery对象和DOM对象相互转换"><a href="#4-jQuery对象和DOM对象相互转换" class="headerlink" title="4.jQuery对象和DOM对象相互转换"></a>4.jQuery对象和DOM对象相互转换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">JS</span>转<span class="variable constant_">JQ</span>对象</span><br><span class="line"><span class="comment">//使用$()包裹起来就可以转成JQ对象</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JQ转JS对象</span><br><span class="line">//方法一</span><br><span class="line">$(element).get(0)</span><br><span class="line">//方法二</span><br><span class="line">$(element)[0]</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-css样式修改"><a href="#5-css样式修改" class="headerlink" title="5.css样式修改"></a>5.css样式修改</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">css</span>()  </span><br><span class="line"></span><br><span class="line">$(selector).<span class="title function_">css</span>(<span class="string">&#x27;key&#x27;</span>, <span class="string">&#x27;value&#x27;</span>);    <span class="comment">//只能修改一个属性和一个属性值</span></span><br><span class="line"></span><br><span class="line">$(selector).<span class="title function_">css</span>(&#123;</span><br><span class="line">  <span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;value&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;value&#x27;</span></span><br><span class="line">   ....</span><br><span class="line">&#125;)                      <span class="comment">//可以多属性修改，理论上可以修改无限多个属性</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-prop和attr的区别"><a href="#6-prop和attr的区别" class="headerlink" title="6.prop和attr的区别"></a>6.prop和attr的区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取a标签的href属性</span></span><br><span class="line"><span class="title function_">attr</span>(),<span class="title function_">prop</span>()都可以获取,修改</span><br><span class="line"><span class="comment">//2获取及修改input标签的checked属性</span></span><br><span class="line"><span class="title function_">prop</span>()可以获取，修改，<span class="title function_">attr</span>()不可以</span><br><span class="line"><span class="comment">//3.自定义属性，必须使用attr进行获取和设置</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-parent方法"><a href="#7-parent方法" class="headerlink" title="7.parent方法"></a>7.parent方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).parent()表示选中所有匹配元素的唯一父元素</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-siblings方法"><a href="#8-siblings方法" class="headerlink" title="8.siblings方法"></a>8.siblings方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).siblings()表示选中某个元素同级的元素，括号内有写元素，表示选中同级的某个元素，如果没有书写，则表示选中同级的所有元素!</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-childern方法"><a href="#9-childern方法" class="headerlink" title="9.childern方法"></a>9.childern方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).childern表示选中某个元素的子级元素，括号内有写元素，表示选中子级中的某个元素，如果没有书写，则表示选中子级的所有元素！</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-index"><a href="#10-index" class="headerlink" title="10.index()"></a>10.index()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.jq的获取索引  index()</span></span><br><span class="line">				 $(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">					 <span class="comment">// console.log(this);</span></span><br><span class="line">					 <span class="comment">// this.index() //  错误的写法，不能使用原生js的对象操作jquery的方法</span></span><br><span class="line">					 <span class="variable language_">console</span>.<span class="title function_">log</span>($(<span class="variable language_">this</span>).<span class="title function_">index</span>());</span><br><span class="line">				 &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-addClass与removeClass方法"><a href="#11-addClass与removeClass方法" class="headerlink" title="11.addClass与removeClass方法"></a>11.addClass与removeClass方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给某个元素添加类名，理论上，一个标签可以添加无数多个类名，用空格分开</span></span><br><span class="line">$(selector).<span class="title function_">addClass</span>(“className1  className2  className3”)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给某个元素移除类名</span></span><br><span class="line">$(selector).<span class="title function_">removeClass</span>(“className1  className2  className3”)</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-toggleClass方法"><a href="#12-toggleClass方法" class="headerlink" title="12.toggleClass方法"></a>12.toggleClass方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换某个元素的类名（添加或删除）</span></span><br><span class="line">$(selector).<span class="title function_">toggleClass</span>(“className”)</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-val-获取表单中的值"><a href="#13-val-获取表单中的值" class="headerlink" title="13.val()获取表单中的值"></a>13.val()获取表单中的值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ()内部写入文本可以实现修改功能</span></span><br><span class="line">$(<span class="string">&#x27;input&#x27;</span>).<span class="title function_">val</span>()           .<span class="property">value</span></span><br><span class="line">$(<span class="string">&#x27;textarea&#x27;</span>).<span class="title function_">val</span>()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 总结1：  常见的表单元素，包括  input文本，单选，多选 ，文本域、下拉列表等 ，获取值使用的val()</span></span><br><span class="line"><span class="comment">// 总结2： 单选，多选 下拉列表等元素，常见的使用的事件是change事件</span></span><br><span class="line"><span class="comment">// change 当内容发生改变的时候，进行触发</span></span><br><span class="line">			$(<span class="string">&#x27;select&#x27;</span>).<span class="title function_">change</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">				<span class="variable language_">console</span>.<span class="title function_">log</span>($(<span class="variable language_">this</span>).<span class="title function_">val</span>());</span><br><span class="line">			&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="14-trim-去除前后空格"><a href="#14-trim-去除前后空格" class="headerlink" title="14.trim()去除前后空格"></a>14.trim()去除前后空格</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.trim(str)  || str.trim()</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-增加节点"><a href="#15-增加节点" class="headerlink" title="15.增加节点"></a>15.增加节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在某个元素的子级中，往后面添加节点</span></span><br><span class="line">$(element).<span class="title function_">append</span>(<span class="string">&#x27;子节点&#x27;</span>)</span><br><span class="line"><span class="comment">// 在某个元素的子级中，往前面添加节点</span></span><br><span class="line">$(element).<span class="title function_">prepend</span>(<span class="string">&#x27;子节点&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="16-增加同级节点"><a href="#16-增加同级节点" class="headerlink" title="16.增加同级节点"></a>16.增加同级节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在element之前添加兄弟节点</span></span><br><span class="line">$(element).<span class="title function_">before</span>(<span class="string">&#x27;兄弟节点&#x27;</span>) </span><br><span class="line"><span class="comment">// 在element之后添加兄弟节点</span></span><br><span class="line">$(element).<span class="title function_">after</span>(<span class="string">&#x27;兄弟节点&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+<h3 id="17-节点的删除"><a href="#17-节点的删除" class="headerlink" title="17.节点的删除"></a>17.节点的删除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将element节点中的子级节点包括内容清空</span></span><br><span class="line">$(element).<span class="title function_">empty</span>();</span><br><span class="line"><span class="comment">// 删除element节点包括内容</span></span><br><span class="line">$(element).<span class="title function_">remove</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="18-节点的替换"><a href="#18-节点的替换" class="headerlink" title="18.节点的替换"></a>18.节点的替换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用后者替代前者</span></span><br><span class="line">$(element1).<span class="title function_">replaceWith</span>(element2);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="19-事件委托"><a href="#19-事件委托" class="headerlink" title="19.事件委托"></a>19.事件委托</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件和函数是必填的，子级选择器选填（不填就是普通事件绑定）</span></span><br><span class="line">$(selector).<span class="title function_">on</span>(事件,children,<span class="keyword">function</span>(<span class="params">e</span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//在on前面的父级元素上绑定事件处理程序，利用冒泡，实现委托</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="20-键盘事件"><a href="#20-键盘事件" class="headerlink" title="20.键盘事件"></a>20.键盘事件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">keydown</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;);<span class="comment">// 键盘按下事件</span></span><br><span class="line">$(selector).<span class="title function_">keyup</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;);<span class="comment">// 键盘松开事件</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="键码–e-keyCode"><a href="#键码–e-keyCode" class="headerlink" title="键码–e.keyCode"></a>键码–e.keyCode</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 键盘抬起事件</span></span><br><span class="line">			$(<span class="string">&#x27;input&#x27;</span>).<span class="title function_">keyup</span>(<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">				<span class="comment">// console.log(12345678);</span></span><br><span class="line">				e  =e ||  <span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line">				<span class="comment">// 当按回车键的时候，获取对应的文本内容</span></span><br><span class="line">				<span class="comment">// console.log(e.keyCode);</span></span><br><span class="line">				<span class="keyword">if</span>(e.<span class="property">keyCode</span> == <span class="number">13</span>)&#123;</span><br><span class="line">					<span class="comment">// 证明按下的是回车键</span></span><br><span class="line">					<span class="variable language_">console</span>.<span class="title function_">log</span>( $(<span class="variable language_">this</span>).<span class="title function_">val</span>().<span class="title function_">trim</span>() );</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/" class="archive-article-date">
-  	<time datetime="2022-08-16T13:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS进阶-02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/">JS进阶-02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery"><span class="toc-number">1.</span> <span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-jQuery%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.jQuery入口函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%98%BE%E7%A4%BA%EF%BC%8C%E9%9A%90%E8%97%8F%E4%B8%8E%E5%88%87%E6%8D%A2"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.显示，隐藏与切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%BF%E9%97%AE%E5%92%8C%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.访问和修改文本内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-jQuery%E5%AF%B9%E8%B1%A1%E5%92%8CDOM%E5%AF%B9%E8%B1%A1%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.jQuery对象和DOM对象相互转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-css%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9"><span class="toc-number">1.0.5.</span> <span class="toc-text">5.css样式修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-prop%E5%92%8Cattr%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.prop和attr的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-parent%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.7.</span> <span class="toc-text">7.parent方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-siblings%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.8.</span> <span class="toc-text">8.siblings方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-childern%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.9.</span> <span class="toc-text">9.childern方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-index"><span class="toc-number">1.0.10.</span> <span class="toc-text">10.index()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-addClass%E4%B8%8EremoveClass%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.11.</span> <span class="toc-text">11.addClass与removeClass方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-toggleClass%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.12.</span> <span class="toc-text">12.toggleClass方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-val-%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="toc-number">1.0.13.</span> <span class="toc-text">13.val()获取表单中的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-trim-%E5%8E%BB%E9%99%A4%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC"><span class="toc-number">1.0.14.</span> <span class="toc-text">14.trim()去除前后空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%A2%9E%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-number">1.0.15.</span> <span class="toc-text">15.增加节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E5%A2%9E%E5%8A%A0%E5%90%8C%E7%BA%A7%E8%8A%82%E7%82%B9"><span class="toc-number">1.0.16.</span> <span class="toc-text">16.增加同级节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E8%8A%82%E7%82%B9%E7%9A%84%E5%88%A0%E9%99%A4"><span class="toc-number">1.0.17.</span> <span class="toc-text">17.节点的删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E8%8A%82%E7%82%B9%E7%9A%84%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.0.18.</span> <span class="toc-text">18.节点的替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">1.0.19.</span> <span class="toc-text">19.事件委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.0.20.</span> <span class="toc-text">20.键盘事件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%94%AE%E7%A0%81%E2%80%93e-keyCode"><span class="toc-number">1.0.20.0.0.1.</span> <span class="toc-text">键码–e.keyCode</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/" class="archive-article-date">
-  	<time datetime="2022-08-16T12:25:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/">JS进阶-01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/" class="archive-article-date">
-  	<time datetime="2022-08-13T08:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/">js基础复习-3</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/11/JS%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
-  	<time datetime="2022-08-11T13:05:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/11/JS%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2/">JS隐式转换</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/11/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-day2/" class="archive-article-date">
-  	<time datetime="2022-08-11T12:17:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/11/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-day2/">js基础复习 day2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/10/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-08-10T15:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/10/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/">js基础复习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/09/%E8%A7%A3%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2022-08-09T02:57:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/09/%E8%A7%A3%E6%9E%84/">解构</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2022-08-08T03:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/">变量和常量声明关键字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-04T06:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">ajax请求切换商品列表排序方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
