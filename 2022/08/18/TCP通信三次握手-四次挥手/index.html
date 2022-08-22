@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>TCP通信三次握手,四次挥手 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/page/2/index.html">
+  <meta name="description" content="浏览器-TCP通信：三次握手,四次挥手TCP协议是面向连接的通信协议，即在传输数据前先在发送端和接受端建立逻辑连接，然后再传输数据，它提供了2台计算机之间可靠无差错的数据传输 三次握手🤝1234567在TCP连接中必须要明确 “客户端” 和 “服务端”，由 “客户端” 向 “服务端” 发出连接请求，每次 “创建连”。接都要经过三次握手🤝第一次握手：客户端向服务端发送一个带 SYN 标志的数据包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP通信三次握手,四次挥手">
+<meta property="og:url" content="http://example.com/2022/08/18/TCP%E9%80%9A%E4%BF%A1%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="浏览器-TCP通信：三次握手,四次挥手TCP协议是面向连接的通信协议，即在传输数据前先在发送端和接受端建立逻辑连接，然后再传输数据，它提供了2台计算机之间可靠无差错的数据传输 三次握手🤝1234567在TCP连接中必须要明确 “客户端” 和 “服务端”，由 “客户端” 向 “服务端” 发出连接请求，每次 “创建连”。接都要经过三次握手🤝第一次握手：客户端向服务端发送一个带 SYN 标志的数据包">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-18T12:44:24.000Z">
+<meta property="article:modified_time" content="2022-08-18T12:49:25.178Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,187 +154,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-TCP通信三次握手-四次挥手" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TCP通信三次握手,四次挥手
+    </h1>
+  
+
+        
+        <a href="/2022/08/18/TCP%E9%80%9A%E4%BF%A1%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" class="archive-article-date">
+  	<time datetime="2022-08-18T12:44:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="浏览器-TCP通信：三次握手-四次挥手"><a href="#浏览器-TCP通信：三次握手-四次挥手" class="headerlink" title="浏览器-TCP通信：三次握手,四次挥手"></a>浏览器-TCP通信：三次握手,四次挥手</h2><p>TCP协议是面向连接的通信协议，即在传输数据前先在发送端和接受端建立逻辑连接，然后再传输数据，它提供了2台计算机之间可靠无差错的数据传输</p>
+<h5 id="三次握手🤝"><a href="#三次握手🤝" class="headerlink" title="三次握手🤝"></a>三次握手🤝</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在TCP连接中必须要明确 “客户端” 和 “服务端”，由 “客户端” 向 “服务端” 发出连接请求，每次 “创建连”。接都要经过三次握手🤝</span><br><span class="line"></span><br><span class="line">第一次握手：客户端向服务端发送一个带 SYN 标志的数据包，等待服务端确认</span><br><span class="line"></span><br><span class="line">第二次握手：服务端向客户端回传一个带 SYN/ ACK 标志的数据包，通知客户端收到了 “连接请求”</span><br><span class="line"></span><br><span class="line">第三次握手：客户端再次向服务端回传一个带ACK 标志的数据包，确认 “ 连接”， 握手🤝结束</span><br></pre></td></tr></table></figure>
+
+<p>四次挥手解析：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一次挥手：“主动关闭方” 发送一个 FIN，用来 “关闭” 主动方 到 被动关闭方 的数据传送，也就是 主动关闭方 告诉 被动关闭方：我已经不会再给你发数据了(当然，在 fin 包之前发送出去的数据，如果没有收到对应的 ack 确认报文，主动关闭方  依然会 “重发” 这些数据)，但是，此时 主动关闭方 还可以 “接受数据”。</span><br><span class="line"></span><br><span class="line">第二次挥手：被动关闭方 收到 FIN 包后，发送一个 ACK 给对方，确认序号为收到序号+1（与 SYN 相同，一个 FIN 占用一个序号）。</span><br><span class="line"></span><br><span class="line">第三次挥手：被动关闭方 发送一个 FIN，用来 “关闭” 被动关闭方 到 主动关闭方 的数据传送，也就是告诉 主动关闭方，我的数据也发送完了，不会再给你发数据了。</span><br><span class="line"></span><br><span class="line">第四次挥手：主动关闭方 收到 FIN 后，发送一个 ACK 给 被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/09/%E8%A7%A3%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2022-08-09T02:57:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/09/%E8%A7%A3%E6%9E%84/">解构</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/18/TCP%E9%80%9A%E4%BF%A1%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2022-08-08T03:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/08/22/node-js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          node.js
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/18/ES6%E5%A4%8D%E4%B9%A0-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Promise和async,await</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/">变量和常量声明关键字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8-TCP%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">1.</span> <span class="toc-text">浏览器-TCP通信：三次握手,四次挥手</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%F0%9F%A4%9D"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">三次握手🤝</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-04T06:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">ajax请求切换商品列表排序方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2022-08-03T06:42:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/">jQuery实现轮播图</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-08-03T00:43:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">一些js面试题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/hello-world/" class="archive-article-date">
-  	<time datetime="2022-08-02T15:18:38.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -354,8 +353,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
