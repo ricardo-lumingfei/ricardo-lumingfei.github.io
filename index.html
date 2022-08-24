@@ -251,6 +251,43 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
 
 <ul>
+<li>创建数据库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 charset=utf8;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除数据库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 数据库名;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看表结构</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建表解构</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	字段名 数据类型 可选约束条件,</span><br><span class="line">	字段名 数据类型  可选约束条件</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="attr">eg</span>:</span><br><span class="line">	create table <span class="title function_">teacher</span>(</span><br><span class="line">		id int  auto_increment primary key not <span class="literal">null</span>,		<span class="comment">/*</span></span><br><span class="line"><span class="comment">				auto_increment	自动递增</span></span><br><span class="line"><span class="comment">				primary key		主键</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">		name <span class="title function_">varchar</span>(<span class="number">10</span>)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create table students(</span><br><span class="line">    id int unsigned primary key auto_increment not null,</span><br><span class="line">    name varchar(20) default &#x27;&#x27;,</span><br><span class="line">    age tinyint unsigned default 0,</span><br><span class="line">    height decimal(5,2),</span><br><span class="line">    gender enum(&#x27;男&#x27;,&#x27;女&#x27;,&#x27;人妖&#x27;,&#x27;保密&#x27;),</span><br><span class="line">    cls_id int unsigned default 0</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改表-添加字段</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改表-删除字段</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert table 表名 drop 列名;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除表</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>查看当前进入的数据库中所有的数据表</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
@@ -263,7 +300,7 @@
 <ul>
 <li>插入数据</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.指定字段插入</span><br><span class="line">	insert into 表名 (&#x27;字段&#x27;,&#x27;字段&#x27;,&#x27;字段&#x27;,...) values(值,值,值,...)</span><br><span class="line">	</span><br><span class="line">2.不指定字段插入</span><br><span class="line">	insert into 表明 values(值,值,值,...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.指定字段插入：</span><br><span class="line">		值的顺序与给出的列顺序对应</span><br><span class="line">		此时需要根据实际的数据的特点 填写对应字段列表</span><br><span class="line">	insert into 表名 (&#x27;字段&#x27;,&#x27;字段&#x27;,&#x27;字段&#x27;,...) values(值,值,值,...)</span><br><span class="line">	</span><br><span class="line">2.不指定字段插入：</span><br><span class="line">        值的顺序与表结构字段的顺序完全一一对应</span><br><span class="line">        此时 字段名列表不用填写</span><br><span class="line">	insert into 表明 values(值,值,值,...)</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>删除语句</li>
