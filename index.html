@@ -152,29 +152,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-formidable-模块处理服务器端表单传入数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/">formidable 模块处理服务器端表单传入数据</a>
+      <a class="article-title" href="/2022/09/26/Vue%E7%BB%84%E4%BB%B6/">Vue组件</a>
     </h1>
   
 
         
-        <a href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2022-08-24T11:27:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-24</time>
+        <a href="/2022/09/26/Vue%E7%BB%84%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2022-09-26T13:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	formidable 模块：</span></span><br><span class="line"><span class="comment">		接收表单的信息</span></span><br><span class="line"><span class="comment">		  1-1 普通字段信息</span></span><br><span class="line"><span class="comment">		  1-2 进行文件上传</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//引入formidable 模块</span></span><br><span class="line"><span class="keyword">let</span> form = <span class="built_in">require</span>(<span class="string">&#x27;formidable&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//处理表单传入数据</span></span><br><span class="line"><span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&#x27;/doform&#x27;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&#x27;POST&#x27;</span>)&#123;</span><br><span class="line">    <span class="comment">//实例化</span></span><br><span class="line">    <span class="keyword">let</span> form2 = <span class="keyword">new</span> form.<span class="title class_">IncomingForm</span>();</span><br><span class="line">    <span class="comment">//设置文件上传路径</span></span><br><span class="line">    form2.<span class="property">uploadDir</span> = <span class="string">&#x27;./images&#x27;</span>;</span><br><span class="line">    <span class="comment">//是否保留文件扩展名</span></span><br><span class="line">    form2.<span class="property">keepExtensions</span> = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	form2.parse(请求报文,(err,fields,files)=&gt;&#123;</span></span><br><span class="line"><span class="comment">    		err 错误</span></span><br><span class="line"><span class="comment">    		fields 普通字段信息</span></span><br><span class="line"><span class="comment">    		files 文件信息 可选</span></span><br><span class="line"><span class="comment">    	&#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    form2.<span class="title function_">parse</span>(req,<span class="function">(<span class="params">err,fields,files</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">            处理逻辑...</span><br><span class="line">        &#125;</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        
       
 
       
@@ -186,7 +184,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/09/26/Vue%E7%BB%84%E4%BB%B6/">展开全文 >></a>
         </p>
       
 
@@ -216,101 +214,38 @@
 
 
   
-    <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue自定义指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/24/mysql/">mysql</a>
+      <a class="article-title" href="/2022/09/26/Vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/">Vue自定义指令</a>
     </h1>
   
 
         
-        <a href="/2022/08/24/mysql/" class="archive-article-date">
-  	<time datetime="2022-08-24T11:04:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-24</time>
+        <a href="/2022/09/26/Vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2022-09-26T12:48:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是数据库"><a href="#什么是数据库" class="headerlink" title="什么是数据库"></a>什么是数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mySQL数据库是n种数据库中的一种</span><br><span class="line">	数据库：用于存储项目中数据的一种 --服务</span><br><span class="line">	</span><br><span class="line">	服务一定会有端口号 mysql数据库的默认端口是3306</span><br><span class="line">			数据库 (用于存储表)</span><br><span class="line">			  数据表(用于存储数据)</span><br><span class="line">			    字段(属性  类似于表头)</span><br></pre></td></tr></table></figure>
-
-<h3 id="cmd操作数据库"><a href="#cmd操作数据库" class="headerlink" title="cmd操作数据库"></a>cmd操作数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">启动mysql:</span><br><span class="line">	mysql -h localhost -u root -p</span><br><span class="line">		-h 主机的ip地址  如果是本机 -h 参数可以省略</span><br><span class="line">		-u 用户名</span><br><span class="line">		-p 密码</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h3><ul>
-<li>查看mysql服务中的所有数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="1、自定义指令注册"><a href="#1、自定义指令注册" class="headerlink" title="1、自定义指令注册"></a>1、自定义指令注册</h1><p>自定义指令需要注册后才能使用，Vue提供了两种注册方式：</p>
 <ul>
-<li>进入指定数据库</li>
+<li><strong>全局注册</strong>：<code>Vue.directive(id, [definition])</code>；id：指令名称，[definition]：自定义对象或者函数对象，指令要实现的功能在这个对象中定义。</li>
+<li><strong>局部注册</strong>：是在 <code>Vue实例</code> 的选项对象中使用 <code>directives</code> 选项进行注册</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">    <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="attr">directives</span>: &#123;</span><br><span class="line">        <span class="comment">// 注册一个局部自定义指令</span></span><br><span class="line">        <span class="attr">focue</span>: &#123;</span><br><span class="line">            ...</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>创建数据库</li>
+<h1 id="2、钩子函数"><a href="#2、钩子函数" class="headerlink" title="2、钩子函数"></a>2、钩子函数</h1><ul>
+<li><strong>bind</strong>: 只调用一次，指令第一次绑定到元素时调用，可以定义一个在绑定时执行一次的初始化动作。</li>
+<li><strong>update</strong>: 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的值来忽略不必要的模板更新。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 charset=utf8;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 数据库名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看表结构</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建表解构</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	字段名 数据类型 可选约束条件,</span><br><span class="line">	字段名 数据类型  可选约束条件</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="attr">eg</span>:</span><br><span class="line">	create table <span class="title function_">teacher</span>(</span><br><span class="line">		id int  auto_increment primary key not <span class="literal">null</span>,		<span class="comment">/*</span></span><br><span class="line"><span class="comment">				auto_increment	自动递增</span></span><br><span class="line"><span class="comment">				primary key		主键</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">		name <span class="title function_">varchar</span>(<span class="number">10</span>)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create table students(</span><br><span class="line">    id int unsigned primary key auto_increment not null,</span><br><span class="line">    name varchar(20) default &#x27;&#x27;,</span><br><span class="line">    age tinyint unsigned default 0,</span><br><span class="line">    height decimal(5,2),</span><br><span class="line">    gender enum(&#x27;男&#x27;,&#x27;女&#x27;,&#x27;人妖&#x27;,&#x27;保密&#x27;),</span><br><span class="line">    cls_id int unsigned default 0</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改表-添加字段</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改表-删除字段</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert table 表名 drop 列名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除表</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看当前进入的数据库中所有的数据表</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查询表中的数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select 字段 form 表明  where 条件</span><br><span class="line"></span><br><span class="line">* 所有字段</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>插入数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.指定字段插入：</span><br><span class="line">		值的顺序与给出的列顺序对应</span><br><span class="line">		此时需要根据实际的数据的特点 填写对应字段列表</span><br><span class="line">	insert into 表名 (&#x27;字段&#x27;,&#x27;字段&#x27;,&#x27;字段&#x27;,...) values(值,值,值,...)</span><br><span class="line">	</span><br><span class="line">2.不指定字段插入：</span><br><span class="line">        值的顺序与表结构字段的顺序完全一一对应</span><br><span class="line">        此时 字段名列表不用填写</span><br><span class="line">	insert into 表明 values(值,值,值,...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除语句</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意：如果删除语句没有条件，那么就是清空表</span><br><span class="line"></span><br><span class="line">delete from 表明 where 条件</span><br><span class="line"></span><br><span class="line">	注意：删除的语句id的位置会保留，新添加的数据的id是之前数据的最新id+1作为新数据的id</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改语句</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 set 字段=&#x27;修改后的新值&#x27;，字段=&#x27;修改后的新值&#x27; where 条件</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">  <span class="comment">//自定义的指令民在声明的时候,不需要加 v-</span></span><br><span class="line">  <span class="string">&#x27;demo&#x27;</span>:&#123;</span><br><span class="line">    <span class="title function_">bind</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是bind函数,我被执行了&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(el);</span><br><span class="line">      <span class="comment">//bind函数中的el参数:表示的是绑定该指令的DOM元素 </span></span><br><span class="line">      <span class="comment">// &#123;name: &#x27;demo&#x27;, rawName: &#x27;v-demo&#x27;, value: &#x27;admin&#x27;, expression: &#x27;str&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(binding);</span><br><span class="line">      <span class="comment">//bind函数中的binding参数:</span></span><br><span class="line">      <span class="comment">// &#123;name: &#x27;自定义指令名&#x27;, rawName: &#x27;自定义指令&#x27;, value: &#x27;自定义指令的指令值的值&#x27;, expression: &#x27;自定义指令的指令值&#x27;&#125;  </span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">update</span>(<span class="params">el,binding</span>)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是update函数,我被执行了&quot;</span>);</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(el);</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(binding);</span><br><span class="line">      <span class="comment">// update函数中的binding参数:</span></span><br><span class="line">     <span class="comment">//这里的value变成了修改后的新值,其他都是一样的</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">      2.自定义指令的使用</span></span><br><span class="line"><span class="comment">      指令需要写在元素中</span></span><br><span class="line"><span class="comment">        &lt;元素 v-自定义指令名 = &quot;指令值&quot;&gt;&lt;/元素&gt;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -324,7 +259,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/24/mysql/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/09/26/Vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
@@ -354,28 +289,34 @@
 
 
   
-    <article id="post-服务器获取数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue过滤器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/">服务器获取数据</a>
+      <a class="article-title" href="/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/">Vue过滤器</a>
     </h1>
   
 
         
-        <a href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2022-08-23T15:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-23</time>
+        <a href="/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2022-09-26T12:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="根据不同路径加载不同的静态资源"><a href="#根据不同路径加载不同的静态资源" class="headerlink" title="根据不同路径加载不同的静态资源"></a>根据不同路径加载不同的静态资源</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> qs = <span class="built_in">require</span>(<span class="string">&#x27;querystring&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createSever</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">    加载静态资源:</span></span><br><span class="line"><span class="comment">      1.什么是静态资源 例如  html  css  js   图片  ...</span></span><br><span class="line"><span class="comment">      2.如何加载静态资源:</span></span><br><span class="line"><span class="comment">        我们需要一个模块这个模块叫做文件系统模块 fs</span></span><br><span class="line"><span class="comment">        我们就需要先引入这个模块</span></span><br><span class="line"><span class="comment">        在这个fs模块中有一个readFile的方法</span></span><br><span class="line"><span class="comment">        语法格式:</span></span><br><span class="line"><span class="comment">          fs.readFile(参数1,参数2)</span></span><br><span class="line"><span class="comment">          参数1:要加载的静态资源</span></span><br><span class="line"><span class="comment">          参数2:回调函数</span></span><br><span class="line"><span class="comment">          例如:</span></span><br><span class="line"><span class="comment">          fs.readFile(&quot;./index.html&quot;,(参数1,参数2)=&gt;&#123;</span></span><br><span class="line"><span class="comment">            参数1:错误   err</span></span><br><span class="line"><span class="comment">            参数2:加载成功的静态资源  data</span></span><br><span class="line"><span class="comment">          &#125;)</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&#x27;/form&#x27;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&#x27;GET&#x27;</span>)&#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./form.html&#x27;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                res.<span class="title function_">write</span>(<span class="string">&#x27;404&#x27;</span>)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                res.<span class="title function_">write</span>(data)</span><br><span class="line">            &#125;</span><br><span class="line">            res.<span class="title function_">end</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        	引入html页面中包含的其他静态资源</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    <span class="keyword">if</span>(url!=<span class="string">&quot;/favicon.ico&quot;</span>)&#123;</span><br><span class="line">      <span class="comment">// console.log(url);</span></span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      url:</span></span><br><span class="line"><span class="comment">        ./css/index.css</span></span><br><span class="line"><span class="comment">        ./js/jquery.js</span></span><br><span class="line"><span class="comment">        ./images/1.jpg</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      <span class="keyword">let</span> p = <span class="string">&quot;.&quot;</span>+url;</span><br><span class="line">      <span class="comment">// console.log(p);</span></span><br><span class="line">      fs.<span class="title function_">readFile</span>(p,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          res.<span class="title function_">write</span>(<span class="string">&quot;404&quot;</span>);</span><br><span class="line">          res.<span class="title function_">end</span>();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          res.<span class="title function_">write</span>(data);</span><br><span class="line">          res.<span class="title function_">end</span>();</span><br><span class="line">        &#125;  </span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&quot;/form&quot;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&quot;GET&quot;</span>)&#123;</span><br><span class="line">     fs.<span class="title function_">readFile</span>(<span class="string">&quot;./form.html&quot;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(err)&#123;</span><br><span class="line">         res.<span class="title function_">write</span>(<span class="string">&quot;404&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         res.<span class="title function_">write</span>(data);</span><br><span class="line">       &#125;</span><br><span class="line">       res.<span class="title function_">end</span>();</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//处理表单的提交</span></span><br><span class="line">   <span class="keyword">if</span>(url == <span class="string">&quot;/dologin&quot;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&quot;POST&quot;</span>)&#123;</span><br><span class="line">    <span class="comment">//  console.log(&quot;你点击了登录按钮&quot;);</span></span><br><span class="line">    <span class="comment">//接收你表单提交过来的信息  用户名 和  密码</span></span><br><span class="line">    <span class="comment">//  如果需要接收表单的信息,我们需要使用一种监听的手段,监听表单中的数据</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        req.addListener(data,function()&#123;&#125;)</span></span><br><span class="line"><span class="comment">        参数1:是data  如果参数为data那么就表示开始监听</span></span><br><span class="line"><span class="comment">        参数2:是回调函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">     <span class="comment">//声明一个空变量,用于存储每一次监听到的数据</span></span><br><span class="line">     <span class="keyword">let</span> datas = <span class="string">&quot;&quot;</span>;</span><br><span class="line">     req.<span class="title function_">addListener</span>(<span class="string">&quot;data&quot;</span>,<span class="function">(<span class="params">chunk</span>)=&gt;</span>&#123;</span><br><span class="line">        datas += chunk;</span><br><span class="line">     &#125;)</span><br><span class="line">     req.<span class="title function_">addListener</span>(<span class="string">&quot;end&quot;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">		<span class="keyword">let</span> obj = qs.<span class="title function_">parse</span>(datas);</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line">       <span class="keyword">let</span> username = obj.<span class="property">username</span>;</span><br><span class="line">       <span class="keyword">let</span> pass = obj.<span class="property">pass</span>;</span><br><span class="line">      <span class="comment">//  let pass = xxx;</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(username,pass);</span><br><span class="line">     &#125;)</span><br><span class="line">     res.<span class="title function_">end</span>();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8090</span>)</span><br></pre></td></tr></table></figure>
+        <h5 id="vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return"><a href="#vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return" class="headerlink" title="vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return"></a>vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return</h5><p>局部过滤器:</p>
+<h6 id="filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为-，"><a href="#filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为-，" class="headerlink" title="filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，"></a>filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，</h6><h6 id="而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，"><a href="#而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，" class="headerlink" title="而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，"></a>而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">            方法名(形参)&#123;</span><br><span class="line">              形参就是要过滤的内容</span><br><span class="line">              这个方法必须有返回值,返回值就是你过滤后的结果</span><br><span class="line">              return 过滤后的结果</span><br><span class="line">            &#125;,</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div id=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;date | f1 | f2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>价钱是:&#123;&#123;rmb | f3&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">date</span>:<span class="string">&quot;2022-09-03&quot;</span>,   <span class="comment">// 2022/09/03</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">rmb</span>:<span class="string">&quot;99.00&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">filters</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">f1</span>(<span class="params">v</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//把字符串按照指定的字符转成数组</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">let</span> arr = v.<span class="title function_">split</span>(<span class="string">&quot;-&quot;</span>);<span class="comment">// [2022,09,03]</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//将数组转换成字符串,按 / 作为分隔符</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">let</span> str = arr.<span class="title function_">join</span>(<span class="string">&quot;/&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> str;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">f2</span>(<span class="params">v</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//v是上一层过滤器过滤后的内容</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="string">&quot;今天是:&quot;</span>+v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">f3</span>(<span class="params">v</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(v);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="string">&quot;¥&quot;</span>+v+<span class="string">&quot;元&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>全局过滤器:</p>
+<p>一般写在main.js里面,Vue.filter，里面只能写一个过滤器，如果需要写第二个过滤器，需要再创建一个，第一个参数是过滤器的id，第二个是一个回调函数</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44826388/article/details/123628069">https://blog.csdn.net/weixin_44826388/article/details/123628069</a></p>
 
       
 
@@ -388,7 +329,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/">展开全文 >></a>
         </p>
       
 
@@ -418,505 +359,81 @@
 
 
   
-    <article id="post-node-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue系统指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/22/node-js/">node.js</a>
+      <a class="article-title" href="/2022/09/26/Vue%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/">Vue系统指令</a>
     </h1>
   
 
         
-        <a href="/2022/08/22/node-js/" class="archive-article-date">
-  	<time datetime="2022-08-22T01:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-22</time>
+        <a href="/2022/09/26/Vue%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2022-09-26T10:45:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><h3 id="node可以做什么？"><a href="#node可以做什么？" class="headerlink" title="node可以做什么？"></a>node可以做什么？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>node可以解析js代码</span><br><span class="line">	(浏览器可以解析<span class="variable constant_">HTML</span>代码,js代码不能在浏览器中被直接解析,可以使用node命令执行js文件)</span><br><span class="line"><span class="number">2.</span>可以搭建服务器</span><br><span class="line">	搭建好的服务器文件 如何执行 </span><br><span class="line">		node <span class="number">2.</span>js</span><br><span class="line">		</span><br><span class="line">		启动服务器发现光标闪烁，说明服务器已经启动</span><br><span class="line">		如果修改了js代码中的文件，必须重启服务 ctrl+c 终止服务</span><br><span class="line">		如何访问服务器：</span><br><span class="line">			在浏览器的url地址栏中输入 <span class="number">127.0</span>.<span class="number">.0</span><span class="number">.1</span>:端口号 或者<span class="attr">localhost</span>:端口号</span><br><span class="line">			</span><br><span class="line">			<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> 本地ip</span><br><span class="line">			localhost 表示的也是本地</span><br><span class="line"><span class="number">3.</span>可以操作数据库</span><br></pre></td></tr></table></figure>
+        <h3 id="1-v-model"><a href="#1-v-model" class="headerlink" title="1.v-model"></a>1.v-model</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这个指令的功能是数据双向绑定,是使用在表单中的系统指令</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">回调函数：</span><br><span class="line">	回调函数就是传递一个参数化的函数，就是将这个函数作为一个参数传递到另一个主函数里面，当那一个主函数执行完之后，再执行传递进去的作为参数的函数。走这个过程的参数化的函数，就叫做回调函数。</span><br><span class="line">	换个说法也就是被作为参数传递到另一个函数(主函数)的那个函数就叫做回调函数。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">双向绑定：当数据变化视图同步更新，当视图更新数据也会同步更新。</span><br></pre></td></tr></table></figure>
 
-<h1 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引入http模块</span></span><br><span class="line"><span class="keyword">let</span> http = <span class="title function_">requre</span>(<span class="string">&quot;http&quot;</span>);<span class="comment">//引入的变量中有一个模块，这个模块可以创建服务器</span></span><br><span class="line"><span class="comment">//2.创建http服务</span></span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="keyword">function</span>(<span class="params">req,res</span>)&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		req参数:	请求报文(只要和请求有关的都在req中)</span></span><br><span class="line"><span class="comment">		res参数:	响应报文(只要和响应有关的都在res中)</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取请求方式</span></span><br><span class="line">	<span class="keyword">let</span> method = req.<span class="property">method</span>;</span><br><span class="line">	<span class="comment">//请求路径</span></span><br><span class="line">	<span class="keyword">let</span> url = req.<span class="property">url</span>;</span><br><span class="line">	<span class="comment">//请求参数</span></span><br><span class="line">	<span class="keyword">let</span> param = urll.<span class="title function_">parse</span>(url,<span class="literal">true</span>)</span><br><span class="line">	<span class="keyword">let</span> id = param.<span class="property">query</span>.<span class="property">id</span>;</span><br><span class="line">	<span class="keyword">let</span> name = param.<span class="property">query</span>.<span class="property">name</span>;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置响应体</span></span><br><span class="line">	res.<span class="title function_">write</span>(<span class="string">&quot;xxx&quot;</span>)</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//告诉客户端，服务器响应结束了</span></span><br><span class="line">	</span><br><span class="line">	res.<span class="property">end</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;inval&quot;/&gt;</span><br><span class="line">&lt;h3&gt;&#123;&#123;inval&#125;&#125;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-获取请求的方式："><a href="#1-获取请求的方式：" class="headerlink" title="1.获取请求的方式："></a>1.获取请求的方式：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">req.<span class="property">method</span>;</span><br><span class="line"></span><br><span class="line">	请求方法有 <span class="variable constant_">GET</span> <span class="variable constant_">POST</span></span><br><span class="line">	就是在服务端获取客户端数据的请求方法</span><br><span class="line">	我们能发送请求的方法：</span><br><span class="line">		<span class="number">1.</span>通过点击链接进行请求</span><br><span class="line">		<span class="number">2.</span>通过超链接进行请求 --超链接也是<span class="variable constant_">GET</span>请求</span><br><span class="line">		<span class="number">3.</span>表单请求：</span><br><span class="line">			action  将数据提交到哪里</span><br><span class="line">			method  通过哪种方式进行提交</span><br><span class="line">				&lt;form action=<span class="string">&quot;路径&quot;</span>method=<span class="string">&quot;请求方式&quot;</span>&gt;&lt;/form&gt;</span><br><span class="line">				</span><br><span class="line">		<span class="number">4.</span>ajax	可以请求数据</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用原生js完成数据绑定</span></span><br><span class="line"><span class="keyword">let</span> ins = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;ins&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> h = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;h&#x27;</span>);</span><br><span class="line">ins.<span class="property">oninput</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">// 获取表单中的数据</span></span><br><span class="line">  <span class="keyword">let</span> inval = ins.<span class="property">value</span>;</span><br><span class="line">  <span class="comment">// console.log(inval);</span></span><br><span class="line">  <span class="comment">// 将表单获取的数据放到h标签中</span></span><br><span class="line">  h.<span class="property">innerHTML</span> = inval;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-获取请求路径"><a href="#2-获取请求路径" class="headerlink" title="2.获取请求路径"></a>2.获取请求路径</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">在访问服务器的时候在浏览器上输入的是:<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:端口号</span><br><span class="line">[<span class="attr">localhost</span>:<span class="number">8090</span>]	这是在请求</span><br><span class="line">请求方式:<span class="variable constant_">GET</span></span><br><span class="line">关于url地址：</span><br><span class="line">	协议 域名 端口 路径?参数=参数值&amp;参数<span class="number">2</span>=参数值<span class="number">2</span></span><br><span class="line">	<span class="attr">http</span>:<span class="comment">//www.qq.com:8080/index?id=xx&amp;gname=男装</span></span><br><span class="line">	</span><br><span class="line">	注意：！！！！！！！！参数也属于路径的一部分</span><br><span class="line">	</span><br><span class="line">	特殊情况</span><br><span class="line">	<span class="attr">http</span>:<span class="comment">//lacalhost:8090/</span></span><br><span class="line">			当前地址的路径就是	/</span><br><span class="line">			</span><br><span class="line">请求路径：</span><br><span class="line">	req.<span class="property">url</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    &lt;!-- v-model双向绑定 --&gt;</span><br><span class="line">    &lt;!-- 在单选按钮中绑定: --&gt;</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot; v-model=&quot;sex&quot;&gt;女</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot; v-model=&quot;sex&quot;&gt;男</span><br><span class="line">    &lt;p&gt;你选择的是:&#123;&#123;sex&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;!-- 多选按钮 不要值,我只要你的选择状态 ,就不需要设置value,如果不设置value属性,那么你选择了,就是true,没有选择,就是false --&gt;</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; v-model=&quot;bool&quot;/&gt; 《用户协议》</span><br><span class="line">    &#123;&#123;bool&#125;&#125; </span><br><span class="line">    &lt;!-- 我们可以根据bool的值来完成后续的操作 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;!-- 多选按钮  .要值,你选择哪些值,我就把哪些值和data中的数据进行双向绑定 --&gt;</span><br><span class="line">    &lt;!-- 这个键所对应的数据应该是一个数组类型 --&gt;</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;吃&quot; v-model=&quot;hobby&quot;&gt;吃</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;喝酒&quot; v-model=&quot;hobby&quot;&gt;喝酒</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;玩&quot; v-model=&quot;hobby&quot;&gt;玩</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;乐&quot; v-model=&quot;hobby&quot;&gt;乐</span><br><span class="line">    &#123;&#123;hobby&#125;&#125;</span><br><span class="line"></span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;select name=&quot;&quot; id=&quot;&quot; v-model=&quot;name&quot;&gt;</span><br><span class="line">      &lt;option value=&quot;色色峰&quot;&gt;色色峰&lt;/option&gt;</span><br><span class="line">      &lt;option value=&quot;母爱楠&quot;&gt;母爱楠&lt;/option&gt;</span><br><span class="line">      &lt;option value=&quot;狼草&quot;&gt;狼草&lt;/option&gt;</span><br><span class="line">      &lt;option value=&quot;猥琐东&quot;&gt;猥琐东&lt;/option&gt;</span><br><span class="line">      &lt;option value=&quot;污妖王&quot;&gt;污妖王&lt;/option&gt;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    &lt;p&gt;你选择的老师是:&#123;&#123;name&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">      sex:&quot;&quot;,</span><br><span class="line">      bool:&quot;&quot;,</span><br><span class="line">      hobby:[],</span><br><span class="line">      name:&quot;&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">     </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-获取请求参数"><a href="#3-获取请求参数" class="headerlink" title="3.获取请求参数"></a>3.获取请求参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果我们需要获取路径中的参数，我们需要使用一个新的模块 url</span><br><span class="line">使用的语法格式：</span><br><span class="line">	urll.<span class="title function_">parse</span>(参数<span class="number">1</span>,参数<span class="number">2</span>)</span><br><span class="line">	参数<span class="number">1</span>：要解析的请求路径</span><br><span class="line">	参数<span class="number">2</span>：布尔类型 <span class="literal">true</span> <span class="literal">false</span> 如果值为<span class="literal">true</span>，那么解析之后可以单独存储到一个对象中</span><br><span class="line">	返回值就是解析后的结果</span><br></pre></td></tr></table></figure>
 
 
+<h3 id="2-v-if和v-show"><a href="#2-v-if和v-show" class="headerlink" title="2.v-if和v-show"></a>2.v-if和v-show</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v-if指令: 控制元素是否显示,如果指令的指令值为true ,就显示元素,如果指令的指令值为false 就不显示元素</span><br><span class="line">v-show指令: 控制元素是否显示,如果指令的指令值为true ,就显示元素,如果指令的指令值为false 就不显示元素</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这两个系统指令使用的语法格式:</span><br><span class="line">      &lt;元素 v-if=&quot;布尔值&quot;&gt;&lt;/元素&gt;</span><br><span class="line">      &lt;元素 v-show=&quot;布尔值&quot;&gt;&lt;/元素&gt;</span><br><span class="line">      注意:v-if  或 v-show的值不建议写成固定的true 或 false,因为没有意义</span><br><span class="line">      需要写成动态的变量(键)</span><br></pre></td></tr></table></figure>
 
-      
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">区别:</span><br><span class="line">      v-if的值如果为false,就删除当前的元素</span><br><span class="line">      v-show的值如果为false,就给该元素添加一个隐藏效果</span><br><span class="line">      性能:</span><br><span class="line">        如果是频繁控制元素的显示与不显示,那么推荐使用v-show</span><br><span class="line">        如果不频繁控制元素出现于不出现,那么推荐使用 v-if 将这个元素从DOM中删除</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;p v-if=&quot;bool&quot;&gt;v-if你能看到我吗?&lt;/p&gt;</span><br><span class="line">    &lt;p v-show=&quot;bool&quot;&gt;v-show你能看到我吗?&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">      bool:false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/22/node-js/">展开全文 >></a>
-        </p>
-      
+<h3 id="3-v-on"><a href="#3-v-on" class="headerlink" title="3.v-on"></a>3.v-on</h3><p>v-on指令，可简写为“@”，绑定事件监听器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;number = number + 1&quot;&gt;number++&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-TCP通信三次握手-四次挥手" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/18/TCP%E9%80%9A%E4%BF%A1%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/">TCP通信三次握手,四次挥手</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/18/TCP%E9%80%9A%E4%BF%A1%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" class="archive-article-date">
-  	<time datetime="2022-08-18T12:44:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浏览器-TCP通信：三次握手-四次挥手"><a href="#浏览器-TCP通信：三次握手-四次挥手" class="headerlink" title="浏览器-TCP通信：三次握手,四次挥手"></a>浏览器-TCP通信：三次握手,四次挥手</h2><p>TCP协议是面向连接的通信协议，即在传输数据前先在发送端和接受端建立逻辑连接，然后再传输数据，它提供了2台计算机之间可靠无差错的数据传输</p>
-<h5 id="三次握手🤝"><a href="#三次握手🤝" class="headerlink" title="三次握手🤝"></a>三次握手🤝</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在TCP连接中必须要明确 “客户端” 和 “服务端”，由 “客户端” 向 “服务端” 发出连接请求，每次 “创建连”。接都要经过三次握手🤝</span><br><span class="line"></span><br><span class="line">第一次握手：客户端向服务端发送一个带 SYN 标志的数据包，等待服务端确认</span><br><span class="line"></span><br><span class="line">第二次握手：服务端向客户端回传一个带 SYN/ ACK 标志的数据包，通知客户端收到了 “连接请求”</span><br><span class="line"></span><br><span class="line">第三次握手：客户端再次向服务端回传一个带ACK 标志的数据包，确认 “ 连接”， 握手🤝结束</span><br></pre></td></tr></table></figure>
-
-<p>四次挥手解析：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一次挥手：“主动关闭方” 发送一个 FIN，用来 “关闭” 主动方 到 被动关闭方 的数据传送，也就是 主动关闭方 告诉 被动关闭方：我已经不会再给你发数据了(当然，在 fin 包之前发送出去的数据，如果没有收到对应的 ack 确认报文，主动关闭方  依然会 “重发” 这些数据)，但是，此时 主动关闭方 还可以 “接受数据”。</span><br><span class="line"></span><br><span class="line">第二次挥手：被动关闭方 收到 FIN 包后，发送一个 ACK 给对方，确认序号为收到序号+1（与 SYN 相同，一个 FIN 占用一个序号）。</span><br><span class="line"></span><br><span class="line">第三次挥手：被动关闭方 发送一个 FIN，用来 “关闭” 被动关闭方 到 主动关闭方 的数据传送，也就是告诉 主动关闭方，我的数据也发送完了，不会再给你发数据了。</span><br><span class="line"></span><br><span class="line">第四次挥手：主动关闭方 收到 FIN 后，发送一个 ACK 给 被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/18/TCP%E9%80%9A%E4%BF%A1%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6复习-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/18/ES6%E5%A4%8D%E4%B9%A0-01/">Promise和async,await</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/18/ES6%E5%A4%8D%E4%B9%A0-01/" class="archive-article-date">
-  	<time datetime="2022-08-18T11:35:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h2><p><strong>功能：避免了回调地狱(异步回调的多层嵌套),把异步代码改成调用起来像同步代码。</strong></p>
-<p>一个Promise对象有以下几种状态：</p>
-<p>​	pending:初始状态，既不是成功，也不是失败状态</p>
-<p>​	fulfilled:意味着操作完成</p>
-<p>​	rejected:意味着操作失败</p>
-<p>Promise的书写语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认pending:初始状态</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve,reject</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">&#x27;操作成功&#x27;</span>)&#123;</span><br><span class="line">		<span class="title function_">resolve</span>();<span class="comment">//pending--&gt;fulfiled	异步操作成功的回调函数</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="title function_">reject</span>();<span class="comment">//pending--&gt;reject	异步操作失败的回调函数</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">p.<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="comment">//在外面调用then处理成功的逻辑</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;处理成功的逻辑&quot;</span>);<span class="comment">//fulfilled</span></span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;失败的逻辑&quot;</span>);<span class="comment">//reject</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//then方法会在异步成功后调用,catch方法会在失败后调用</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//作用：完全实现异步变同步</span></span><br><span class="line"><span class="comment">//语法:</span></span><br><span class="line">	<span class="keyword">async</span> <span class="keyword">function</span> 函数名称()&#123;</span><br><span class="line">		<span class="keyword">var</span> <span class="title class_">Promise</span> resolve返回的数据 = <span class="keyword">await</span> 调用<span class="title class_">Promise</span>的方法</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/18/ES6%E5%A4%8D%E4%B9%A0-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jQuery复习-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/">jQuery复习-01</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/" class="archive-article-date">
-  	<time datetime="2022-08-18T08:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="1-jQuery入口函数"><a href="#1-jQuery入口函数" class="headerlink" title="1.jQuery入口函数"></a>1.jQuery入口函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原生js写法：</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;</span><br><span class="line"><span class="comment">//jQuery写法一：</span></span><br><span class="line"><span class="title function_">jQuery</span>(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//jQuery写法二：</span></span><br><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//jQuery写法三：</span></span><br><span class="line">$().<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//jQuery写法四：</span></span><br><span class="line">$(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-显示，隐藏与切换"><a href="#2-显示，隐藏与切换" class="headerlink" title="2.显示，隐藏与切换"></a>2.显示，隐藏与切换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">show</span>(time);<span class="comment">//显示，tiem表示动画时常 为毫秒</span></span><br><span class="line">$(selector).<span class="title function_">hide</span>(time);<span class="comment">//隐藏，</span></span><br><span class="line">$(selector).<span class="title function_">toggle</span>(time);<span class="comment">//切换</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-访问和修改文本内容"><a href="#3-访问和修改文本内容" class="headerlink" title="3.访问和修改文本内容"></a>3.访问和修改文本内容</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">html</span>();<span class="comment">//获取与修改选择器中的html内容</span></span><br><span class="line">innerHTML</span><br><span class="line">$(selector).<span class="title function_">text</span>();<span class="comment">//获取与修改选择器中的文本内容</span></span><br><span class="line">innerText</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-jQuery对象和DOM对象相互转换"><a href="#4-jQuery对象和DOM对象相互转换" class="headerlink" title="4.jQuery对象和DOM对象相互转换"></a>4.jQuery对象和DOM对象相互转换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">JS</span>转<span class="variable constant_">JQ</span>对象</span><br><span class="line"><span class="comment">//使用$()包裹起来就可以转成JQ对象</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JQ转JS对象</span><br><span class="line">//方法一</span><br><span class="line">$(element).get(0)</span><br><span class="line">//方法二</span><br><span class="line">$(element)[0]</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-css样式修改"><a href="#5-css样式修改" class="headerlink" title="5.css样式修改"></a>5.css样式修改</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">css</span>()  </span><br><span class="line"></span><br><span class="line">$(selector).<span class="title function_">css</span>(<span class="string">&#x27;key&#x27;</span>, <span class="string">&#x27;value&#x27;</span>);    <span class="comment">//只能修改一个属性和一个属性值</span></span><br><span class="line"></span><br><span class="line">$(selector).<span class="title function_">css</span>(&#123;</span><br><span class="line">  <span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;value&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;value&#x27;</span></span><br><span class="line">   ....</span><br><span class="line">&#125;)                      <span class="comment">//可以多属性修改，理论上可以修改无限多个属性</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-prop和attr的区别"><a href="#6-prop和attr的区别" class="headerlink" title="6.prop和attr的区别"></a>6.prop和attr的区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取a标签的href属性</span></span><br><span class="line"><span class="title function_">attr</span>(),<span class="title function_">prop</span>()都可以获取,修改</span><br><span class="line"><span class="comment">//2获取及修改input标签的checked属性</span></span><br><span class="line"><span class="title function_">prop</span>()可以获取，修改，<span class="title function_">attr</span>()不可以</span><br><span class="line"><span class="comment">//3.自定义属性，必须使用attr进行获取和设置</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="7-parent方法"><a href="#7-parent方法" class="headerlink" title="7.parent方法"></a>7.parent方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).parent()表示选中所有匹配元素的唯一父元素</span><br></pre></td></tr></table></figure>
-
-<h3 id="8-siblings方法"><a href="#8-siblings方法" class="headerlink" title="8.siblings方法"></a>8.siblings方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).siblings()表示选中某个元素同级的元素，括号内有写元素，表示选中同级的某个元素，如果没有书写，则表示选中同级的所有元素!</span><br></pre></td></tr></table></figure>
-
-<h3 id="9-childern方法"><a href="#9-childern方法" class="headerlink" title="9.childern方法"></a>9.childern方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).childern表示选中某个元素的子级元素，括号内有写元素，表示选中子级中的某个元素，如果没有书写，则表示选中子级的所有元素！</span><br></pre></td></tr></table></figure>
-
-<h3 id="10-index"><a href="#10-index" class="headerlink" title="10.index()"></a>10.index()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.jq的获取索引  index()</span></span><br><span class="line">				 $(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">					 <span class="comment">// console.log(this);</span></span><br><span class="line">					 <span class="comment">// this.index() //  错误的写法，不能使用原生js的对象操作jquery的方法</span></span><br><span class="line">					 <span class="variable language_">console</span>.<span class="title function_">log</span>($(<span class="variable language_">this</span>).<span class="title function_">index</span>());</span><br><span class="line">				 &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="11-addClass与removeClass方法"><a href="#11-addClass与removeClass方法" class="headerlink" title="11.addClass与removeClass方法"></a>11.addClass与removeClass方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给某个元素添加类名，理论上，一个标签可以添加无数多个类名，用空格分开</span></span><br><span class="line">$(selector).<span class="title function_">addClass</span>(“className1  className2  className3”)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给某个元素移除类名</span></span><br><span class="line">$(selector).<span class="title function_">removeClass</span>(“className1  className2  className3”)</span><br></pre></td></tr></table></figure>
-
-<h3 id="12-toggleClass方法"><a href="#12-toggleClass方法" class="headerlink" title="12.toggleClass方法"></a>12.toggleClass方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换某个元素的类名（添加或删除）</span></span><br><span class="line">$(selector).<span class="title function_">toggleClass</span>(“className”)</span><br></pre></td></tr></table></figure>
-
-<h3 id="13-val-获取表单中的值"><a href="#13-val-获取表单中的值" class="headerlink" title="13.val()获取表单中的值"></a>13.val()获取表单中的值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ()内部写入文本可以实现修改功能</span></span><br><span class="line">$(<span class="string">&#x27;input&#x27;</span>).<span class="title function_">val</span>()           .<span class="property">value</span></span><br><span class="line">$(<span class="string">&#x27;textarea&#x27;</span>).<span class="title function_">val</span>()</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 总结1：  常见的表单元素，包括  input文本，单选，多选 ，文本域、下拉列表等 ，获取值使用的val()</span></span><br><span class="line"><span class="comment">// 总结2： 单选，多选 下拉列表等元素，常见的使用的事件是change事件</span></span><br><span class="line"><span class="comment">// change 当内容发生改变的时候，进行触发</span></span><br><span class="line">			$(<span class="string">&#x27;select&#x27;</span>).<span class="title function_">change</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">				<span class="variable language_">console</span>.<span class="title function_">log</span>($(<span class="variable language_">this</span>).<span class="title function_">val</span>());</span><br><span class="line">			&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="14-trim-去除前后空格"><a href="#14-trim-去除前后空格" class="headerlink" title="14.trim()去除前后空格"></a>14.trim()去除前后空格</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.trim(str)  || str.trim()</span><br></pre></td></tr></table></figure>
-
-<h3 id="15-增加节点"><a href="#15-增加节点" class="headerlink" title="15.增加节点"></a>15.增加节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在某个元素的子级中，往后面添加节点</span></span><br><span class="line">$(element).<span class="title function_">append</span>(<span class="string">&#x27;子节点&#x27;</span>)</span><br><span class="line"><span class="comment">// 在某个元素的子级中，往前面添加节点</span></span><br><span class="line">$(element).<span class="title function_">prepend</span>(<span class="string">&#x27;子节点&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="16-增加同级节点"><a href="#16-增加同级节点" class="headerlink" title="16.增加同级节点"></a>16.增加同级节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在element之前添加兄弟节点</span></span><br><span class="line">$(element).<span class="title function_">before</span>(<span class="string">&#x27;兄弟节点&#x27;</span>) </span><br><span class="line"><span class="comment">// 在element之后添加兄弟节点</span></span><br><span class="line">$(element).<span class="title function_">after</span>(<span class="string">&#x27;兄弟节点&#x27;</span>) </span><br></pre></td></tr></table></figure>
-
-<h3 id="17-节点的删除"><a href="#17-节点的删除" class="headerlink" title="17.节点的删除"></a>17.节点的删除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将element节点中的子级节点包括内容清空</span></span><br><span class="line">$(element).<span class="title function_">empty</span>();</span><br><span class="line"><span class="comment">// 删除element节点包括内容</span></span><br><span class="line">$(element).<span class="title function_">remove</span>();</span><br></pre></td></tr></table></figure>
-
-<h3 id="18-节点的替换"><a href="#18-节点的替换" class="headerlink" title="18.节点的替换"></a>18.节点的替换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用后者替代前者</span></span><br><span class="line">$(element1).<span class="title function_">replaceWith</span>(element2);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="19-事件委托"><a href="#19-事件委托" class="headerlink" title="19.事件委托"></a>19.事件委托</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件和函数是必填的，子级选择器选填（不填就是普通事件绑定）</span></span><br><span class="line">$(selector).<span class="title function_">on</span>(事件,children,<span class="keyword">function</span>(<span class="params">e</span>)&#123;...&#125;)</span><br><span class="line"><span class="comment">//在on前面的父级元素上绑定事件处理程序，利用冒泡，实现委托</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="20-键盘事件"><a href="#20-键盘事件" class="headerlink" title="20.键盘事件"></a>20.键盘事件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">keydown</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;);<span class="comment">// 键盘按下事件</span></span><br><span class="line">$(selector).<span class="title function_">keyup</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;...&#125;);<span class="comment">// 键盘松开事件</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="键码–e-keyCode"><a href="#键码–e-keyCode" class="headerlink" title="键码–e.keyCode"></a>键码–e.keyCode</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 键盘抬起事件</span></span><br><span class="line">			$(<span class="string">&#x27;input&#x27;</span>).<span class="title function_">keyup</span>(<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">				<span class="comment">// console.log(12345678);</span></span><br><span class="line">				e  =e ||  <span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line">				<span class="comment">// 当按回车键的时候，获取对应的文本内容</span></span><br><span class="line">				<span class="comment">// console.log(e.keyCode);</span></span><br><span class="line">				<span class="keyword">if</span>(e.<span class="property">keyCode</span> == <span class="number">13</span>)&#123;</span><br><span class="line">					<span class="comment">// 证明按下的是回车键</span></span><br><span class="line">					<span class="variable language_">console</span>.<span class="title function_">log</span>( $(<span class="variable language_">this</span>).<span class="title function_">val</span>().<span class="title function_">trim</span>() );</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/18/jQuery%E5%A4%8D%E4%B9%A0-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS进阶-02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/">JS进阶-02</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/" class="archive-article-date">
-  	<time datetime="2022-08-16T13:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="1-事件的三个阶段"><a href="#1-事件的三个阶段" class="headerlink" title="1.事件的三个阶段"></a>1.事件的三个阶段</h2><p>事件触发分为三个阶段</p>
-<p>​		1.目标阶段</p>
-<p>​		2.冒泡阶段(微软提出，整个事件默认执行的阶段),只要当前页面的元素存在嵌套关系，同时多个多个元素之间绑定的事件类型是一致的，那么默认就是发生冒泡(从里到外执行)</p>
-<p>​		3.捕获阶段(必须经过设置才能执行,从外到内)</p>
-<h3 id="1-1什么是事件冒泡"><a href="#1-1什么是事件冒泡" class="headerlink" title="1.1什么是事件冒泡"></a>1.1什么是事件冒泡</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在一个对象上触发某类事件（比如单击onclick事件），如果此对象定义了此事件的处</span><br><span class="line">理程序，那么此事件就会调用这个处理程序，如果没有定义此事件处理程序或者事件返回true，那么这个事件会向这个对象的父级对象传播，从里到外，直至它</span><br><span class="line">被处理（父级对象所有同类事件都将被激活），或者它到达了对象层次的最顶层，即document对象（有些浏览器是window）。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1-2阻止事件冒泡"><a href="#1-2阻止事件冒泡" class="headerlink" title="1.2阻止事件冒泡"></a>1.2阻止事件冒泡</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e.<span class="title function_">stopPropagation</span>();<span class="comment">//停止传播，不再派发事件，符合w3c标准，谷歌和火狐支持，IE8不支持</span></span><br><span class="line">e.<span class="property">cancelBubble</span> = <span class="literal">true</span>;<span class="comment">//确定取消冒泡，IE特有 居然没有兼容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-事件对象event-非常重要"><a href="#2-事件对象event-非常重要" class="headerlink" title="2.事件对象event	(非常重要)"></a>2.事件对象event	(非常重要)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">只要给一个元素绑定了事件，那么在事件函数中默认会生成一个形参 ---即事件对象</span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> event = event || <span class="variable language_">window</span>.<span class="property">event</span>	<span class="comment">//兼容IE8</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//event.pageX--表示鼠标距离，网页左上角的水平距离</span></span><br><span class="line"><span class="comment">//event.pageY--表示鼠标距离，网页左上角的垂直距离</span></span><br><span class="line"><span class="comment">//event.target--返回触发此事件的元素(事件的目标节点)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p><strong>事件委托</strong>：又叫事件代理，原理就是利用事件冒泡的特点：当子元素的事件发生时，父元素的同名事件也会发生——指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
-<p>优点：不用给列表的每一个元素绑定事件，只需要绑定父元素就可以处理所有子元素的事件，优化性能。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用事件委托，实现删除和替换功能（目的： 使新添加的节点也能实现删除和替换的效果）</span></span><br><span class="line">			uu.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">				<span class="comment">// console.log(&#x27;click,uu&#x27;);</span></span><br><span class="line">				<span class="comment">// 目的：  寻找触发uu点击事件的事件源</span></span><br><span class="line">				<span class="comment">// 简单的来说：就是用户点击的是哪一个按钮，触发的click事件</span></span><br><span class="line">				<span class="comment">// console.dir(e.target);</span></span><br><span class="line">				<span class="comment">// 删除</span></span><br><span class="line">				<span class="keyword">if</span>(e.<span class="property">target</span>.<span class="property">nodeName</span>==<span class="string">&quot;BUTTON&quot;</span> &amp;&amp; e.<span class="property">target</span>.<span class="property">innerText</span> ==<span class="string">&quot;删除&quot;</span>)&#123;</span><br><span class="line">					<span class="comment">// console.log(&#x27;删除&#x27;);</span></span><br><span class="line">					uu.<span class="title function_">removeChild</span>(e.<span class="property">target</span>.<span class="property">parentElement</span>)</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-阻止事件默认行为"><a href="#3-阻止事件默认行为" class="headerlink" title="3.阻止事件默认行为"></a>3.阻止事件默认行为</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">e.<span class="title function_">preventDefault</span>() <span class="comment">// 阻止默认行为 符合w3c标准 只有IE8不支持</span></span><br><span class="line">e.<span class="property">returnValue</span> = <span class="literal">false</span>;阻止默认行为 <span class="variable constant_">IE</span>特有 火狐不支持(亲测支持)</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-事件绑定"><a href="#4-事件绑定" class="headerlink" title="4.事件绑定"></a>4.事件绑定</h2><h4 id="1-0级事件绑定"><a href="#1-0级事件绑定" class="headerlink" title="1.0级事件绑定"></a>1.0级事件绑定</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件源.on事件=function()&#123;要执行的处理程序;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>缺点：</p>
-<p>​		重复绑定会覆盖之前的事件</p>
-<h4 id="2-2级事件绑定"><a href="#2-2级事件绑定" class="headerlink" title="2.2级事件绑定"></a>2.2级事件绑定</h4><p>​		又叫<strong>事件监听</strong>：使同一个事件源一次或多次触发同类型事件函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//谷歌和火狐支持,IE8不支持(掌握)</span></span><br><span class="line">对象.<span class="title function_">addEventListener</span>(<span class="string">&quot;事件类型&quot;</span>,事件处理函数,<span class="literal">false</span>); <span class="comment">//  false  代表冒泡  true  捕获，默认值是false（冒泡）</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>级事件解绑：</span><br><span class="line"><span class="comment">//直接将dom.onclick = null；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// addEventListener对应的事件解绑(掌握)</span></span><br><span class="line">对象.<span class="title function_">removeEventListener</span>(<span class="string">&quot;事件类型&quot;</span>,事件处理函数,<span class="literal">false</span>); <span class="comment">//  false 冒泡  true  捕获</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="顶级对象window"><a href="#顶级对象window" class="headerlink" title="顶级对象window"></a>顶级对象window</h1><h3 id="1-原生js入口函数"><a href="#1-原生js入口函数" class="headerlink" title="1.原生js入口函数"></a>1.原生js入口函数</h3><h6 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h6><p>​			用与在网页加载完毕后立即执行的操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onlioad = function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><h5 id="window对象：浏览器的顶级对象，全局对象"><a href="#window对象：浏览器的顶级对象，全局对象" class="headerlink" title="window对象：浏览器的顶级对象，全局对象"></a>window对象：浏览器的顶级对象，全局对象</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. alert 等一系列弹框方法</span><br><span class="line">2. open方法：打开新窗口</span><br><span class="line">3. close方法：关闭当前窗口</span><br><span class="line">4. document对象：HTML 文档</span><br><span class="line">5. location对象：包含当前网页文档的URL信息</span><br><span class="line">6. history对象：包含浏览器窗口访问过的URL信息</span><br><span class="line">7. navigator对象：包含有关浏览器的信息，如名称，版本和系统等。</span><br><span class="line">8. 定时器</span><br></pre></td></tr></table></figure>
-
-<h4 id="Location对象"><a href="#Location对象" class="headerlink" title="Location对象"></a>Location对象</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.href -- 获取完整的URL</span><br><span class="line"></span><br><span class="line">location.href = &quot;一个地址&quot;	可以跳转页面</span><br></pre></td></tr></table></figure>
-
-<h4 id="History对象"><a href="#History对象" class="headerlink" title="History对象"></a>History对象</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> length属性——历史记录的长度（个数）。</span><br><span class="line"> back() 方法——向后跳转，加载 history 列表中的前一个 URL。</span><br><span class="line">*** forward()方法——向前跳转，加载 history 列表中的下一个 URL。</span><br><span class="line"> go()方法——加载 history 列表中的某个具体页面，参数 1 表示向前跳转，-1表示向后跳转。</span><br></pre></td></tr></table></figure>
-
-<h4 id="offset方法和-scroll方法"><a href="#offset方法和-scroll方法" class="headerlink" title="offset方法	和 scroll方法"></a>offset方法	和 scroll方法</h4><p>offset是偏移、位移、补偿的意思（取整数值四舍五入），表示元素的偏移量。</p>
-<p>scroll是长卷纸，卷轴的意思，表示浏览器滚动时元素的卷曲值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**offsetLeft和offsetTop**(  常用）</span><br><span class="line">- 1、表示当前元素距离它最近的相对父级（定位元素）的水平或者垂直距离。</span><br><span class="line">- 2、如果它一直没有相对父级元素，默认指向body</span><br><span class="line"></span><br><span class="line">**scrollTop和scrollLeft（常用）**</span><br><span class="line">相对父盒子，元素 向上/向左 卷曲出去（滚出去）的距离</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><h3 id="1-单次定时器"><a href="#1-单次定时器" class="headerlink" title="1.单次定时器"></a>1.单次定时器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单次定时器，只能执行一次</span></span><br><span class="line"><span class="comment">// 设置定时器</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,时间);</span><br><span class="line">第一个参数是匿名函数：  当前执行的代码块</span><br><span class="line">第二个参数： 设置的指定的时间  ，时间单位是毫秒    1s == 1000ms</span><br><span class="line">当前定时器只执行一次；</span><br><span class="line"><span class="comment">//清除定时器</span></span><br><span class="line"><span class="built_in">clearTimeout</span>(定时器名称);</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-循环定时器"><a href="#2-循环定时器" class="headerlink" title="2.循环定时器"></a>2.循环定时器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环定时器，不停歇，每过一段时间time，执行一次。</span></span><br><span class="line"><span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123; &#125;,time);</span><br><span class="line"></span><br><span class="line">语法参数同一次性定时器一致；</span><br><span class="line"><span class="built_in">clearInterval</span>(定时器名称);</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS进阶-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/">JS进阶-01</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/" class="archive-article-date">
-  	<time datetime="2022-08-16T12:25:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript组成"><a href="#JavaScript组成" class="headerlink" title="JavaScript组成"></a>JavaScript组成</h1><h5 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h5><p>ECMAScript 定义了JavaScript 的语法规范，是JavaScript的核心。它描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准，它与具体实现无关。</p>
-<p><strong>BOM</strong></p>
-<p>BOM（Browser Object Model）其实是一套操作浏览器功能的API，通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等 。</p>
-<p><strong>DOM</strong></p>
-<p>DOM（Document Object Model）其实是一套操作页面元素的API，JavaScript中的DOM把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作。</p>
-<p>**js的三大组成部分</p>
-<h2 id="DOM的概念"><a href="#DOM的概念" class="headerlink" title="DOM的概念"></a>DOM的概念</h2><p>文档对象模型（Document Object Model，简称DOM），是 W3C 组织推荐的处理 可扩展标记语言（html或xml文档） 的标准 编程接口。它是一种与平台和语言无关的 API，它<strong>可以动态操作HTML文档，如 对html标签作增删改查操作</strong>。DOM 是一种基于树的 API 文档，在处理html文档的过程中，DOM以对象的形式存储在内存中。</p>
-<p>DOM中的几个常用概念</p>
-<p>​	1、文档：一个网页可以称为文档<br>​	2、节点：网页中的所有内容都是节点（标签、属性、文本、注释等）<br>​	3、元素：网页中的标签<br>​	4、属性：标签的属性</p>
-<p>DOM经常进行的操作</p>
-<p>​	1、获取元素<br>​	2、对元素进行操作(设置其属性或调用其方法)<br>​	3、动态创建元素<br>​	4、事件(什么时机做相应的操作)</p>
-<h3 id="表单元素的操作"><a href="#表单元素的操作" class="headerlink" title="表单元素的操作"></a>表单元素的操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">操作表单元素；  input   button   select  textarea    form</span><br><span class="line"></span><br><span class="line">常见的属性操作：</span><br><span class="line">	value</span><br><span class="line">    checked</span><br><span class="line">    disabled</span><br><span class="line">    selected</span><br><span class="line">    </span><br><span class="line">    获取： 直接element.属性</span><br><span class="line">	赋值： element.属性 = 值</span><br></pre></td></tr></table></figure>
-
-<h3 id="动态设置class类名"><a href="#动态设置class类名" class="headerlink" title="动态设置class类名"></a>动态设置class类名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.使用classname 修改类名</span><br><span class="line">	注意：classname属性是替换所有的class的值</span><br><span class="line">	</span><br><span class="line">2.使用classList修改类名</span><br><span class="line">	classList.add(&#x27;新类名&#x27;)</span><br><span class="line">	classList.remove(&#x27;类名&#x27;)</span><br><span class="line">当前方式不会覆盖原来的类名</span><br></pre></td></tr></table></figure>
-
-<h4 id="开关思想："><a href="#开关思想：" class="headerlink" title="开关思想："></a>开关思想：</h4><p>定义一个变量, 这个变量决定了一个状态，事件触发的时候，根据这个变量的值，执行对应的操作，操作完还需要修改这个变量的值。</p>
-<h4 id="阻止超链接跳转"><a href="#阻止超链接跳转" class="headerlink" title="阻止超链接跳转"></a>阻止超链接跳转</h4><h6 id="方法：return-false-阻止a标签的跳转"><a href="#方法：return-false-阻止a标签的跳转" class="headerlink" title="方法：return false;阻止a标签的跳转"></a>方法：return false;阻止a标签的跳转</h6><h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>节点：页面中所有的内容(标签，属性，文本(文字,换行，空格，回车)),Node</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">节点的属性:(可以使用标签--元素.出来,可以使用属性节点.出来,文本节点.点出来)</span><br><span class="line">nodeType:节点的类型</span><br><span class="line">nodeName:节点的名字</span><br><span class="line">nodeValue:节点的值</span><br></pre></td></tr></table></figure>
-
-<h3 id="节点的获取"><a href="#节点的获取" class="headerlink" title="节点的获取"></a>节点的获取</h3><h5 id="获取父级节点-属性"><a href="#获取父级节点-属性" class="headerlink" title="获取父级节点(属性)"></a>获取父级节点(属性)</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取某节点的父级节点</span></span><br><span class="line">node.<span class="property">parentNode</span></span><br><span class="line"><span class="comment">//获取某节点的父级元素(标签)</span></span><br><span class="line">node,parentElement</span><br></pre></td></tr></table></figure>
-
-<h5 id="获取子节点-属性"><a href="#获取子节点-属性" class="headerlink" title="获取子节点(属性)"></a>获取子节点(属性)</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取某节点的子节点</span></span><br><span class="line">node.<span class="property">childNodes</span></span><br><span class="line"><span class="comment">//获取某节点的子元素(标签)</span></span><br><span class="line">node.<span class="property">children</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="属性节点"><a href="#属性节点" class="headerlink" title="属性节点"></a>属性节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取属性节点</span></span><br><span class="line">node.<span class="title function_">getAttributeNode</span>(<span class="string">&#x27;name&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>自定义属性操作方法:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//设置自定义属性：</span><br><span class="line">element.setAttribute(&#x27;属性名&#x27;,&#x27;属性值&#x27;)</span><br><span class="line">//获取自定义属性：</span><br><span class="line">element.getAttribute(&#x27;属性名&#x27;)</span><br><span class="line">//移除指定属性</span><br><span class="line">element.removeAttribute(&quot;属性名&quot;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建元素-标签-的方法"><a href="#创建元素-标签-的方法" class="headerlink" title="创建元素(标签)的方法"></a>创建元素(标签)的方法</h3><ol>
-<li><p>document.write()方法可以向文档写入HTML表达式或者JavaScript代码。</p>
+<p>v-on指令有一系列的修饰符：</p>
+<ul>
+<li><p>.stop - 调用 event.stopPropagation()，禁止事件冒泡：</p>
 </li>
-<li><p>innerHTML创建</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">	<span class="comment">//某个元素节点中间插入一段HTML代码</span></span><br><span class="line">	element.<span class="property">innerHTML</span> = html</span><br></pre></td></tr></table></figure>
+<li><pre><code class="vue">&lt;a @click.stop=&quot;doThis&quot;&gt;&lt;/a&gt;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- .prevent - 调用 event.preventDefault()，禁止事件的默认行为：</span><br><span class="line"></span><br><span class="line">- ```vue</span><br><span class="line">  &lt;form @submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</code></pre>
 </li>
-<li><p>createElement创建</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">	//第一步,先创建元素节点</span><br><span class="line">	chlidNode = document.creatElement(&#x27;p&#x27;);</span><br><span class="line">	//第二部,把元素追加到父级元素中</span><br><span class="line">	parentNode.appendChild(chlidNode)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="元素节点的操作"><a href="#元素节点的操作" class="headerlink" title="元素节点的操作"></a>元素节点的操作</h3><p>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加到容器(父级节点) 的结尾,并返回新增节点</span></span><br><span class="line">parentNode.<span class="title function_">appendChild</span>(新节点)</span><br><span class="line"><span class="comment">//参照节点之前插入节点,并返回新节点</span></span><br><span class="line">parentNode.<span class="title function_">insertBefore</span>(新节点,参照节点)</span><br><span class="line"><span class="comment">//用新节点替换当前节点，并返回被替换的节点(当前节点)</span></span><br><span class="line">parentNode.<span class="title function_">replaceChild</span>(新节点,当前节点)</span><br><span class="line"><span class="comment">//移除节点,并返回移除的节点</span></span><br><span class="line"><span class="comment">//不能直接删除自己,是需要先找到父级元素,再来删除自己</span></span><br><span class="line">parentNode.<span class="title function_">removeChild</span>(当前元素)</span><br><span class="line"><span class="comment">//克隆节点，返回一个被克隆的新节点</span></span><br><span class="line"><span class="comment">//一个布尔值参数，默认false为浅拷贝，只复制容器，true为深拷贝，包括内容全部复制</span></span><br><span class="line">被克隆的元素.<span class="title function_">cloneNode</span>(<span class="literal">true</span>|<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<li><p>.once - 只触发一次回调：</p>
+</li>
+<li><p>&#96;&#96;&#96;vue<br>&lt;a @click.once&#x3D;”doThis”&gt;</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- .left -  只当点击鼠标左键时触发。</span><br><span class="line"></span><br><span class="line">- .right - 只当点击鼠标右键时触发。</span><br><span class="line"></span><br><span class="line">- .middle - 只当点击鼠标中键时触发。</span><br><span class="line"></span><br><span class="line">-   .&#123;keyCode | keyAlias&#125; ——键盘事件——只当事件是从特定键触发时才触发回调。比如：</span><br><span class="line">  .enter - 只有在 `key` 是 `Enter` 时才触发回调。</span><br><span class="line"></span><br><span class="line">- ```vue</span><br><span class="line">  &lt;input v-on:keyup.enter=&quot;submit&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  总结:</span></span><br><span class="line"><span class="comment">    1.事件的绑定:</span></span><br><span class="line"><span class="comment">      &lt;元素 v-on:事件名=&quot;函数名()&quot;&gt;&lt;/元素&gt;</span></span><br><span class="line"><span class="comment">      或</span></span><br><span class="line"><span class="comment">      &lt;元素 @事件名=&quot;函数名()&quot;&gt;&lt;/元素&gt;</span></span><br><span class="line"><span class="comment">    2.函数的声明:</span></span><br><span class="line"><span class="comment">      new Vue(&#123;</span></span><br><span class="line"><span class="comment">        el:&quot;&quot;,</span></span><br><span class="line"><span class="comment">        data:&#123;&#125;,</span></span><br><span class="line"><span class="comment">        methods:&#123;</span></span><br><span class="line"><span class="comment">          函数名:function()&#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">          &#125;</span></span><br><span class="line"><span class="comment">          或</span></span><br><span class="line"><span class="comment">          函数名()&#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">          &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment">      函数的调用还可以直接使用 &#123;&#123;函数名()&#125;&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">      在vue的函数内使用vue data的数据  就直接使用  <span class="variable language_">this</span>.键  <span class="variable language_">this</span>.键就是直接去data中获取对应的数据</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">      如果在函数中修改data中的数据 <span class="variable language_">this</span>.键 = 修改后的新值</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-v-bind"><a href="#4-v-bind" class="headerlink" title="4.v-bind"></a>4.v-bind</h3><ul>
+<li><pre><code>Vue v-bind 指令用于绑定属性，即把被绑定的属性中的值当做 Vue 实例中的变量解析
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  Vue v-bind 指令还可以支持 JavaScript 表达式。</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;<br>Vue v-bind 指令的简写形式为 :属性值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```vue</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- html中的属性,默认不能解析vue中的键 --&gt;</span><br><span class="line">    &lt;a v-bind:href=&quot;aHref&quot;&gt;&#123;&#123;str&#125;&#125;&lt;/a&gt;</span><br><span class="line">    &lt;button @click=&quot;fun()&quot;&gt;玩游戏&lt;/button&gt;</span><br><span class="line">    &lt;!-- &lt;a :href=&quot;aHref2&quot;&gt;淘宝&lt;/a&gt; --&gt;</span><br><span class="line">    &lt;img width=&quot;200&quot; :src=&quot;myimg&quot; alt=&quot;&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">      str:&quot;百度&quot;,</span><br><span class="line">      aHref:&quot;http://www.baidu.com&quot;,</span><br><span class="line">      // aHref2:&quot;http://www.taobao.com&quot;</span><br><span class="line">      myimg:&quot;https://pics3.baidu.com/feed/a8ec8a13632762d0e984c674694de6f2533dc6e9.jpeg?token=803c2a52b1d7b2fd0972f93b6af7a656&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">     fun()&#123;</span><br><span class="line">       this.str = &quot;小游戏&quot;;</span><br><span class="line">       this.aHref = &quot;http://www.4399.com&quot;;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-v-for"><a href="#5-v-for" class="headerlink" title="5.v-for"></a>5.v-for</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-for 指令，for循环，基于源数据多次渲染元素或模板块。</span><br></pre></td></tr></table></figure>
+
+<p>​		（1）、v-for 渲染一个数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=&quot;(item, idx) in [1, 2, 3]&quot; :key=&quot;idx&quot;&gt;</span><br><span class="line"> </span><br><span class="line">    &#123;&#123;item&#125;&#125;</span><br><span class="line"> </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">// 渲染的结果：</span><br><span class="line">// 1</span><br><span class="line">// 2</span><br><span class="line">// 3</span><br></pre></td></tr></table></figure>
+
+<p>​		（2）、 v-for 渲染一个对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=&quot;(val, key) in &#123;one: 1, two: 2&#125;&quot; :key=&quot;key&quot;&gt;</span><br><span class="line"> </span><br><span class="line">    &#123;&#123;key&#125;&#125;: &#123;&#123;val&#125;&#125;</span><br><span class="line"> </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">// 渲染的结果：</span><br><span class="line">// one: 1</span><br><span class="line">// two: 2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//:key主要就是为了提高性能</span></span><br><span class="line"><span class="comment">//&lt;元素 v-for=&quot;(值,键) in 要循环的数据&quot; :key=&quot;唯一的标识&quot;&gt;&lt;/元素&gt;</span></span><br><span class="line"><span class="comment">//如果不需要键,可以写成:</span></span><br><span class="line"><span class="comment">//&lt;元素 v-for=&quot;值 in 要循环的数据&quot; :key=&quot;唯一的标识&quot;&gt;&lt;/元素&gt;</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -930,7 +447,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/16/JS%E8%BF%9B%E9%98%B6-01/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/09/26/Vue%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
@@ -960,65 +477,45 @@
 
 
   
-    <article id="post-js基础复习-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue插值语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/">js基础复习-3</a>
+      <a class="article-title" href="/2022/09/26/Vue%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95/">Vue插值语法</a>
     </h1>
   
 
         
-        <a href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/" class="archive-article-date">
-  	<time datetime="2022-08-13T08:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
+        <a href="/2022/09/26/Vue%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2022-09-26T10:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><p>js里面的代码是有执行顺序的，通过一些特殊的方式控制那些代码如何执行 —— 流程控制</p>
-<p><strong>顺序结构</strong></p>
-<p>按照从上到下的顺序，一行不漏的执行</p>
-<p><strong>分支结构</strong></p>
-<p>在逻辑上有多个分支，只会选择一个分支执行</p>
-<p><strong>循环结构</strong></p>
-<p>重复的代码，可以使用循环的方式实现多次</p>
-<p><strong>表达式</strong></p>
-<p>可以得到一个结果的代码 </p>
-<h3 id="switch结构"><a href="#switch结构" class="headerlink" title="switch结构"></a>switch结构</h3><p>在js里面如果是比较固定值，推荐使用swtich-case结构</p>
-<p>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (变量)&#123;</span><br><span class="line">  <span class="keyword">case</span> 要比较的固定的值<span class="number">1</span>:</span><br><span class="line">    变量和 固定的值<span class="number">1</span>  ===   的时候要执行的代码</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 要比较的固定的值<span class="number">2</span>:</span><br><span class="line">    变量和 固定的值<span class="number">2</span>  ===   的时候要执行的代码</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 要比较的固定的值<span class="number">3</span>:</span><br><span class="line">    变量和 固定的值<span class="number">3</span>  ===   的时候要执行的代码</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="attr">default</span>:</span><br><span class="line">    当以上所有的条件都不成立的时候，代码在这里执行</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="一，Mustache插值"><a href="#一，Mustache插值" class="headerlink" title="一，Mustache插值"></a>一，Mustache插值</h2><h2 id="yiMustache插值"><a href="#yiMustache插值" class="headerlink" title="yiMustache插值"></a>yiMustache插值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法格式:</span></span><br><span class="line">	&#123;&#123;&#125;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>注意：</p>
-<p>1.default不是必须的</p>
-<p>2.break的作用是结束判断，如果不想要，也可以不写</p>
-<p>3.变量和固定值的比较是 &#x3D;&#x3D;&#x3D; 严格等于</p>
-<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>( 条件表达式 )&#123;</span><br><span class="line">  当表达式的结果是<span class="literal">true</span>的时候，这里面的代码会重复的执行，直到条件为<span class="literal">false</span></span><br><span class="line">  循环体（需要重复执行的代码）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &#123;&#123;name&#125;&#125;  写在app外边的语法是不会被解析的 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--只能在元素内部使用，不能在元素属性位置上使用--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 我们的文本插值语法中还可以写一些业务逻辑 例如 三元运算符  页可以写运算 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>名字:&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>年龄:&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>性别:&#123;&#123;sex == 1 ? &quot;男&quot; : &quot;女&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>10年后的年龄:&#123;&#123;age + 10&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>路明非喜欢诺诺嘛?&#123;&#123;bool ? &quot;喜欢&quot; : &quot;不喜欢&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>路明非的爱好是:&#123;&#123;hobby.chi&#125;&#125;和&#123;&#123;hobby.wan&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  循环体（需要重复执行的代码）</span><br><span class="line">&#125;<span class="keyword">while</span> (条件)</span><br></pre></td></tr></table></figure>
+<h2 id="二，其他插值指令"><a href="#二，其他插值指令" class="headerlink" title="二，其他插值指令"></a>二，其他插值指令</h2><h3 id="1-v-once"><a href="#1-v-once" class="headerlink" title="1. v-once"></a>1. v-once</h3><p>Vue是响应式的，那么当Vue中的数据改变时，相应的DOM中展示的数据也会改变。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">/*所在节点在初次动态渲染后，就视为静态内容了。 以后数据的变化不会引起v-once所在结构的更新，可以用户优化性能。*/</span><br></pre></td></tr></table></figure>
 
-<h3 id="break-与-continue区别"><a href="#break-与-continue区别" class="headerlink" title="break 与 continue区别"></a>break 与 continue区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">break</span>用于结束整个循环</span><br><span class="line"><span class="number">2.</span> <span class="keyword">continue</span>用于结束整个循环中的一次</span><br><span class="line"><span class="number">3.</span> <span class="keyword">break</span>和<span class="keyword">continue</span>后面的代码都不会执行</span><br><span class="line"><span class="number">4.</span>终止整个循环，使用<span class="keyword">break</span>,跳过一次循环，使用<span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-v-html"><a href="#2-v-html" class="headerlink" title="2.v-html"></a>2.v-html</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-html 指令 也是文本插值的一种,只不过可以解析数据中的代码</span><br></pre></td></tr></table></figure>
 
-<h2 id="js内置对象中一些常用方法"><a href="#js内置对象中一些常用方法" class="headerlink" title="js内置对象中一些常用方法"></a>js内置对象中一些常用方法</h2><h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><p>数学-用于进行一些和数学相关的运算(计算)的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Math.random()   生成一个 [0,1) 之间的随机浮点数</span><br><span class="line">Math.floor(x)   一个浮点数进行向下取整,向下取整就是从这个数字开始，朝数轴的左边找到一个离它最近的整数</span><br><span class="line">Math.ceil(x)    把一个浮点数进行向上取整</span><br><span class="line">Math.round(x)   把一个浮点数进行四舍五入取整</span><br><span class="line">Math.abs(x)     求一个数的绝对值</span><br><span class="line">Math.max(x,y...)  求多个数字中的最大值</span><br><span class="line">Math.min(x,y...)  求多个数字中的最小值</span><br></pre></td></tr></table></figure>
+<h3 id="3-v-text"><a href="#3-v-text" class="headerlink" title="3.v-text"></a>3.v-text</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-text 指令 和 &#123;&#123;&#125;&#125; 这种文本插值语法的效果一致</span><br></pre></td></tr></table></figure>
 
-<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>数组常见的操作方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1、push()从数组最后增加成员，返回值为新数组的长</span><br><span class="line">2、pop()从数组最后删除成员，返回删除的元素</span><br><span class="line">3、unshift()从数组前面增加成员，返回值为新数组的长度</span><br><span class="line">4、shift()从数组前面删除成员</span><br><span class="line">5、splice(index,多少,项1,项2...) : 返回删除的项目</span><br><span class="line">删除从 index 处开始的零个或多个元素,</span><br><span class="line">并且用参数列表中声明的一个或多个项,来替换那些被删除的元素(如果没有,则不替换)</span><br><span class="line">6、reverse() 将数组反转*</span><br></pre></td></tr></table></figure>
+<h3 id="4-v-pre"><a href="#4-v-pre" class="headerlink" title="4.v-pre"></a>4.v-pre</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-pre 指令 原样输入(如果你在vue的操作范围内,不想解析 vue 的语法,那么我们就可以使用这个系统指令)</span><br></pre></td></tr></table></figure>
 
-<p><em><strong>以下的方法不会改变原数组</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">7、slice(start,end):  返回切割项目</span><br><span class="line">8、indexOf() 返回数组中元素第一次出现的索引值  **重点**</span><br><span class="line">如果返回值是-1，则代表当前字符串没在数组中；</span><br><span class="line">9、join() 将数组成员通过一个分隔符合并成字符串</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;str1&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;str2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 指令值中的数据不需要使用&#123;&#123;&#125;&#125; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">      本质不能再使用v-html指令的方式进行文本插值后在使用&#123;&#123;&#125;&#125;的方式进行文本插值,即使使用&#123;&#123;&#125;&#125;</span></span><br><span class="line"><span class="comment">      方法进行文本插值,也会被系统指令的文本插值覆盖</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;str2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;str2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-pre</span>&gt;</span></span><br><span class="line">      vue的文本插值语法是:&#123;&#123;data中的键&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">str1</span>:<span class="string">&quot;色色峰&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">str2</span>:<span class="string">&quot;&lt;a href=&#x27;http://www.baidu.com&#x27;&gt;百度&lt;/a&gt;&quot;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="filter-数组筛选"><a href="#filter-数组筛选" class="headerlink" title="filter 数组筛选"></a>filter 数组筛选</h4><p>数组.filter</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">作用： 把数组中满足条件的元素，放到一个新的数组里面</span><br><span class="line"><span class="keyword">var</span> result = arr.<span class="title function_">filter</span>(<span class="keyword">function</span>(<span class="params">item,index</span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="comment">// return  后面是筛选的条件</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-v-cloak-指令-斗篷"><a href="#5-v-cloak-指令-斗篷" class="headerlink" title="5.v-cloak 指令(斗篷)"></a>5.v-cloak 指令(斗篷)</h3><p>在某些情况下，我们浏览器可能会直接显示出未编译的Mustache标签(vue对象实例化之前加载了带vue语法的html页面)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  <span class="selector-attr">[v-cloak]</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="String内置对象"><a href="#String内置对象" class="headerlink" title="String内置对象"></a>String内置对象</h3><p>字符串常用方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1、字符串合并操作：“ + ”</span><br><span class="line">2、split() 把一个字符串按某种方式分隔成字符串组成的数组 **</span><br><span class="line">3、charAt() 获取字符串中的某一个字符**</span><br><span class="line">4、indexOf() 查找字符串是否含有某字符**(和数组一样的使用方式)</span><br><span class="line">5、substring() 截取字符串 用法： substring(start,end)（不包括end）截取从star开始,到end之间的字符串</span><br><span class="line"></span><br><span class="line">​	 如果只传一个值,表示从这个位置开始,一致截取到字符串末端</span><br><span class="line"> substring是以两个参数中较小一个作为起始位置，较大的参数</span><br><span class="line">6、substr(index,n) :  从index索引位置开始截取,截取n个字符</span><br><span class="line"></span><br><span class="line">​      如果只传一个值,表示从这个位置开始,一致截取到字符串末端</span><br><span class="line"></span><br><span class="line">7、toUpperCase() 字符串转大写</span><br><span class="line">8、toLowerCase() 字符串转小写</span><br><span class="line">9、replace(&quot;要被替换的字符&quot;,替换的字符)   该方法会返回一个新字符串，原字符串不改变</span><br></pre></td></tr></table></figure>
-
-<h3 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建Date对象</span></span><br><span class="line">       <span class="keyword">var</span> dat = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">       <span class="comment">//获取年份</span></span><br><span class="line">		dat.<span class="title function_">getFullYear</span>();</span><br><span class="line">       <span class="comment">//月份</span></span><br><span class="line">	dat.<span class="title function_">getMonth</span>()+<span class="number">1</span>    <span class="comment">//注意，月份是从0开始的，所有在正常使用的时候，需要+1</span></span><br><span class="line">       <span class="comment">//日</span></span><br><span class="line">	dat.<span class="title function_">getDate</span>();</span><br><span class="line">       <span class="comment">//时</span></span><br><span class="line"> 		dat.<span class="title function_">getHours</span>();</span><br><span class="line">       <span class="comment">//分</span></span><br><span class="line">	dat.<span class="title function_">getMinutes</span>();</span><br><span class="line">       <span class="comment">//秒</span></span><br><span class="line">	dat.<span class="title function_">getSeconds</span>();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="comment">//获取时间戳</span></span><br><span class="line">       <span class="comment">//返回距 1970 年 1 月 1 日之间的毫秒数</span></span><br><span class="line">	dat.<span class="title function_">getTime</span>();<span class="comment">//单位是毫秒，与秒1：1000</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">//返回当前日期时间</span></span><br><span class="line">	dat.<span class="title function_">toLocaleString</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span> <span class="attr">v-cloak</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./js/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">//在vue解析之前，div中有一个属性v-cloak</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 在vue解析之后，div中v-cloak属性消失</span></span></span><br><span class="line"><span class="language-javascript">  <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">message</span>: <span class="string">&#x27;你好&#x27;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">  &#125;, <span class="number">1000</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -1032,7 +529,342 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/13/js%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-3/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/09/26/Vue%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">vue基础</a>
+    </h1>
+  
+
+        
+        <a href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2022-09-08T15:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-vue引入"><a href="#1-vue引入" class="headerlink" title="1.vue引入"></a>1.vue引入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vue官网下载 vue.<span class="property">js</span></span><br><span class="line">&lt;script src = <span class="string">&quot;./vue.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-vue基础语法格式"><a href="#2-vue基础语法格式" class="headerlink" title="2.vue基础语法格式"></a>2.vue基础语法格式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//作用域</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    &#123;&#123;键&#125;&#125;		写在app外面的vue语法不会被解析</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- &#123;&#123;对象名&#125;&#125;		mustache插值语法--&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 我们的文本插值语法中还可以写一些业务逻辑 例如 三元运算符  页可以写运算 --&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>性别:&#123;&#123;sex == 1 ? &quot;男&quot; : &quot;女&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>10年后的年龄:&#123;&#123;age + 10&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>路明非喜欢诺诺嘛?&#123;&#123;bool ? &quot;喜欢&quot; : &quot;不喜欢&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="comment">&lt;!--	vue中的普通函数调用    --&gt;</span></span><br><span class="line">        1.通过事件的方式调用</span><br><span class="line">        <span class="tag">&lt;<span class="name">元素</span> <span class="attr">v-on:click</span> = <span class="string">&quot;函数名()&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">元素</span>&gt;</span></span><br><span class="line">        2.使用文本插值语法进行调用</span><br><span class="line">        &#123;&#123;函数名()&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="comment">//实例化vue</span></span><br><span class="line">	<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">		<span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,	<span class="comment">//声明vue操作范围</span></span><br><span class="line"><span class="comment">//vue中的数据</span></span><br><span class="line">		<span class="attr">data</span>:&#123;</span><br><span class="line">			 <span class="attr">name</span>:<span class="string">&quot;路明非&quot;</span>,</span><br><span class="line">             <span class="attr">age</span>:<span class="number">190</span>,</span><br><span class="line">              <span class="comment">// 一般性别存储在数据库中的数据格式应该是 1男  0女  一个数字的大小一定比一个汉字小</span></span><br><span class="line">              <span class="attr">sex</span>:<span class="number">1</span>,</span><br><span class="line">              <span class="attr">bool</span>:<span class="literal">true</span>,</span><br><span class="line">              <span class="attr">hobby</span>:&#123;</span><br><span class="line">                <span class="attr">chi</span>:<span class="string">&quot;螺蛳粉&quot;</span>,</span><br><span class="line">                <span class="attr">wan</span>:<span class="string">&quot;王者荣耀&quot;</span></span><br><span class="line">                    &#125;</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//vue中的普通方法(函数)</span><br><span class="line">    	methods:&#123;</span><br><span class="line">            fun:function()&#123;</span><br><span class="line">                </span><br><span class="line">            &#125;,</span><br><span class="line">            //简写</span><br><span class="line">            fun2()&#123;</span><br><span class="line">                 //在vue的函数内使用vue data的数据  就直接使用  this.键  					this.键就是直接去data中获取对应的数据</span><br><span class="line">                </span><br><span class="line">                //如果在函数中修改data中的数据 this.键 = 修改后的新值</span><br><span class="line">                </span><br><span class="line">                this.name = &quot;路明泽&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="vue计算属性—computed"><a href="#vue计算属性—computed" class="headerlink" title="vue计算属性—computed"></a>vue计算属性—computed</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//一个数据, 依赖另外一些数据计算而来的结果</span><br></pre></td></tr></table></figure>
+
+<p>场景: 一个变量的值, 需要用另外变量计算而得来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    &quot;计算属性名&quot; () &#123;</span><br><span class="line">        return &quot;值&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意1: 计算属性和data属性都是变量-不能重名. 用法和data相同</strong></p>
+<p><strong>注意2: 函数内变量变化, 会自动重新计算结果返回</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//好处:</span></span><br><span class="line"><span class="comment">//带缓存，多次调用只执行函数一次</span></span><br><span class="line"><span class="comment">//缓存更新:</span></span><br><span class="line"><span class="comment">//函数里的依赖项，发生改变，函数&quot;自动&quot;重新计算，重新缓存起来</span></span><br><span class="line"><span class="comment">//注意:</span></span><br><span class="line"><span class="comment">//计算属性和data里的变量名都是变量，不能重复</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">完整语法:</span><br><span class="line">    <span class="attr">computed</span>: &#123;</span><br><span class="line">       <span class="comment">// &quot;计算属性名&quot; ()&#123;&#125;,</span></span><br><span class="line">        <span class="string">&quot;计算属性名&quot;</span>: &#123;</span><br><span class="line">            <span class="title function_">set</span>(<span class="params">值</span>)&#123;</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> 值</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//2.关于调用:</span><br><span class="line">普通方法:	调用的形式是	事件	或	&#123;&#123;函数名()&#125;&#125;</span><br><span class="line">计算方法:	调用的形式是	&#123;&#123;函数名&#125;&#125;	------没有括号</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//3.关于调用次数</span><br><span class="line">          普通方法,每一次调用都会执行一次</span><br><span class="line">          计算方法,如果值没有发生改变,多次调用只执行一次,但是如果函数内有返回值,</span><br><span class="line">          可以多次返回</span><br><span class="line"></span><br><span class="line">          计算方法如何多次触发? 就是需要修改函数的返回值,只要函数的返回值发生改变,</span><br><span class="line">          那么函数就会自动再次触发</span><br><span class="line"></span><br><span class="line">          计算属性中的函数,返回值没有发生改变,只执行一次,但是返回结果在渲染位置可以渲染多次</span><br><span class="line">          是因为,在第一个调用的时候,就将函数的返回值存储到内存中,再次调用函数,</span><br><span class="line">          发现函数的返回值没有变,那么就不执行函数</span><br><span class="line">          而是从内存中获取上一次的数据</span><br><span class="line"></span><br><span class="line">        计算方法一般会在购物车的总计位置使用</span><br><span class="line">          统计总价: 所有商品的单价 * 数量     如果数量变了</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue脚手架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">vue脚手架</a>
+    </h1>
+  
+
+        
+        <a href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/" class="archive-article-date">
+  	<time datetime="2022-09-08T03:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-webpack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/07/webpack/">webpack</a>
+    </h1>
+  
+
+        
+        <a href="/2022/09/07/webpack/" class="archive-article-date">
+  	<time datetime="2022-09-07T12:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/07/webpack/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/01/vue-js/">vue.js</a>
+    </h1>
+  
+
+        
+        <a href="/2022/09/01/vue-js/" class="archive-article-date">
+  	<time datetime="2022-09-01T00:36:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/01/vue-js/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-session" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/29/session/">session</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/29/session/" class="archive-article-date">
+  	<time datetime="2022-08-29T02:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/29/session/">展开全文 >></a>
         </p>
       
 
@@ -1064,7 +896,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

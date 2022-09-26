@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>Vue过滤器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return局部过滤器: filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，123456filters:&amp;#123;            方法名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue过滤器">
+<meta property="og:url" content="http://example.com/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return局部过滤器: filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，123456filters:&amp;#123;            方法名">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-26T12:15:48.000Z">
+<meta property="article:modified_time" content="2022-09-26T12:48:14.841Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,295 +154,184 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue过滤器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/26/Vue%E7%BB%84%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2022-09-26T13:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/26/Vue%E7%BB%84%E4%BB%B6/">Vue组件</a>
+    <h1 class="article-title" itemprop="name">
+      Vue过滤器
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/26/Vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2022-09-26T12:48:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/26/Vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/">Vue自定义指令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/" class="archive-article-date">
+        
+        <a href="/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/" class="archive-article-date">
   	<time datetime="2022-09-26T12:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/">Vue过滤器</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return"><a href="#vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return" class="headerlink" title="vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return"></a>vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return</h5><p>局部过滤器:</p>
+<h6 id="filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为-，"><a href="#filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为-，" class="headerlink" title="filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，"></a>filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，</h6><h6 id="而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，"><a href="#而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，" class="headerlink" title="而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，"></a>而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">            方法名(形参)&#123;</span><br><span class="line">              形参就是要过滤的内容</span><br><span class="line">              这个方法必须有返回值,返回值就是你过滤后的结果</span><br><span class="line">              return 过滤后的结果</span><br><span class="line">            &#125;,</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div id=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;date | f1 | f2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>价钱是:&#123;&#123;rmb | f3&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">date</span>:<span class="string">&quot;2022-09-03&quot;</span>,   <span class="comment">// 2022/09/03</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">rmb</span>:<span class="string">&quot;99.00&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">filters</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">f1</span>(<span class="params">v</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//把字符串按照指定的字符转成数组</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">let</span> arr = v.<span class="title function_">split</span>(<span class="string">&quot;-&quot;</span>);<span class="comment">// [2022,09,03]</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//将数组转换成字符串,按 / 作为分隔符</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">let</span> str = arr.<span class="title function_">join</span>(<span class="string">&quot;/&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> str;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">f2</span>(<span class="params">v</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//v是上一层过滤器过滤后的内容</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="string">&quot;今天是:&quot;</span>+v;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">f3</span>(<span class="params">v</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(v);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">return</span> <span class="string">&quot;¥&quot;</span>+v+<span class="string">&quot;元&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
+<p>全局过滤器:</p>
+<p>一般写在main.js里面,Vue.filter，里面只能写一个过滤器，如果需要写第二个过滤器，需要再创建一个，第一个参数是过滤器的id，第二个是一个回调函数</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44826388/article/details/123628069">https://blog.csdn.net/weixin_44826388/article/details/123628069</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/09/26/Vue%E8%BF%87%E6%BB%A4%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/26/Vue%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2022-09-26T10:45:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/09/26/Vue%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue自定义指令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/26/Vue%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue系统指令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/26/Vue%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4/">Vue系统指令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#vue2%E8%BF%87%E6%BB%A4%E5%99%A8%E5%88%86%E4%B8%BA%E5%85%A8%E5%B1%80%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E5%B1%80%E9%83%A8%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E8%BF%87%E6%BB%A4%E5%99%A8%E5%8F%AF%E7%94%A8%E4%BA%8E%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E6%96%87%E6%9C%AC%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%EF%BC%8C%E5%A4%9A%E7%94%A8%E4%BA%8E%E5%80%92%E8%AE%A1%E6%97%B6%E5%92%8C%E4%BB%B7%E6%A0%BC%EF%BC%8C%E8%BF%87%E6%BB%A4%E5%99%A8%E9%87%8C%E9%9D%A2%E6%B2%A1%E6%9C%89this%E6%8C%87%E5%90%91%EF%BC%8C%E5%BF%85%E9%A1%BBreturn"><span class="toc-number">1.</span> <span class="toc-text">vue2过滤器分为全局过滤器和局部过滤器，过滤器可用于一些常见文本的格式化，多用于倒计时和价格，过滤器里面没有this指向，必须return</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#filters%E5%92%8Cdata%E5%90%8C%E7%BA%A7%EF%BC%8C%E9%87%8C%E9%9D%A2%E5%8F%AF%E4%BB%A5%E6%9C%89%E5%A4%9A%E4%B8%AA%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E8%BF%87%E6%BB%A4%E5%99%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%E6%98%AF%E7%AE%A1%E9%81%93%E7%AC%A6%E5%89%8D%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E7%AE%A1%E9%81%93%E7%AC%A6%E4%B8%BA-%EF%BC%8C"><span class="toc-number">1.1.</span> <span class="toc-text">filters和data同级，里面可以有多个过滤器，过滤器的第一个参数是管道符前的数据，管道符为|，</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%80%8C%E4%B8%94%E5%8F%AF%E4%BB%A5%E4%B8%B2%E8%81%94%EF%BC%8C%E5%BD%93%E4%BD%A0%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%BF%87%E6%BB%A4%E5%99%A8%E6%97%B6%EF%BC%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%8C%E6%98%AF%E5%89%8D%E9%9D%A2%E8%BF%87%E6%BB%A4%E5%99%A8%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%8C"><span class="toc-number">1.2.</span> <span class="toc-text">而且可以串联，当你创建第二个过滤器时，你的第一个参数，是前面过滤器的返回值，</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/26/Vue%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-09-26T10:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/26/Vue%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95/">Vue插值语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2022-09-08T15:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">vue基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2022-09-08T03:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">vue脚手架</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/07/webpack/" class="archive-article-date">
-  	<time datetime="2022-09-07T12:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/07/webpack/">webpack</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/01/vue-js/" class="archive-article-date">
-  	<time datetime="2022-09-01T00:36:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/01/vue-js/">vue.js</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/29/session/" class="archive-article-date">
-  	<time datetime="2022-08-29T02:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/29/session/">session</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
