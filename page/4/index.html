@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/page/4/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,51 +152,52 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-vue基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-变量和常量声明关键字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">vue基础</a>
+      <a class="article-title" href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/">变量和常量声明关键字</a>
     </h1>
   
 
         
-        <a href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2022-09-08T15:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
+        <a href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/" class="archive-article-date">
+  	<time datetime="2022-08-08T03:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-vue引入"><a href="#1-vue引入" class="headerlink" title="1.vue引入"></a>1.vue引入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vue官网下载 vue.<span class="property">js</span></span><br><span class="line">&lt;script src = <span class="string">&quot;./vue.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-vue基础语法格式"><a href="#2-vue基础语法格式" class="headerlink" title="2.vue基础语法格式"></a>2.vue基础语法格式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//作用域</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    &#123;&#123;键&#125;&#125;		写在app外面的vue语法不会被解析</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- &#123;&#123;对象名&#125;&#125;		mustache插值语法--&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 我们的文本插值语法中还可以写一些业务逻辑 例如 三元运算符  页可以写运算 --&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>性别:&#123;&#123;sex == 1 ? &quot;男&quot; : &quot;女&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>10年后的年龄:&#123;&#123;age + 10&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>路明非喜欢诺诺嘛?&#123;&#123;bool ? &quot;喜欢&quot; : &quot;不喜欢&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="comment">&lt;!--	vue中的普通函数调用    --&gt;</span></span><br><span class="line">        1.通过事件的方式调用</span><br><span class="line">        <span class="tag">&lt;<span class="name">元素</span> <span class="attr">v-on:click</span> = <span class="string">&quot;函数名()&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">元素</span>&gt;</span></span><br><span class="line">        2.使用文本插值语法进行调用</span><br><span class="line">        &#123;&#123;函数名()&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="comment">//实例化vue</span></span><br><span class="line">	<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">		<span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,	<span class="comment">//声明vue操作范围</span></span><br><span class="line"><span class="comment">//vue中的数据</span></span><br><span class="line">		<span class="attr">data</span>:&#123;</span><br><span class="line">			 <span class="attr">name</span>:<span class="string">&quot;路明非&quot;</span>,</span><br><span class="line">             <span class="attr">age</span>:<span class="number">190</span>,</span><br><span class="line">              <span class="comment">// 一般性别存储在数据库中的数据格式应该是 1男  0女  一个数字的大小一定比一个汉字小</span></span><br><span class="line">              <span class="attr">sex</span>:<span class="number">1</span>,</span><br><span class="line">              <span class="attr">bool</span>:<span class="literal">true</span>,</span><br><span class="line">              <span class="attr">hobby</span>:&#123;</span><br><span class="line">                <span class="attr">chi</span>:<span class="string">&quot;螺蛳粉&quot;</span>,</span><br><span class="line">                <span class="attr">wan</span>:<span class="string">&quot;王者荣耀&quot;</span></span><br><span class="line">                    &#125;</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//vue中的普通方法(函数)</span><br><span class="line">    	methods:&#123;</span><br><span class="line">            fun:function()&#123;</span><br><span class="line">                </span><br><span class="line">            &#125;,</span><br><span class="line">            //简写</span><br><span class="line">            fun2()&#123;</span><br><span class="line">                 //在vue的函数内使用vue data的数据  就直接使用  this.键  					this.键就是直接去data中获取对应的数据</span><br><span class="line">                </span><br><span class="line">                //如果在函数中修改data中的数据 this.键 = 修改后的新值</span><br><span class="line">                </span><br><span class="line">                this.name = &quot;路明泽&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
-
-<h3 id="vue计算属性—computed"><a href="#vue计算属性—computed" class="headerlink" title="vue计算属性—computed"></a>vue计算属性—computed</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//一个数据, 依赖另外一些数据计算而来的结果</span><br></pre></td></tr></table></figure>
-
-<p>场景: 一个变量的值, 需要用另外变量计算而得来</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    &quot;计算属性名&quot; () &#123;</span><br><span class="line">        return &quot;值&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>注意1: 计算属性和data属性都是变量-不能重名. 用法和data相同</strong></p>
-<p><strong>注意2: 函数内变量变化, 会自动重新计算结果返回</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//好处:</span></span><br><span class="line"><span class="comment">//带缓存，多次调用只执行函数一次</span></span><br><span class="line"><span class="comment">//缓存更新:</span></span><br><span class="line"><span class="comment">//函数里的依赖项，发生改变，函数&quot;自动&quot;重新计算，重新缓存起来</span></span><br><span class="line"><span class="comment">//注意:</span></span><br><span class="line"><span class="comment">//计算属性和data里的变量名都是变量，不能重复</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">完整语法:</span><br><span class="line">    <span class="attr">computed</span>: &#123;</span><br><span class="line">       <span class="comment">// &quot;计算属性名&quot; ()&#123;&#125;,</span></span><br><span class="line">        <span class="string">&quot;计算属性名&quot;</span>: &#123;</span><br><span class="line">            <span class="title function_">set</span>(<span class="params">值</span>)&#123;</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> 值</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="let关键字-声明变量"><a href="#let关键字-声明变量" class="headerlink" title="let关键字(声明变量)"></a>let关键字(声明变量)</h1><p>1.let声明的变量不会提升，必须在声明后才能使用</p>
+<p>2.let声明的变量不能重复声明</p>
+<p>3.let声明的变量存在块级作用域</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="keyword">var</span> i = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(i);	<span class="comment">//10</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">let</span> i = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line">	    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);	<span class="comment">//Uncaught ReferenceError: i is not defined</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//2.关于调用:</span><br><span class="line">普通方法:	调用的形式是	事件	或	&#123;&#123;函数名()&#125;&#125;</span><br><span class="line">计算方法:	调用的形式是	&#123;&#123;函数名&#125;&#125;	------没有括号</span><br></pre></td></tr></table></figure>
+<p>4.let在for循环中不会造成全局变量污染</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=<span class="number">4</span>;i++)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(i)<span class="comment">//0 1 2 3 4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(i)	<span class="comment">//10;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//3.关于调用次数</span><br><span class="line">          普通方法,每一次调用都会执行一次</span><br><span class="line">          计算方法,如果值没有发生改变,多次调用只执行一次,但是如果函数内有返回值,</span><br><span class="line">          可以多次返回</span><br><span class="line"></span><br><span class="line">          计算方法如何多次触发? 就是需要修改函数的返回值,只要函数的返回值发生改变,</span><br><span class="line">          那么函数就会自动再次触发</span><br><span class="line"></span><br><span class="line">          计算属性中的函数,返回值没有发生改变,只执行一次,但是返回结果在渲染位置可以渲染多次</span><br><span class="line">          是因为,在第一个调用的时候,就将函数的返回值存储到内存中,再次调用函数,</span><br><span class="line">          发现函数的返回值没有变,那么就不执行函数</span><br><span class="line">          而是从内存中获取上一次的数据</span><br><span class="line"></span><br><span class="line">        计算方法一般会在购物车的总计位置使用</span><br><span class="line">          统计总价: 所有商品的单价 * 数量     如果数量变了</span><br></pre></td></tr></table></figure>
+<h3 id="获取当前点击的按钮下标"><a href="#获取当前点击的按钮下标" class="headerlink" title="获取当前点击的按钮下标"></a>获取当前点击的按钮下标</h3><h5 id="使用let定义循环变量"><a href="#使用let定义循环变量" class="headerlink" title="使用let定义循环变量"></a>使用let定义循环变量</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>4<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;button&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span></span><br><span class="line"><span class="language-javascript">            btn[i].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>,i);</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h5 id="使用var定义循环变量"><a href="#使用var定义循环变量" class="headerlink" title="使用var定义循环变量"></a>使用var定义循环变量</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>4<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;button&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span></span><br><span class="line"><span class="language-javascript">            btn[i].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                btn[i].<span class="property">myindex</span> = i;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>,<span class="variable language_">this</span>.<span class="property">myindex</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="const关键字-声明常量"><a href="#const关键字-声明常量" class="headerlink" title="const关键字(声明常量)"></a>const关键字(声明常量)</h1><p>SE6中为了让程序执行起来更加高效，推出了const关键字来声明一个只读的常量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">常量具备以下特点：  (行业规范：常量起名必须全部大写)</span><br><span class="line">                1.一旦声明就必须赋值</span><br><span class="line">                2.一旦赋值就不能修改</span><br><span class="line">                3.常量的作用域和let声明的变量作用域一样</span><br><span class="line">                4.引用类型的值可以修改</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 注意： 行业规范：常量必须全部大写</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// -1. 一旦声明就必须赋值</span></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span>  <span class="variable constant_">URL</span> = <span class="string">&quot;http://www.zwd.com1&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// -2. 一旦赋值就不能修改</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// URL=&quot;http://www.zwd.com&quot; // 修改常量的值会报错</span></span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// -3. 常量的作用域和let声明的变量作用域一样</span></span></span><br><span class="line"><span class="language-javascript">			&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">const</span>  <span class="variable constant_">PORT</span>=<span class="number">3306</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable constant_">PORT</span>); <span class="comment">//  3306</span></span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// console.log(PORT); // PORT is not defined</span></span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// -4. 引用类型的值可以修改</span></span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">const</span>  <span class="variable constant_">USER_INFO</span> = &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="attr">USER_NAME</span>:<span class="string">&quot;admin&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">				<span class="attr">PASS_WORD</span>:<span class="string">&quot;123456&quot;</span></span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">// 获取值</span></span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="variable constant_">USER_INFO</span>.<span class="property">USER_NAME</span> );</span></span><br><span class="line"><span class="language-javascript">			<span class="variable constant_">USER_INFO</span>.<span class="property">USER_NAME</span> = <span class="string">&quot;root&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable constant_">USER_INFO</span>.<span class="property">USER_NAME</span>);</span></span><br><span class="line"><span class="language-javascript">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="var-let-const区别"><a href="#var-let-const区别" class="headerlink" title="var let const区别"></a>var let const区别</h1><ul>
+<li>区别一：var 存在变量提升 而 let 与 const 不存在变量提升</li>
+<li>区别二：var定义的变量可以声明多次，而let、const定义的变量只能声明</li>
+<li>区别三：var、let声明的变量可以再次赋值，而const声明的变量不能再次赋值</li>
+<li>区别四：var声明的变量没有自身的作用域，而let、const声明的变量有自身的作用域</li>
+<li>区别五：var let声明变量	const声明常量</li>
+</ul>
 
       
 
@@ -209,7 +210,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/08/%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E%E5%85%B3%E9%94%AE%E5%AD%97/">展开全文 >></a>
         </p>
       
 
@@ -239,27 +240,99 @@
 
 
   
-    <article id="post-vue脚手架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ajax请求切换商品列表排序方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">vue脚手架</a>
+      <a class="article-title" href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">ajax请求切换商品列表排序方式</a>
     </h1>
   
 
         
-        <a href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2022-09-08T03:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
+        <a href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2022-08-04T06:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="ajax请求"><a href="#ajax请求" class="headerlink" title="ajax请求"></a>ajax请求</h2><h3 id="3-1、基本概念"><a href="#3-1、基本概念" class="headerlink" title="3.1、基本概念"></a>3.1、基本概念</h3><ul>
+<li>AJAX 即 “Asynchronous JavaScript and XML”（异步的 JavaScript 与 XML 技术），指的是一套综合了多项技术的浏览器端网页开发技术。AJAX 的概念由 Jesse James Garrett 所提出，说白了就可以<strong>使用 JavaScript 代码发送网络请求并处理响应，由浏览器实现</strong>。</li>
+<li>出现的很早 <code>1998</code> 年出来，首次是<code>微软</code>提出来的，并没有引起重视；直到<code>2005</code>年左右，谷歌推出 <code>gmail，gmap</code> 使得ajax技术一时间流行起来。</li>
+</ul>
+<p><strong>定义：ajax技术就是在页面不刷新情况下，和服务器端进行数据交互的技术。</strong></p>
+<ul>
+<li><p>传统的 Web 应用允许用户端填写表单（form），当提交表单时就向网页服务器发送一个请求。服务器接收并处理传来的表单，然后送回一个新的网页，但这个做法浪费了许多带宽，因为在前后两个页面中的大部分 HTML 码往往是相同的。由于每次应用的沟通都需要向服务器发送请求，应用的回应时间依赖于服务器的回应时间。这导致了用户界面的回应比本机应用慢得多。</p>
+</li>
+<li><p>与此不同，AJAX 应用可以仅向服务器发送并取回必须的数据，并在客户端采用 JavaScript 处理来自服务器的回应。因为在服务器和浏览器之间交换的数据大量减少，服务器回应更快了。同时，很多的处理工作可以在发出请求的客户端机器上完成，因此 Web 服务器的负荷也减少了。</p>
+</li>
+</ul>
+<p><strong>所以ajax特点是：异步请求，局部刷新</strong>。</p>
+<ol>
+<li><p>这里的同步是指：发送方发出数据后，等接收方发回响应以后才发下一个数据包的通讯方式。</p>
+</li>
+<li><p>这里的异步是指：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式。</p>
+</li>
+<li><p>这里局部刷新是指：刷新页面部分内容。</p>
+</li>
+</ol>
+<p><strong>优缺点：</strong></p>
+<p>优点：Web 应用程序更为迅捷地回应用户动作，并避免了在网络上发送那些没有改变的信息，减轻服务器压力。</p>
+<p>缺点：浏览器实现之间有差异处理兼容性问题；不能回退和前进；默认不支持跨域访问（可以自主学习相关知识：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy">同源策略</a>）。</p>
+<p><strong>注意事项</strong>：</p>
+<p>ajax 这门技术，必须要在网络协议环境下才可以使用。不能把网页直接拖入到浏览器执行，必须在 web 服务器模式下访问。</p>
+<hr>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>Ajax &#x3D; 异步 javaScript 和 XML</p>
+<p>Ajax 是一种用于创建快速网页的技术</p>
+<p>通过在后台与服务器进行少量的数据交换，Ajax可以使网页实现异步更新—这意味着可以在不重新加载整个网页的情况下，对网页某部分进行更新。</p>
+<p>传统的网页(不适用ajax)如果需要更新内容，必须重载整个页面</p>
+<h3 id="XMLHttpRequest对象-ajax对象-的核心："><a href="#XMLHttpRequest对象-ajax对象-的核心：" class="headerlink" title="XMLHttpRequest对象(ajax对象)的核心："></a>XMLHttpRequest对象(ajax对象)的核心：</h3><ul>
+<li><p>onreadystatechange :当准备状态发生变化</p>
+</li>
+<li><p>readyState : 准备状态，该属性的值可能是0~4之间的数字，0表示尚未建立连接，4表示接受到响应</p>
+</li>
+<li><p>status : 响应码，例如404，200</p>
+</li>
+<li><p>responseText : 响应的字符串</p>
+</li>
+<li><p>responseXML : 响应的XML</p>
+<h5 id="当需要发出请求时需要XMLHttpRequest-对象的-open-和-send-方法"><a href="#当需要发出请求时需要XMLHttpRequest-对象的-open-和-send-方法" class="headerlink" title="当需要发出请求时需要XMLHttpRequest 对象的 open() 和 send()方法"></a>当需要发出请求时需要XMLHttpRequest 对象的 open() 和 send()方法</h5><ul>
+<li>open(请求方式，请求路径，是否异步)</li>
+<li>send()</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何使用ajax"><a href="#如何使用ajax" class="headerlink" title="如何使用ajax"></a>如何使用ajax</h3><ol>
+<li>首先，需要获取XMLHttpRequest对象：</li>
+<li>使用   open()方法设置路径及请求方式</li>
+<li>使用   send()方法发送请求</li>
+<li>设置回调获取返回值</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ajax = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();	<span class="comment">//1.创建ajax对象</span></span><br><span class="line">ajax.<span class="title function_">open</span>(<span class="string">&#x27;post&#x27;</span>,<span class="string">&#x27;接口路径&#x27;</span>);	<span class="comment">//2.设置请求路径及请求方式</span></span><br><span class="line">ajax.<span class="title function_">send</span>(<span class="string">`username=<span class="subst">$&#123;user.value&#125;</span>`</span>)	<span class="comment">//3.发送请求  post请求参数放在send方法里 </span></span><br><span class="line">ajax.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;	<span class="comment">//4.设置回调</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Ajax时的返回类型有哪些："><a href="#使用Ajax时的返回类型有哪些：" class="headerlink" title="使用Ajax时的返回类型有哪些："></a>使用Ajax时的返回类型有哪些：</h3><ul>
+<li>xml：返回XML文档，可以用jQuery处理</li>
+<li>html：返回值是纯文本信息；</li>
+<li>script：返回纯文本JavaScript代码。不会缓存结果。除非设置了”cach”参数</li>
+<li>json：json方式和html方式在请求和服务器中完全是一样，请求的返回值实际上都是String对象，有两点不同，<ul>
+<li>第一：html方式的时候并没有限制返回的字符串格式，而json方式的时候，必须符合json协议的规范。</li>
+<li>第二：html方式请求i完成之后并没有做任何的操作直接回调sucuess，而json多了一步就是加了evel，执行返回的字符串，看看源码 <code>data = eval_r(&quot;(&quot;+data+&quot;)&quot;)</code>;返回json对象；(方法的返回值是javabean时，在响应体中响应成json字符串格式)</li>
+</ul>
+</li>
+<li>jsonp：jsonp方式的交互方式和js是一样的，本身<code>xmlHttpRequest</code>对象并不能跨域访问，但是<code>script</code>标签的<code>src</code>可以跨域访问，这里就注意两个概念：第一Ajax是不能跨域操作的，第二jQuery的jsonp是可以跨域操作，jsonp到底是什么东西呢？他是一个非官方的定义，目前的规范，需要服务器和客户端进行配合使用；</li>
+<li>text：返回纯文本字符串。</li>
+</ul>
+<h3 id="原生ajax"><a href="#原生ajax" class="headerlink" title="原生ajax"></a>原生ajax</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>获取数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//1.获取button按钮</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">var</span> box = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;box&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//给按钮添加点击事件，发起ajax请求，获取数据，将数据渲染到div盒子中；</span></span></span><br><span class="line"><span class="language-javascript">        btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//发起ajax请求</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//使用ajax发起get请求的步骤 ***</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//2.1创建ajax对象</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> ajax = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//2.2设置请求路径及请求方式</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//注意：1.请求路径就是接口路径，一般是后端提供的  http://kumanxuan1.f3322.net:8809/travels/query</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//2.请求方式是由接口决定的  get</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//ajax.open(&#x27;请求方式&#x27;,服务端请求)</span></span></span><br><span class="line"><span class="language-javascript">            ajax.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>,<span class="string">&#x27;http://kumanxuan1.f3322.net:8809/travels/query&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//2.4设置异步请求的回调函数，获取最终的数据</span></span></span><br><span class="line"><span class="language-javascript">            ajax.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span>(ajax.<span class="property">readyState</span> == <span class="number">4</span> &amp;&amp; ajax.<span class="property">status</span> == <span class="number">200</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//自己的业务逻辑</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//ajax.responseText 值是一个字符串，不能很好的渲染页面</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//要将字符串转换为对象的格式 JSON.parse(js串) 将字符串转为对象</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//JSON.stringify(OBJ)将对象转为字符串</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">var</span> res = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(ajax.<span class="property">responseText</span>)</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//遍历获取到哦的对象</span></span></span><br><span class="line"><span class="language-javascript">                    res.<span class="property">data</span>.<span class="property">content</span>.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">item,index</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                        box.<span class="property">innerHTML</span> +=<span class="string">`</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                        </span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                        &lt;div&gt;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">								&lt;span&gt;<span class="subst">$&#123;item.title&#125;</span>&lt;/span&gt;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">								&lt;img src=&quot;<span class="subst">$&#123;item.coverUrl&#125;</span>&quot; alt=&quot;&quot;&gt;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">							&lt;/div&gt;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                        `</span></span></span><br><span class="line"><span class="language-javascript">                    &#125;)</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//3.3进行发送请求</span></span></span><br><span class="line"><span class="language-javascript">            ajax.<span class="title function_">send</span>()</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="ajax请求切换商品列表排序方式"><a href="#ajax请求切换商品列表排序方式" class="headerlink" title="ajax请求切换商品列表排序方式"></a>ajax请求切换商品列表排序方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">二，首页游记列表</span><br><span class="line">       <span class="keyword">function</span> <span class="title function_">getList</span>(<span class="params">orderType,currentPage</span>)&#123;</span><br><span class="line">        <span class="comment">//获取接口文件</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> ajax = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">        $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">            <span class="attr">type</span>:<span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">            <span class="attr">url</span>:<span class="string">&#x27;http://kumanxuan1.f3322.net:8809/travels/query&#x27;</span>,</span><br><span class="line">            <span class="attr">data</span>:&#123;</span><br><span class="line">                <span class="attr">orderType</span>:orderType,<span class="comment">//排序方式  2代表阅读数 </span></span><br><span class="line">                <span class="attr">currentPage</span>:currentPage<span class="comment">//代表当前页</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">success</span>(<span class="params">res</span>)&#123;</span><br><span class="line">                $(<span class="string">&#x27;#_j_tn_content .tn-list&#x27;</span>).<span class="title function_">empty</span>()	<span class="comment">//重复调用会将数据追加，因此每次调用都需要进行初始化</span></span><br><span class="line">                <span class="keyword">if</span>(res.<span class="property">code</span> == <span class="number">200</span>)&#123;</span><br><span class="line">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">                    res.<span class="property">data</span>.<span class="property">content</span>.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">item,index</span>)&#123;</span><br><span class="line">                        $(<span class="string">&#x27;#_j_tn_content .tn-list&#x27;</span>).<span class="title function_">append</span>(<span class="string">`</span></span><br><span class="line"><span class="string">                    </span></span><br><span class="line"><span class="string">                    </span></span><br><span class="line"><span class="string">                    &lt;div class=&quot;tn-item clearfix&quot;&gt;</span></span><br><span class="line"><span class="string">                                        &lt;div class=&quot;tn-image&quot;&gt;</span></span><br><span class="line"><span class="string">                                            &lt;a href=&quot;javascript:void(0);&quot; target=&quot;_blank&quot;&gt;</span></span><br><span class="line"><span class="string">                                                &lt;img src=&quot;<span class="subst">$&#123;item.coverUrl&#125;</span>&quot; style=&quot;display: inline;&quot;&gt;</span></span><br><span class="line"><span class="string">                                            &lt;/a&gt;</span></span><br><span class="line"><span class="string">                                        &lt;/div&gt;</span></span><br><span class="line"><span class="string">                                        &lt;div class=&quot;tn-wrapper&quot;&gt;</span></span><br><span class="line"><span class="string">                                            &lt;dl&gt;</span></span><br><span class="line"><span class="string">                                                &lt;dt&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;a href=&quot;./traveldetail.html?id=5e3bf6a93f050000ff0035e5&quot;</span></span><br><span class="line"><span class="string">                                                        target=&quot;_blank&quot;&gt;<span class="subst">$&#123;item.title&#125;</span></span></span><br><span class="line"><span class="string">                                                    &lt;/a&gt;</span></span><br><span class="line"><span class="string">                                                &lt;/dt&gt;</span></span><br><span class="line"><span class="string">                                                &lt;dd&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;a href=&quot;./traveldetail.html?id=5e3bf6a93f050000ff0035e5&quot;</span></span><br><span class="line"><span class="string">                                                        target=&quot;_blank&quot;&gt;</span></span><br><span class="line"><span class="string">                                                        <span class="subst">$&#123;item.summary&#125;</span></span></span><br><span class="line"><span class="string">                                                    &lt;/a&gt;</span></span><br><span class="line"><span class="string">                                                &lt;/dd&gt;</span></span><br><span class="line"><span class="string">                                            &lt;/dl&gt;</span></span><br><span class="line"><span class="string">                                            &lt;div class=&quot;tn-extra&quot;&gt;</span></span><br><span class="line"><span class="string">                                                &lt;span class=&quot;tn-ding&quot;&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;a href=&quot;javascript:void(0);&quot; data-japp=&quot;articleding&quot; data-iid=&quot;12451790&quot; data-vote=&quot;2157&quot; rel=&quot;nofollow&quot; class=&quot;btn-ding&quot;&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;/a&gt; </span></span><br><span class="line"><span class="string">                                                    &lt;em id=&quot;topvote12451790&quot;&gt;23&lt;/em&gt; </span></span><br><span class="line"><span class="string">                                                &lt;/span&gt;</span></span><br><span class="line"><span class="string">                                                &lt;span class=&quot;tn-place&quot;&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;i&gt;&lt;/i&gt; </span></span><br><span class="line"><span class="string">                                                    &lt;a href=&quot;javascript:void(0);&quot; rel=&quot;nofollow&quot; class=&quot;_j_gs_item&quot;&gt;</span></span><br><span class="line"><span class="string">                                                        <span class="subst">$&#123;item.destName&#125;</span>&lt;/a&gt;</span></span><br><span class="line"><span class="string">                                                &lt;/span&gt; </span></span><br><span class="line"><span class="string">                                                &lt;span class=&quot;tn-user&quot;&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;a href=&quot;javascript:void(0);&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;</span></span><br><span class="line"><span class="string">                                                        &lt;img src=&quot;<span class="subst">$&#123;item.author.headImgUrl&#125;</span>&quot;&gt;</span></span><br><span class="line"><span class="string">                                                        <span class="subst">$&#123;item.author.info&#125;</span></span></span><br><span class="line"><span class="string">                                                    &lt;/a&gt;</span></span><br><span class="line"><span class="string">                                                &lt;/span&gt;</span></span><br><span class="line"><span class="string">                                                &lt;span class=&quot;tn-nums&quot;&gt;</span></span><br><span class="line"><span class="string">                                                    &lt;i&gt;&lt;/i&gt;13/22</span></span><br><span class="line"><span class="string">                                                    &lt;/span&gt;</span></span><br><span class="line"><span class="string">                                            &lt;/div&gt;</span></span><br><span class="line"><span class="string">                                        &lt;/div&gt;</span></span><br><span class="line"><span class="string">                                    &lt;/div&gt;</span></span><br><span class="line"><span class="string">                    </span></span><br><span class="line"><span class="string">                    </span></span><br><span class="line"><span class="string">                    `</span>)</span><br><span class="line">                    &#125;)</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="title function_">getList</span>(<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">       <span class="comment">//给热门游记和最新发表按钮添加点击事件</span></span><br><span class="line">    $(<span class="string">&#x27;#_j_tn_nav li&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">//使用hasClass方法，检测点击的li是否有active类名</span></span><br><span class="line">        <span class="keyword">if</span>($(<span class="variable language_">this</span>).<span class="title function_">hasClass</span>(<span class="string">&#x27;active&#x27;</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span>; <span class="comment">//避免点击已显示的按钮重复发起请求</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                $(<span class="variable language_">this</span>).<span class="title function_">addClass</span>(<span class="string">&#x27;active&#x27;</span>).<span class="title function_">siblings</span>(<span class="string">&#x27;li&#x27;</span>).<span class="title function_">removeClass</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">                <span class="comment">//判断点击的是哪一个li</span></span><br><span class="line">                <span class="keyword">if</span>($(<span class="variable language_">this</span>).<span class="title function_">index</span>() == <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="comment">//代表点击的是第一个li</span></span><br><span class="line">                    <span class="title function_">getList</span>(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="title function_">getList</span>(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -271,7 +344,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/04/ajax%E8%AF%B7%E6%B1%82%E5%88%87%E6%8D%A2%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">展开全文 >></a>
         </p>
       
 
@@ -301,27 +374,29 @@
 
 
   
-    <article id="post-webpack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-jQuery实现轮播图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/07/webpack/">webpack</a>
+      <a class="article-title" href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/">jQuery实现轮播图</a>
     </h1>
   
 
         
-        <a href="/2022/09/07/webpack/" class="archive-article-date">
-  	<time datetime="2022-09-07T12:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
+        <a href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2022-08-03T06:42:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//写整个index的页面的js逻辑</span></span><br><span class="line">    <span class="comment">//轮播图模式</span></span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">        1.进入页面，发送ajax请求，获取轮播图数据</span></span><br><span class="line"><span class="comment">        2.获取数据成功后，会有返回值，将返回的轮播图数据渲染到body</span></span><br><span class="line"><span class="comment">            两个位置：1 是大图 2 是右侧小图列表</span></span><br><span class="line"><span class="comment">        3.点击右侧列表，操作自身样式</span></span><br><span class="line"><span class="comment">        4.点击右侧列表，控制大图的显示效果</span></span><br><span class="line"><span class="comment">        5.轮播图自动播放效果</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   $(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">//1.进入页面获取ajax请求</span></span><br><span class="line">        <span class="title function_">getBanner</span>();</span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">getBanner</span>(<span class="params"></span>)&#123;</span><br><span class="line">            $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">                <span class="attr">type</span>:<span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">                <span class="attr">url</span>:<span class="string">&#x27;http://kumanxuan1.f3322.net:8809/index/banners/travel&#x27;</span>,</span><br><span class="line">                <span class="title function_">success</span>(<span class="params">res</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(res.<span class="property">code</span> == <span class="number">200</span>)&#123;</span><br><span class="line">                        <span class="comment">// console.log(res);</span></span><br><span class="line">                        <span class="comment">//2.1清空原来内部静态元素</span></span><br><span class="line">                        $(<span class="string">&#x27;#_j_mfw_focus .show-image&#x27;</span>).<span class="title function_">empty</span>();</span><br><span class="line">                        $(<span class="string">&#x27;#_j_mfw_focus .show-nav&#x27;</span>).<span class="title function_">empty</span>();</span><br><span class="line">                        <span class="comment">//2.2利用循环追加节点</span></span><br><span class="line">                        res.<span class="property">data</span>.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">item,index</span>)&#123;</span><br><span class="line">                            <span class="comment">// console.log(item.coverUrl);</span></span><br><span class="line">                            $(<span class="string">&#x27;#_j_mfw_focus .show-image&#x27;</span>).<span class="title function_">append</span>(<span class="string">`     </span></span><br><span class="line"><span class="string">                    &lt;li data-id=&quot;<span class="subst">$&#123;index&#125;</span>&quot; class=&quot;show_image first&quot; style=&quot;display: block;&quot;&gt;&lt;a</span></span><br><span class="line"><span class="string">                        href=&quot;./traveldetail.html?id=5e3bf6a93f050000ff0035ec&quot; class=&quot;show-pic&quot;&gt;&lt;img</span></span><br><span class="line"><span class="string">                            src=&quot;<span class="subst">$&#123;item.coverUrl&#125;</span>&quot;&gt;&lt;/a&gt; &lt;a href=&quot;javascript:void(0);&quot;</span></span><br><span class="line"><span class="string">                        class=&quot;show-title dark&quot;&gt;</span></span><br><span class="line"><span class="string">                        &lt;div class=&quot;date&quot;&gt;&lt;span class=&quot;day&quot;&gt;15&lt;/span&gt;/Oct.2020&lt;/div&gt;</span></span><br><span class="line"><span class="string">                        &lt;h3&gt;<span class="subst">$&#123;item.title&#125;</span>&lt;/h3&gt;</span></span><br><span class="line"><span class="string">                    &lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">                            `</span>)</span><br><span class="line">                            <span class="comment">//右侧banner图</span></span><br><span class="line">                            $(<span class="string">&#x27;#_j_mfw_focus .show-nav&#x27;</span>).<span class="title function_">append</span>(<span class="string">`</span></span><br><span class="line"><span class="string">                            </span></span><br><span class="line"><span class="string">                            &lt;li class=&quot;show_nav&quot; onclick = &#x27;changnav(<span class="subst">$&#123;index&#125;</span>)&#x27;&gt;&lt;a href=&quot;javascript:&quot;&gt;&lt;img src=&quot;<span class="subst">$&#123;item.coverUrl&#125;</span>&quot;</span></span><br><span class="line"><span class="string">                            height=&quot;62&quot; width=&quot;110&quot;&gt;</span></span><br><span class="line"><span class="string">                        &lt;span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">                            </span></span><br><span class="line"><span class="string">                            `</span>)</span><br><span class="line">                        &#125;)</span><br><span class="line">                       <span class="title function_">changnav</span>(<span class="number">0</span>); </span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//原生JS发送get请求</span></span><br><span class="line">       <span class="comment">/*  var ajax = new XMLHttpRequest();</span></span><br><span class="line"><span class="comment">        ajax.open(&#x27;get&#x27;,&#x27;http://kumanxuan1.f3322.net:8809/index/banners/travel&#x27;)</span></span><br><span class="line"><span class="comment">        ajax.onreadystatechange = function()&#123;</span></span><br><span class="line"><span class="comment">            if(ajax.readyState == 4 &amp;&amp; status == 200)&#123;</span></span><br><span class="line"><span class="comment">                var res = JSON.parse(ajax.responseText);</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125; */</span></span><br><span class="line">   &#125;)</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">changnav</span>(<span class="params">i</span>)&#123;    <span class="comment">//这里的 i 是个形参 当这个函数在 autoplayFn中被调用后 i 与 num 相等</span></span><br><span class="line">    <span class="keyword">if</span>(timer)<span class="built_in">clearInterval</span>(timer)   <span class="comment">//函数来回调用会造成定时器累加 因此需要清除定时器</span></span><br><span class="line">        $(<span class="string">&#x27;#_j_mfw_focus .show-nav li&#x27;</span>).<span class="title function_">eq</span>(i).<span class="title function_">addClass</span>(<span class="string">&#x27;active&#x27;</span>).<span class="title function_">siblings</span>(<span class="string">&#x27;li&#x27;</span>).<span class="title function_">removeClass</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">        <span class="comment">// $(&#x27;#_j_mfw_focus .show-image li&#x27;).eq(i).show().siblings(&#x27;li&#x27;).hide()</span></span><br><span class="line">        <span class="comment">//淡入淡出</span></span><br><span class="line">        $(<span class="string">&#x27;#_j_mfw_focus .show-image li&#x27;</span>).<span class="title function_">eq</span>(i).<span class="title function_">fadeIn</span>(<span class="number">500</span>).<span class="title function_">siblings</span>(<span class="string">&#x27;li&#x27;</span>).<span class="title function_">fadeOut</span>(<span class="number">500</span>)</span><br><span class="line">        <span class="title function_">autoplayFn</span>(i)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//4.自动轮播</span></span><br><span class="line">   <span class="keyword">var</span> timer = <span class="literal">null</span>;    <span class="comment">//这里设置全局变量的原因是 changenav中清除定时器也需要使用到timer</span></span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">autoplayFn</span>(<span class="params">i</span>)&#123;</span><br><span class="line">    <span class="comment">//第一次进入页面 i的初始化是 0</span></span><br><span class="line">    <span class="keyword">var</span> num = i;</span><br><span class="line">    timer = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        num++;</span><br><span class="line">        <span class="keyword">if</span>(num&gt;<span class="number">4</span>)&#123;</span><br><span class="line">            num = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// console.log(num);</span></span><br><span class="line">            <span class="title function_">changnav</span>(num)   <span class="comment">//调用changenav 实现小图与大图同步</span></span><br><span class="line">                   </span><br><span class="line">    &#125;,<span class="number">2000</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -333,7 +408,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/07/webpack/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/03/jQuery%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/">展开全文 >></a>
         </p>
       
 
@@ -363,27 +438,37 @@
 
 
   
-    <article id="post-vue-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-一些js面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/01/vue-js/">vue.js</a>
+      <a class="article-title" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">一些js面试题</a>
     </h1>
   
 
         
-        <a href="/2022/09/01/vue-js/" class="archive-article-date">
-  	<time datetime="2022-09-01T00:36:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-01</time>
+        <a href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-08-03T00:43:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="1-console-log-0-1-0-2"><a href="#1-console-log-0-1-0-2" class="headerlink" title="1.console.log(0.1 + 0.2)"></a>1.console.log(0.1 + 0.2)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.1+0.2的结果不是0.3，而是0.3000000000000000004</span><br><span class="line"></span><br><span class="line">JS中两个数字相加时是以二进制形式进行的,当十进制小数的二进制表示的有限数字超过52位时,在JS里是不能精确储存的，这个时候就存在舍入误差.</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-x3D-x3D-和-x3D-x3D-x3D"><a href="#2-x3D-x3D-和-x3D-x3D-x3D" class="headerlink" title="2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;"></a>2.&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==：只是比较值,值相等则结果为	true</span><br><span class="line">===:既比较值又比较数据类型	值向等数据类型不等则结果为	false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-事件冒泡和事件捕获到底有何区别"><a href="#3-事件冒泡和事件捕获到底有何区别" class="headerlink" title="3.事件冒泡和事件捕获到底有何区别"></a>3.事件冒泡和事件捕获到底有何区别</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.：事件冒泡：从下到上(从里到外)。给父子元素的同一事件绑定方法的时候，触发子元素身上的事件，执行完毕之后，也会触发父级元素相同发事件</span><br><span class="line">2.：事件捕获：从上至下(从外到里)。当触发子元素身上的事件时，先触发父元素，然后再传递给子元素</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-JS数据类型"><a href="#4-JS数据类型" class="headerlink" title="4.JS数据类型"></a>4.JS数据类型</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ES5：Number,String,Boolean,undefined.object,Null</span><br><span class="line">ES6:Symbol	(这种类型的对象用不相等，即使创建的时候传入相同的值，可以解决属性名冲突的问题，作为标记)</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-js中的作用域和变量声明提升"><a href="#5-js中的作用域和变量声明提升" class="headerlink" title="5.js中的作用域和变量声明提升"></a>5.js中的作用域和变量声明提升</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">作用域：程序源代码中定义变量的区域，作用域确定了当前执行代码对变量的访问权限</span><br><span class="line">变量声明提升：所有变量和函数的声明都会被&quot;移动&quot;到各自作用域的最顶端</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -395,7 +480,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/01/vue-js/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/03/%E4%B8%80%E4%BA%9Bjs%E9%9D%A2%E8%AF%95%E9%A2%98/">展开全文 >></a>
         </p>
       
 
@@ -425,152 +510,39 @@
 
 
   
-    <article id="post-session" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/29/session/">session</a>
+      <a class="article-title" href="/2022/08/02/hello-world/">Hello World</a>
     </h1>
   
 
         
-        <a href="/2022/08/29/session/" class="archive-article-date">
-  	<time datetime="2022-08-29T02:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
+        <a href="/2022/08/02/hello-world/" class="archive-article-date">
+  	<time datetime="2022-08-02T15:18:38.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/29/session/">展开全文 >></a>
-        </p>
-      
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/29/cookie/">cookie</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/29/cookie/" class="archive-article-date">
-  	<time datetime="2022-08-29T02:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/29/cookie/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-formidable-模块处理服务器端表单传入数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/">formidable 模块处理服务器端表单传入数据</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2022-08-24T11:27:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	formidable 模块：</span></span><br><span class="line"><span class="comment">		接收表单的信息</span></span><br><span class="line"><span class="comment">		  1-1 普通字段信息</span></span><br><span class="line"><span class="comment">		  1-2 进行文件上传</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//引入formidable 模块</span></span><br><span class="line"><span class="keyword">let</span> form = <span class="built_in">require</span>(<span class="string">&#x27;formidable&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//处理表单传入数据</span></span><br><span class="line"><span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&#x27;/doform&#x27;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&#x27;POST&#x27;</span>)&#123;</span><br><span class="line">    <span class="comment">//实例化</span></span><br><span class="line">    <span class="keyword">let</span> form2 = <span class="keyword">new</span> form.<span class="title class_">IncomingForm</span>();</span><br><span class="line">    <span class="comment">//设置文件上传路径</span></span><br><span class="line">    form2.<span class="property">uploadDir</span> = <span class="string">&#x27;./images&#x27;</span>;</span><br><span class="line">    <span class="comment">//是否保留文件扩展名</span></span><br><span class="line">    form2.<span class="property">keepExtensions</span> = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	form2.parse(请求报文,(err,fields,files)=&gt;&#123;</span></span><br><span class="line"><span class="comment">    		err 错误</span></span><br><span class="line"><span class="comment">    		fields 普通字段信息</span></span><br><span class="line"><span class="comment">    		files 文件信息 可选</span></span><br><span class="line"><span class="comment">    	&#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    form2.<span class="title function_">parse</span>(req,<span class="function">(<span class="params">err,fields,files</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">            处理逻辑...</span><br><span class="line">        &#125;</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
 
@@ -583,285 +555,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/24/mysql/">mysql</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/24/mysql/" class="archive-article-date">
-  	<time datetime="2022-08-24T11:04:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="什么是数据库"><a href="#什么是数据库" class="headerlink" title="什么是数据库"></a>什么是数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mySQL数据库是n种数据库中的一种</span><br><span class="line">	数据库：用于存储项目中数据的一种 --服务</span><br><span class="line">	</span><br><span class="line">	服务一定会有端口号 mysql数据库的默认端口是3306</span><br><span class="line">			数据库 (用于存储表)</span><br><span class="line">			  数据表(用于存储数据)</span><br><span class="line">			    字段(属性  类似于表头)</span><br></pre></td></tr></table></figure>
-
-<h3 id="cmd操作数据库"><a href="#cmd操作数据库" class="headerlink" title="cmd操作数据库"></a>cmd操作数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">启动mysql:</span><br><span class="line">	mysql -h localhost -u root -p</span><br><span class="line">		-h 主机的ip地址  如果是本机 -h 参数可以省略</span><br><span class="line">		-u 用户名</span><br><span class="line">		-p 密码</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h3><ul>
-<li>查看mysql服务中的所有数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>进入指定数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 charset=utf8;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 数据库名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看表结构</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建表解构</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	字段名 数据类型 可选约束条件,</span><br><span class="line">	字段名 数据类型  可选约束条件</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="attr">eg</span>:</span><br><span class="line">	create table <span class="title function_">teacher</span>(</span><br><span class="line">		id int  auto_increment primary key not <span class="literal">null</span>,		<span class="comment">/*</span></span><br><span class="line"><span class="comment">				auto_increment	自动递增</span></span><br><span class="line"><span class="comment">				primary key		主键</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">		name <span class="title function_">varchar</span>(<span class="number">10</span>)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create table students(</span><br><span class="line">    id int unsigned primary key auto_increment not null,</span><br><span class="line">    name varchar(20) default &#x27;&#x27;,</span><br><span class="line">    age tinyint unsigned default 0,</span><br><span class="line">    height decimal(5,2),</span><br><span class="line">    gender enum(&#x27;男&#x27;,&#x27;女&#x27;,&#x27;人妖&#x27;,&#x27;保密&#x27;),</span><br><span class="line">    cls_id int unsigned default 0</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改表-添加字段</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改表-删除字段</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert table 表名 drop 列名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除表</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看当前进入的数据库中所有的数据表</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查询表中的数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select 字段 form 表明  where 条件</span><br><span class="line"></span><br><span class="line">* 所有字段</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>插入数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.指定字段插入：</span><br><span class="line">		值的顺序与给出的列顺序对应</span><br><span class="line">		此时需要根据实际的数据的特点 填写对应字段列表</span><br><span class="line">	insert into 表名 (&#x27;字段&#x27;,&#x27;字段&#x27;,&#x27;字段&#x27;,...) values(值,值,值,...)</span><br><span class="line">	</span><br><span class="line">2.不指定字段插入：</span><br><span class="line">        值的顺序与表结构字段的顺序完全一一对应</span><br><span class="line">        此时 字段名列表不用填写</span><br><span class="line">	insert into 表明 values(值,值,值,...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除语句</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意：如果删除语句没有条件，那么就是清空表</span><br><span class="line"></span><br><span class="line">delete from 表明 where 条件</span><br><span class="line"></span><br><span class="line">	注意：删除的语句id的位置会保留，新添加的数据的id是之前数据的最新id+1作为新数据的id</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改语句</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 set 字段=&#x27;修改后的新值&#x27;，字段=&#x27;修改后的新值&#x27; where 条件</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/24/mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-服务器获取数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/">服务器获取数据</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2022-08-23T15:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="根据不同路径加载不同的静态资源"><a href="#根据不同路径加载不同的静态资源" class="headerlink" title="根据不同路径加载不同的静态资源"></a>根据不同路径加载不同的静态资源</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> qs = <span class="built_in">require</span>(<span class="string">&#x27;querystring&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createSever</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">    加载静态资源:</span></span><br><span class="line"><span class="comment">      1.什么是静态资源 例如  html  css  js   图片  ...</span></span><br><span class="line"><span class="comment">      2.如何加载静态资源:</span></span><br><span class="line"><span class="comment">        我们需要一个模块这个模块叫做文件系统模块 fs</span></span><br><span class="line"><span class="comment">        我们就需要先引入这个模块</span></span><br><span class="line"><span class="comment">        在这个fs模块中有一个readFile的方法</span></span><br><span class="line"><span class="comment">        语法格式:</span></span><br><span class="line"><span class="comment">          fs.readFile(参数1,参数2)</span></span><br><span class="line"><span class="comment">          参数1:要加载的静态资源</span></span><br><span class="line"><span class="comment">          参数2:回调函数</span></span><br><span class="line"><span class="comment">          例如:</span></span><br><span class="line"><span class="comment">          fs.readFile(&quot;./index.html&quot;,(参数1,参数2)=&gt;&#123;</span></span><br><span class="line"><span class="comment">            参数1:错误   err</span></span><br><span class="line"><span class="comment">            参数2:加载成功的静态资源  data</span></span><br><span class="line"><span class="comment">          &#125;)</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&#x27;/form&#x27;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&#x27;GET&#x27;</span>)&#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./form.html&#x27;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                res.<span class="title function_">write</span>(<span class="string">&#x27;404&#x27;</span>)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                res.<span class="title function_">write</span>(data)</span><br><span class="line">            &#125;</span><br><span class="line">            res.<span class="title function_">end</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        	引入html页面中包含的其他静态资源</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    <span class="keyword">if</span>(url!=<span class="string">&quot;/favicon.ico&quot;</span>)&#123;</span><br><span class="line">      <span class="comment">// console.log(url);</span></span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      url:</span></span><br><span class="line"><span class="comment">        ./css/index.css</span></span><br><span class="line"><span class="comment">        ./js/jquery.js</span></span><br><span class="line"><span class="comment">        ./images/1.jpg</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      <span class="keyword">let</span> p = <span class="string">&quot;.&quot;</span>+url;</span><br><span class="line">      <span class="comment">// console.log(p);</span></span><br><span class="line">      fs.<span class="title function_">readFile</span>(p,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          res.<span class="title function_">write</span>(<span class="string">&quot;404&quot;</span>);</span><br><span class="line">          res.<span class="title function_">end</span>();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          res.<span class="title function_">write</span>(data);</span><br><span class="line">          res.<span class="title function_">end</span>();</span><br><span class="line">        &#125;  </span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&quot;/form&quot;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&quot;GET&quot;</span>)&#123;</span><br><span class="line">     fs.<span class="title function_">readFile</span>(<span class="string">&quot;./form.html&quot;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(err)&#123;</span><br><span class="line">         res.<span class="title function_">write</span>(<span class="string">&quot;404&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         res.<span class="title function_">write</span>(data);</span><br><span class="line">       &#125;</span><br><span class="line">       res.<span class="title function_">end</span>();</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//处理表单的提交</span></span><br><span class="line">   <span class="keyword">if</span>(url == <span class="string">&quot;/dologin&quot;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&quot;POST&quot;</span>)&#123;</span><br><span class="line">    <span class="comment">//  console.log(&quot;你点击了登录按钮&quot;);</span></span><br><span class="line">    <span class="comment">//接收你表单提交过来的信息  用户名 和  密码</span></span><br><span class="line">    <span class="comment">//  如果需要接收表单的信息,我们需要使用一种监听的手段,监听表单中的数据</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        req.addListener(data,function()&#123;&#125;)</span></span><br><span class="line"><span class="comment">        参数1:是data  如果参数为data那么就表示开始监听</span></span><br><span class="line"><span class="comment">        参数2:是回调函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">     <span class="comment">//声明一个空变量,用于存储每一次监听到的数据</span></span><br><span class="line">     <span class="keyword">let</span> datas = <span class="string">&quot;&quot;</span>;</span><br><span class="line">     req.<span class="title function_">addListener</span>(<span class="string">&quot;data&quot;</span>,<span class="function">(<span class="params">chunk</span>)=&gt;</span>&#123;</span><br><span class="line">        datas += chunk;</span><br><span class="line">     &#125;)</span><br><span class="line">     req.<span class="title function_">addListener</span>(<span class="string">&quot;end&quot;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">		<span class="keyword">let</span> obj = qs.<span class="title function_">parse</span>(datas);</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line">       <span class="keyword">let</span> username = obj.<span class="property">username</span>;</span><br><span class="line">       <span class="keyword">let</span> pass = obj.<span class="property">pass</span>;</span><br><span class="line">      <span class="comment">//  let pass = xxx;</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(username,pass);</span><br><span class="line">     &#125;)</span><br><span class="line">     res.<span class="title function_">end</span>();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8090</span>)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-node-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/22/node-js/">node.js</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/22/node-js/" class="archive-article-date">
-  	<time datetime="2022-08-22T01:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><h3 id="node可以做什么？"><a href="#node可以做什么？" class="headerlink" title="node可以做什么？"></a>node可以做什么？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>node可以解析js代码</span><br><span class="line">	(浏览器可以解析<span class="variable constant_">HTML</span>代码,js代码不能在浏览器中被直接解析,可以使用node命令执行js文件)</span><br><span class="line"><span class="number">2.</span>可以搭建服务器</span><br><span class="line">	搭建好的服务器文件 如何执行 </span><br><span class="line">		node <span class="number">2.</span>js</span><br><span class="line">		</span><br><span class="line">		启动服务器发现光标闪烁，说明服务器已经启动</span><br><span class="line">		如果修改了js代码中的文件，必须重启服务 ctrl+c 终止服务</span><br><span class="line">		如何访问服务器：</span><br><span class="line">			在浏览器的url地址栏中输入 <span class="number">127.0</span>.<span class="number">.0</span><span class="number">.1</span>:端口号 或者<span class="attr">localhost</span>:端口号</span><br><span class="line">			</span><br><span class="line">			<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> 本地ip</span><br><span class="line">			localhost 表示的也是本地</span><br><span class="line"><span class="number">3.</span>可以操作数据库</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">回调函数：</span><br><span class="line">	回调函数就是传递一个参数化的函数，就是将这个函数作为一个参数传递到另一个主函数里面，当那一个主函数执行完之后，再执行传递进去的作为参数的函数。走这个过程的参数化的函数，就叫做回调函数。</span><br><span class="line">	换个说法也就是被作为参数传递到另一个函数(主函数)的那个函数就叫做回调函数。</span><br></pre></td></tr></table></figure>
-
-<h1 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引入http模块</span></span><br><span class="line"><span class="keyword">let</span> http = <span class="title function_">requre</span>(<span class="string">&quot;http&quot;</span>);<span class="comment">//引入的变量中有一个模块，这个模块可以创建服务器</span></span><br><span class="line"><span class="comment">//2.创建http服务</span></span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="keyword">function</span>(<span class="params">req,res</span>)&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		req参数:	请求报文(只要和请求有关的都在req中)</span></span><br><span class="line"><span class="comment">		res参数:	响应报文(只要和响应有关的都在res中)</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取请求方式</span></span><br><span class="line">	<span class="keyword">let</span> method = req.<span class="property">method</span>;</span><br><span class="line">	<span class="comment">//请求路径</span></span><br><span class="line">	<span class="keyword">let</span> url = req.<span class="property">url</span>;</span><br><span class="line">	<span class="comment">//请求参数</span></span><br><span class="line">	<span class="keyword">let</span> param = urll.<span class="title function_">parse</span>(url,<span class="literal">true</span>)</span><br><span class="line">	<span class="keyword">let</span> id = param.<span class="property">query</span>.<span class="property">id</span>;</span><br><span class="line">	<span class="keyword">let</span> name = param.<span class="property">query</span>.<span class="property">name</span>;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置响应体</span></span><br><span class="line">	res.<span class="title function_">write</span>(<span class="string">&quot;xxx&quot;</span>)</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//告诉客户端，服务器响应结束了</span></span><br><span class="line">	</span><br><span class="line">	res.<span class="property">end</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-获取请求的方式："><a href="#1-获取请求的方式：" class="headerlink" title="1.获取请求的方式："></a>1.获取请求的方式：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">req.<span class="property">method</span>;</span><br><span class="line"></span><br><span class="line">	请求方法有 <span class="variable constant_">GET</span> <span class="variable constant_">POST</span></span><br><span class="line">	就是在服务端获取客户端数据的请求方法</span><br><span class="line">	我们能发送请求的方法：</span><br><span class="line">		<span class="number">1.</span>通过点击链接进行请求</span><br><span class="line">		<span class="number">2.</span>通过超链接进行请求 --超链接也是<span class="variable constant_">GET</span>请求</span><br><span class="line">		<span class="number">3.</span>表单请求：</span><br><span class="line">			action  将数据提交到哪里</span><br><span class="line">			method  通过哪种方式进行提交</span><br><span class="line">				&lt;form action=<span class="string">&quot;路径&quot;</span>method=<span class="string">&quot;请求方式&quot;</span>&gt;&lt;/form&gt;</span><br><span class="line">				</span><br><span class="line">		<span class="number">4.</span>ajax	可以请求数据</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-获取请求路径"><a href="#2-获取请求路径" class="headerlink" title="2.获取请求路径"></a>2.获取请求路径</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">在访问服务器的时候在浏览器上输入的是:<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:端口号</span><br><span class="line">[<span class="attr">localhost</span>:<span class="number">8090</span>]	这是在请求</span><br><span class="line">请求方式:<span class="variable constant_">GET</span></span><br><span class="line">关于url地址：</span><br><span class="line">	协议 域名 端口 路径?参数=参数值&amp;参数<span class="number">2</span>=参数值<span class="number">2</span></span><br><span class="line">	<span class="attr">http</span>:<span class="comment">//www.qq.com:8080/index?id=xx&amp;gname=男装</span></span><br><span class="line">	</span><br><span class="line">	注意：！！！！！！！！参数也属于路径的一部分</span><br><span class="line">	</span><br><span class="line">	特殊情况</span><br><span class="line">	<span class="attr">http</span>:<span class="comment">//lacalhost:8090/</span></span><br><span class="line">			当前地址的路径就是	/</span><br><span class="line">			</span><br><span class="line">请求路径：</span><br><span class="line">	req.<span class="property">url</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-获取请求参数"><a href="#3-获取请求参数" class="headerlink" title="3.获取请求参数"></a>3.获取请求参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果我们需要获取路径中的参数，我们需要使用一个新的模块 url</span><br><span class="line">使用的语法格式：</span><br><span class="line">	urll.<span class="title function_">parse</span>(参数<span class="number">1</span>,参数<span class="number">2</span>)</span><br><span class="line">	参数<span class="number">1</span>：要解析的请求路径</span><br><span class="line">	参数<span class="number">2</span>：布尔类型 <span class="literal">true</span> <span class="literal">false</span> 如果值为<span class="literal">true</span>，那么解析之后可以单独存储到一个对象中</span><br><span class="line">	返回值就是解析后的结果</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/22/node-js/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/02/hello-world/">展开全文 >></a>
         </p>
       
 
@@ -893,7 +587,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
     </nav>
   
 

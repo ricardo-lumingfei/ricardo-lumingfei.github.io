@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>Archives: 2022/9 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/archives/2022/09/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,748 +152,130 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-vue基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">vue基础</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/" class="archive-article-date">
   	<time datetime="2022-09-08T15:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-vue引入"><a href="#1-vue引入" class="headerlink" title="1.vue引入"></a>1.vue引入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vue官网下载 vue.<span class="property">js</span></span><br><span class="line">&lt;script src = <span class="string">&quot;./vue.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-vue基础语法格式"><a href="#2-vue基础语法格式" class="headerlink" title="2.vue基础语法格式"></a>2.vue基础语法格式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//作用域</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    &#123;&#123;键&#125;&#125;		写在app外面的vue语法不会被解析</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- &#123;&#123;对象名&#125;&#125;		mustache插值语法--&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 我们的文本插值语法中还可以写一些业务逻辑 例如 三元运算符  页可以写运算 --&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>性别:&#123;&#123;sex == 1 ? &quot;男&quot; : &quot;女&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>10年后的年龄:&#123;&#123;age + 10&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>路明非喜欢诺诺嘛?&#123;&#123;bool ? &quot;喜欢&quot; : &quot;不喜欢&quot;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="comment">&lt;!--	vue中的普通函数调用    --&gt;</span></span><br><span class="line">        1.通过事件的方式调用</span><br><span class="line">        <span class="tag">&lt;<span class="name">元素</span> <span class="attr">v-on:click</span> = <span class="string">&quot;函数名()&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">元素</span>&gt;</span></span><br><span class="line">        2.使用文本插值语法进行调用</span><br><span class="line">        &#123;&#123;函数名()&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="comment">//实例化vue</span></span><br><span class="line">	<span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">		<span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,	<span class="comment">//声明vue操作范围</span></span><br><span class="line"><span class="comment">//vue中的数据</span></span><br><span class="line">		<span class="attr">data</span>:&#123;</span><br><span class="line">			 <span class="attr">name</span>:<span class="string">&quot;路明非&quot;</span>,</span><br><span class="line">             <span class="attr">age</span>:<span class="number">190</span>,</span><br><span class="line">              <span class="comment">// 一般性别存储在数据库中的数据格式应该是 1男  0女  一个数字的大小一定比一个汉字小</span></span><br><span class="line">              <span class="attr">sex</span>:<span class="number">1</span>,</span><br><span class="line">              <span class="attr">bool</span>:<span class="literal">true</span>,</span><br><span class="line">              <span class="attr">hobby</span>:&#123;</span><br><span class="line">                <span class="attr">chi</span>:<span class="string">&quot;螺蛳粉&quot;</span>,</span><br><span class="line">                <span class="attr">wan</span>:<span class="string">&quot;王者荣耀&quot;</span></span><br><span class="line">                    &#125;</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//vue中的普通方法(函数)</span><br><span class="line">    	methods:&#123;</span><br><span class="line">            fun:function()&#123;</span><br><span class="line">                </span><br><span class="line">            &#125;,</span><br><span class="line">            //简写</span><br><span class="line">            fun2()&#123;</span><br><span class="line">                 //在vue的函数内使用vue data的数据  就直接使用  this.键  					this.键就是直接去data中获取对应的数据</span><br><span class="line">                </span><br><span class="line">                //如果在函数中修改data中的数据 this.键 = 修改后的新值</span><br><span class="line">                </span><br><span class="line">                this.name = &quot;路明泽&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
-
-<h3 id="vue计算属性—computed"><a href="#vue计算属性—computed" class="headerlink" title="vue计算属性—computed"></a>vue计算属性—computed</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//一个数据, 依赖另外一些数据计算而来的结果</span><br></pre></td></tr></table></figure>
-
-<p>场景: 一个变量的值, 需要用另外变量计算而得来</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    &quot;计算属性名&quot; () &#123;</span><br><span class="line">        return &quot;值&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>注意1: 计算属性和data属性都是变量-不能重名. 用法和data相同</strong></p>
-<p><strong>注意2: 函数内变量变化, 会自动重新计算结果返回</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//好处:</span></span><br><span class="line"><span class="comment">//带缓存，多次调用只执行函数一次</span></span><br><span class="line"><span class="comment">//缓存更新:</span></span><br><span class="line"><span class="comment">//函数里的依赖项，发生改变，函数&quot;自动&quot;重新计算，重新缓存起来</span></span><br><span class="line"><span class="comment">//注意:</span></span><br><span class="line"><span class="comment">//计算属性和data里的变量名都是变量，不能重复</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">完整语法:</span><br><span class="line">    <span class="attr">computed</span>: &#123;</span><br><span class="line">       <span class="comment">// &quot;计算属性名&quot; ()&#123;&#125;,</span></span><br><span class="line">        <span class="string">&quot;计算属性名&quot;</span>: &#123;</span><br><span class="line">            <span class="title function_">set</span>(<span class="params">值</span>)&#123;</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> 值</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//2.关于调用:</span><br><span class="line">普通方法:	调用的形式是	事件	或	&#123;&#123;函数名()&#125;&#125;</span><br><span class="line">计算方法:	调用的形式是	&#123;&#123;函数名&#125;&#125;	------没有括号</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//3.关于调用次数</span><br><span class="line">          普通方法,每一次调用都会执行一次</span><br><span class="line">          计算方法,如果值没有发生改变,多次调用只执行一次,但是如果函数内有返回值,</span><br><span class="line">          可以多次返回</span><br><span class="line"></span><br><span class="line">          计算方法如何多次触发? 就是需要修改函数的返回值,只要函数的返回值发生改变,</span><br><span class="line">          那么函数就会自动再次触发</span><br><span class="line"></span><br><span class="line">          计算属性中的函数,返回值没有发生改变,只执行一次,但是返回结果在渲染位置可以渲染多次</span><br><span class="line">          是因为,在第一个调用的时候,就将函数的返回值存储到内存中,再次调用函数,</span><br><span class="line">          发现函数的返回值没有变,那么就不执行函数</span><br><span class="line">          而是从内存中获取上一次的数据</span><br><span class="line"></span><br><span class="line">        计算方法一般会在购物车的总计位置使用</span><br><span class="line">          统计总价: 所有商品的单价 * 数量     如果数量变了</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue脚手架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">vue脚手架</a>
+      <a class="archive-article-title" href="/2022/09/08/vue%E5%9F%BA%E7%A1%80/">vue基础</a>
     </h1>
   
 
-        
-        <a href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/" class="archive-article-date">
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/" class="archive-article-date">
   	<time datetime="2022-09-08T03:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-08</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/07/webpack/">webpack</a>
+      <a class="archive-article-title" href="/2022/09/08/vue%E8%84%9A%E6%89%8B%E6%9E%B6/">vue脚手架</a>
     </h1>
   
 
-        
-        <a href="/2022/09/07/webpack/" class="archive-article-date">
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/09/07/webpack/" class="archive-article-date">
   	<time datetime="2022-09-07T12:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-07</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/07/webpack/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/01/vue-js/">vue.js</a>
+      <a class="archive-article-title" href="/2022/09/07/webpack/">webpack</a>
     </h1>
   
 
-        
-        <a href="/2022/09/01/vue-js/" class="archive-article-date">
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/09/01/vue-js/" class="archive-article-date">
   	<time datetime="2022-09-01T00:36:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-01</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/01/vue-js/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-session" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/29/session/">session</a>
+      <a class="archive-article-title" href="/2022/09/01/vue-js/">vue.js</a>
     </h1>
   
 
-        
-        <a href="/2022/08/29/session/" class="archive-article-date">
-  	<time datetime="2022-08-29T02:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
+        <div class="article-info info-on-right">
+          
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/29/session/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/29/cookie/">cookie</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/29/cookie/" class="archive-article-date">
-  	<time datetime="2022-08-29T02:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/29/cookie/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-formidable-模块处理服务器端表单传入数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/">formidable 模块处理服务器端表单传入数据</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2022-08-24T11:27:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	formidable 模块：</span></span><br><span class="line"><span class="comment">		接收表单的信息</span></span><br><span class="line"><span class="comment">		  1-1 普通字段信息</span></span><br><span class="line"><span class="comment">		  1-2 进行文件上传</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//引入formidable 模块</span></span><br><span class="line"><span class="keyword">let</span> form = <span class="built_in">require</span>(<span class="string">&#x27;formidable&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//处理表单传入数据</span></span><br><span class="line"><span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&#x27;/doform&#x27;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&#x27;POST&#x27;</span>)&#123;</span><br><span class="line">    <span class="comment">//实例化</span></span><br><span class="line">    <span class="keyword">let</span> form2 = <span class="keyword">new</span> form.<span class="title class_">IncomingForm</span>();</span><br><span class="line">    <span class="comment">//设置文件上传路径</span></span><br><span class="line">    form2.<span class="property">uploadDir</span> = <span class="string">&#x27;./images&#x27;</span>;</span><br><span class="line">    <span class="comment">//是否保留文件扩展名</span></span><br><span class="line">    form2.<span class="property">keepExtensions</span> = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	form2.parse(请求报文,(err,fields,files)=&gt;&#123;</span></span><br><span class="line"><span class="comment">    		err 错误</span></span><br><span class="line"><span class="comment">    		fields 普通字段信息</span></span><br><span class="line"><span class="comment">    		files 文件信息 可选</span></span><br><span class="line"><span class="comment">    	&#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    form2.<span class="title function_">parse</span>(req,<span class="function">(<span class="params">err,fields,files</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!err)&#123;</span><br><span class="line">            处理逻辑...</span><br><span class="line">        &#125;</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/24/formidable-%E6%A8%A1%E5%9D%97%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%85%A5%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/24/mysql/">mysql</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/24/mysql/" class="archive-article-date">
-  	<time datetime="2022-08-24T11:04:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="什么是数据库"><a href="#什么是数据库" class="headerlink" title="什么是数据库"></a>什么是数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mySQL数据库是n种数据库中的一种</span><br><span class="line">	数据库：用于存储项目中数据的一种 --服务</span><br><span class="line">	</span><br><span class="line">	服务一定会有端口号 mysql数据库的默认端口是3306</span><br><span class="line">			数据库 (用于存储表)</span><br><span class="line">			  数据表(用于存储数据)</span><br><span class="line">			    字段(属性  类似于表头)</span><br></pre></td></tr></table></figure>
-
-<h3 id="cmd操作数据库"><a href="#cmd操作数据库" class="headerlink" title="cmd操作数据库"></a>cmd操作数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">启动mysql:</span><br><span class="line">	mysql -h localhost -u root -p</span><br><span class="line">		-h 主机的ip地址  如果是本机 -h 参数可以省略</span><br><span class="line">		-u 用户名</span><br><span class="line">		-p 密码</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h3><ul>
-<li>查看mysql服务中的所有数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>进入指定数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 charset=utf8;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 数据库名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看表结构</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建表解构</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	字段名 数据类型 可选约束条件,</span><br><span class="line">	字段名 数据类型  可选约束条件</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="attr">eg</span>:</span><br><span class="line">	create table <span class="title function_">teacher</span>(</span><br><span class="line">		id int  auto_increment primary key not <span class="literal">null</span>,		<span class="comment">/*</span></span><br><span class="line"><span class="comment">				auto_increment	自动递增</span></span><br><span class="line"><span class="comment">				primary key		主键</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">		name <span class="title function_">varchar</span>(<span class="number">10</span>)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create table students(</span><br><span class="line">    id int unsigned primary key auto_increment not null,</span><br><span class="line">    name varchar(20) default &#x27;&#x27;,</span><br><span class="line">    age tinyint unsigned default 0,</span><br><span class="line">    height decimal(5,2),</span><br><span class="line">    gender enum(&#x27;男&#x27;,&#x27;女&#x27;,&#x27;人妖&#x27;,&#x27;保密&#x27;),</span><br><span class="line">    cls_id int unsigned default 0</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改表-添加字段</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改表-删除字段</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert table 表名 drop 列名;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除表</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看当前进入的数据库中所有的数据表</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查询表中的数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select 字段 form 表明  where 条件</span><br><span class="line"></span><br><span class="line">* 所有字段</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>插入数据</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.指定字段插入：</span><br><span class="line">		值的顺序与给出的列顺序对应</span><br><span class="line">		此时需要根据实际的数据的特点 填写对应字段列表</span><br><span class="line">	insert into 表名 (&#x27;字段&#x27;,&#x27;字段&#x27;,&#x27;字段&#x27;,...) values(值,值,值,...)</span><br><span class="line">	</span><br><span class="line">2.不指定字段插入：</span><br><span class="line">        值的顺序与表结构字段的顺序完全一一对应</span><br><span class="line">        此时 字段名列表不用填写</span><br><span class="line">	insert into 表明 values(值,值,值,...)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除语句</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意：如果删除语句没有条件，那么就是清空表</span><br><span class="line"></span><br><span class="line">delete from 表明 where 条件</span><br><span class="line"></span><br><span class="line">	注意：删除的语句id的位置会保留，新添加的数据的id是之前数据的最新id+1作为新数据的id</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改语句</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 set 字段=&#x27;修改后的新值&#x27;，字段=&#x27;修改后的新值&#x27; where 条件</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/24/mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-服务器获取数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/">服务器获取数据</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2022-08-23T15:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="根据不同路径加载不同的静态资源"><a href="#根据不同路径加载不同的静态资源" class="headerlink" title="根据不同路径加载不同的静态资源"></a>根据不同路径加载不同的静态资源</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> qs = <span class="built_in">require</span>(<span class="string">&#x27;querystring&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createSever</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">    加载静态资源:</span></span><br><span class="line"><span class="comment">      1.什么是静态资源 例如  html  css  js   图片  ...</span></span><br><span class="line"><span class="comment">      2.如何加载静态资源:</span></span><br><span class="line"><span class="comment">        我们需要一个模块这个模块叫做文件系统模块 fs</span></span><br><span class="line"><span class="comment">        我们就需要先引入这个模块</span></span><br><span class="line"><span class="comment">        在这个fs模块中有一个readFile的方法</span></span><br><span class="line"><span class="comment">        语法格式:</span></span><br><span class="line"><span class="comment">          fs.readFile(参数1,参数2)</span></span><br><span class="line"><span class="comment">          参数1:要加载的静态资源</span></span><br><span class="line"><span class="comment">          参数2:回调函数</span></span><br><span class="line"><span class="comment">          例如:</span></span><br><span class="line"><span class="comment">          fs.readFile(&quot;./index.html&quot;,(参数1,参数2)=&gt;&#123;</span></span><br><span class="line"><span class="comment">            参数1:错误   err</span></span><br><span class="line"><span class="comment">            参数2:加载成功的静态资源  data</span></span><br><span class="line"><span class="comment">          &#125;)</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&#x27;/form&#x27;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&#x27;GET&#x27;</span>)&#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./form.html&#x27;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                res.<span class="title function_">write</span>(<span class="string">&#x27;404&#x27;</span>)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                res.<span class="title function_">write</span>(data)</span><br><span class="line">            &#125;</span><br><span class="line">            res.<span class="title function_">end</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        	引入html页面中包含的其他静态资源</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    <span class="keyword">if</span>(url!=<span class="string">&quot;/favicon.ico&quot;</span>)&#123;</span><br><span class="line">      <span class="comment">// console.log(url);</span></span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      url:</span></span><br><span class="line"><span class="comment">        ./css/index.css</span></span><br><span class="line"><span class="comment">        ./js/jquery.js</span></span><br><span class="line"><span class="comment">        ./images/1.jpg</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      <span class="keyword">let</span> p = <span class="string">&quot;.&quot;</span>+url;</span><br><span class="line">      <span class="comment">// console.log(p);</span></span><br><span class="line">      fs.<span class="title function_">readFile</span>(p,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          res.<span class="title function_">write</span>(<span class="string">&quot;404&quot;</span>);</span><br><span class="line">          res.<span class="title function_">end</span>();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          res.<span class="title function_">write</span>(data);</span><br><span class="line">          res.<span class="title function_">end</span>();</span><br><span class="line">        &#125;  </span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span> == <span class="string">&quot;/form&quot;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&quot;GET&quot;</span>)&#123;</span><br><span class="line">     fs.<span class="title function_">readFile</span>(<span class="string">&quot;./form.html&quot;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(err)&#123;</span><br><span class="line">         res.<span class="title function_">write</span>(<span class="string">&quot;404&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         res.<span class="title function_">write</span>(data);</span><br><span class="line">       &#125;</span><br><span class="line">       res.<span class="title function_">end</span>();</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//处理表单的提交</span></span><br><span class="line">   <span class="keyword">if</span>(url == <span class="string">&quot;/dologin&quot;</span> &amp;&amp; req.<span class="property">method</span> == <span class="string">&quot;POST&quot;</span>)&#123;</span><br><span class="line">    <span class="comment">//  console.log(&quot;你点击了登录按钮&quot;);</span></span><br><span class="line">    <span class="comment">//接收你表单提交过来的信息  用户名 和  密码</span></span><br><span class="line">    <span class="comment">//  如果需要接收表单的信息,我们需要使用一种监听的手段,监听表单中的数据</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        req.addListener(data,function()&#123;&#125;)</span></span><br><span class="line"><span class="comment">        参数1:是data  如果参数为data那么就表示开始监听</span></span><br><span class="line"><span class="comment">        参数2:是回调函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">     <span class="comment">//声明一个空变量,用于存储每一次监听到的数据</span></span><br><span class="line">     <span class="keyword">let</span> datas = <span class="string">&quot;&quot;</span>;</span><br><span class="line">     req.<span class="title function_">addListener</span>(<span class="string">&quot;data&quot;</span>,<span class="function">(<span class="params">chunk</span>)=&gt;</span>&#123;</span><br><span class="line">        datas += chunk;</span><br><span class="line">     &#125;)</span><br><span class="line">     req.<span class="title function_">addListener</span>(<span class="string">&quot;end&quot;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">		<span class="keyword">let</span> obj = qs.<span class="title function_">parse</span>(datas);</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line">       <span class="keyword">let</span> username = obj.<span class="property">username</span>;</span><br><span class="line">       <span class="keyword">let</span> pass = obj.<span class="property">pass</span>;</span><br><span class="line">      <span class="comment">//  let pass = xxx;</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(username,pass);</span><br><span class="line">     &#125;)</span><br><span class="line">     res.<span class="title function_">end</span>();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8090</span>)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-node-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/22/node-js/">node.js</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/22/node-js/" class="archive-article-date">
-  	<time datetime="2022-08-22T01:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><h3 id="node可以做什么？"><a href="#node可以做什么？" class="headerlink" title="node可以做什么？"></a>node可以做什么？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>node可以解析js代码</span><br><span class="line">	(浏览器可以解析<span class="variable constant_">HTML</span>代码,js代码不能在浏览器中被直接解析,可以使用node命令执行js文件)</span><br><span class="line"><span class="number">2.</span>可以搭建服务器</span><br><span class="line">	搭建好的服务器文件 如何执行 </span><br><span class="line">		node <span class="number">2.</span>js</span><br><span class="line">		</span><br><span class="line">		启动服务器发现光标闪烁，说明服务器已经启动</span><br><span class="line">		如果修改了js代码中的文件，必须重启服务 ctrl+c 终止服务</span><br><span class="line">		如何访问服务器：</span><br><span class="line">			在浏览器的url地址栏中输入 <span class="number">127.0</span>.<span class="number">.0</span><span class="number">.1</span>:端口号 或者<span class="attr">localhost</span>:端口号</span><br><span class="line">			</span><br><span class="line">			<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> 本地ip</span><br><span class="line">			localhost 表示的也是本地</span><br><span class="line"><span class="number">3.</span>可以操作数据库</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">回调函数：</span><br><span class="line">	回调函数就是传递一个参数化的函数，就是将这个函数作为一个参数传递到另一个主函数里面，当那一个主函数执行完之后，再执行传递进去的作为参数的函数。走这个过程的参数化的函数，就叫做回调函数。</span><br><span class="line">	换个说法也就是被作为参数传递到另一个函数(主函数)的那个函数就叫做回调函数。</span><br></pre></td></tr></table></figure>
-
-<h1 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引入http模块</span></span><br><span class="line"><span class="keyword">let</span> http = <span class="title function_">requre</span>(<span class="string">&quot;http&quot;</span>);<span class="comment">//引入的变量中有一个模块，这个模块可以创建服务器</span></span><br><span class="line"><span class="comment">//2.创建http服务</span></span><br><span class="line"><span class="keyword">let</span> server = http.<span class="title function_">createServer</span>(<span class="keyword">function</span>(<span class="params">req,res</span>)&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		req参数:	请求报文(只要和请求有关的都在req中)</span></span><br><span class="line"><span class="comment">		res参数:	响应报文(只要和响应有关的都在res中)</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取请求方式</span></span><br><span class="line">	<span class="keyword">let</span> method = req.<span class="property">method</span>;</span><br><span class="line">	<span class="comment">//请求路径</span></span><br><span class="line">	<span class="keyword">let</span> url = req.<span class="property">url</span>;</span><br><span class="line">	<span class="comment">//请求参数</span></span><br><span class="line">	<span class="keyword">let</span> param = urll.<span class="title function_">parse</span>(url,<span class="literal">true</span>)</span><br><span class="line">	<span class="keyword">let</span> id = param.<span class="property">query</span>.<span class="property">id</span>;</span><br><span class="line">	<span class="keyword">let</span> name = param.<span class="property">query</span>.<span class="property">name</span>;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置响应体</span></span><br><span class="line">	res.<span class="title function_">write</span>(<span class="string">&quot;xxx&quot;</span>)</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//告诉客户端，服务器响应结束了</span></span><br><span class="line">	</span><br><span class="line">	res.<span class="property">end</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-获取请求的方式："><a href="#1-获取请求的方式：" class="headerlink" title="1.获取请求的方式："></a>1.获取请求的方式：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">req.<span class="property">method</span>;</span><br><span class="line"></span><br><span class="line">	请求方法有 <span class="variable constant_">GET</span> <span class="variable constant_">POST</span></span><br><span class="line">	就是在服务端获取客户端数据的请求方法</span><br><span class="line">	我们能发送请求的方法：</span><br><span class="line">		<span class="number">1.</span>通过点击链接进行请求</span><br><span class="line">		<span class="number">2.</span>通过超链接进行请求 --超链接也是<span class="variable constant_">GET</span>请求</span><br><span class="line">		<span class="number">3.</span>表单请求：</span><br><span class="line">			action  将数据提交到哪里</span><br><span class="line">			method  通过哪种方式进行提交</span><br><span class="line">				&lt;form action=<span class="string">&quot;路径&quot;</span>method=<span class="string">&quot;请求方式&quot;</span>&gt;&lt;/form&gt;</span><br><span class="line">				</span><br><span class="line">		<span class="number">4.</span>ajax	可以请求数据</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-获取请求路径"><a href="#2-获取请求路径" class="headerlink" title="2.获取请求路径"></a>2.获取请求路径</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">在访问服务器的时候在浏览器上输入的是:<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:端口号</span><br><span class="line">[<span class="attr">localhost</span>:<span class="number">8090</span>]	这是在请求</span><br><span class="line">请求方式:<span class="variable constant_">GET</span></span><br><span class="line">关于url地址：</span><br><span class="line">	协议 域名 端口 路径?参数=参数值&amp;参数<span class="number">2</span>=参数值<span class="number">2</span></span><br><span class="line">	<span class="attr">http</span>:<span class="comment">//www.qq.com:8080/index?id=xx&amp;gname=男装</span></span><br><span class="line">	</span><br><span class="line">	注意：！！！！！！！！参数也属于路径的一部分</span><br><span class="line">	</span><br><span class="line">	特殊情况</span><br><span class="line">	<span class="attr">http</span>:<span class="comment">//lacalhost:8090/</span></span><br><span class="line">			当前地址的路径就是	/</span><br><span class="line">			</span><br><span class="line">请求路径：</span><br><span class="line">	req.<span class="property">url</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-获取请求参数"><a href="#3-获取请求参数" class="headerlink" title="3.获取请求参数"></a>3.获取请求参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果我们需要获取路径中的参数，我们需要使用一个新的模块 url</span><br><span class="line">使用的语法格式：</span><br><span class="line">	urll.<span class="title function_">parse</span>(参数<span class="number">1</span>,参数<span class="number">2</span>)</span><br><span class="line">	参数<span class="number">1</span>：要解析的请求路径</span><br><span class="line">	参数<span class="number">2</span>：布尔类型 <span class="literal">true</span> <span class="literal">false</span> 如果值为<span class="literal">true</span>，那么解析之后可以单独存储到一个对象中</span><br><span class="line">	返回值就是解析后的结果</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/22/node-js/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/archives/2022/09/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2022/09/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -917,9 +299,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
